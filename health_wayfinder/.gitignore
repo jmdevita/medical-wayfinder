@@ -33,8 +33,11 @@ migrate_working_dir/
 /build/
 /coverage/
 
-# Models
+# Models — ignore everything except the symlink to the in-repo stub,
+# which the Flutter asset bundler needs to find at build/test time on
+# fresh checkouts (real weights are fetched per model/INSTRUCTIONS.md).
 assets/models/*
+!assets/models/model.gguf
 
 # Symbolication related
 app.*.symbols
