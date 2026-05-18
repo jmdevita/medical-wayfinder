@@ -10,4 +10,7 @@ vite.config.js
 *.local
 .env
 .env.local
-src/routeTree.gen.ts
+# routeTree.gen.ts is intentionally committed — the TanStack Router Vite
+# plugin generates it from src/routes/*.tsx during dev, but Docker / CI
+# builds run `tsc -b` before `vite build`, so tsc needs the file present
+# in the build context. Auto-regenerated on every `npm run dev`.
