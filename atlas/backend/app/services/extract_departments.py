@@ -103,5 +103,5 @@ def _resolve_cfg(*, model: str | None, base_url: str | None) -> dict[str, str]:
     return {
         "base_url": base_url or env.get("OPENAI_BASE_URL", "http://localhost:11434/v1"),
         "api_key":  env.get("OPENAI_API_KEY", "sk-NONE"),
-        "model":    model or env.get("OPENAI_MODEL", "qwen3.5-122b"),
+        "model":    model or env.get("OPENAI_MODEL", "gemma4-31b"),
     }

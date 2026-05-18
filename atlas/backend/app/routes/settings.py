@@ -61,7 +61,7 @@ async def test_connection(
     env = fd.load_env()
 
     base_url = (req.base_url or env.get("OPENAI_BASE_URL", "http://localhost:11434/v1")).rstrip("/")
-    model    = req.model    or env.get("OPENAI_MODEL", "qwen3.5-122b")
+    model    = req.model    or env.get("OPENAI_MODEL", "gemma4-31b")
     api_key  = env.get("OPENAI_API_KEY", "sk-NONE")
 
     # SSRF guard — applies to any user-supplied base_url. Skip for the in-repo
@@ -145,7 +145,7 @@ def current() -> CurrentSettingsResponse:
     )
     return CurrentSettingsResponse(
         base_url=env.get("OPENAI_BASE_URL", "http://localhost:11434/v1"),
-        model=env.get("OPENAI_MODEL", "qwen3.5-122b"),
+        model=env.get("OPENAI_MODEL", "gemma4-31b"),
         cors_origins=[o.strip() for o in cors.split(",") if o.strip()],
         facilities_dir=str(FACILITIES_DIR),
         bootstrap_dir=str(BOOTSTRAP_DIR),
