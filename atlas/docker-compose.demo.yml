@@ -29,10 +29,12 @@ services:
     image: wayfinder-atlas:demo
     container_name: atlas-demo
     ports:
-      # Expose only on localhost — put nginx/caddy/traefik in front for TLS
-      # and public reachability. Change to "8000:8000" if you're terminating
-      # TLS upstream and want the container reachable on all interfaces.
-      - "127.0.0.1:8000:8000"
+      # Host bind defaults to 127.0.0.1:8000 — localhost only, intended to sit
+      # behind nginx/caddy/traefik for TLS. Override via .env:
+      #   ATLAS_HOST_BIND_ADDR=0.0.0.0   (expose on all interfaces, no proxy)
+      #   ATLAS_HOST_PORT=9000           (change published port)
+      # Container always listens on 8000 internally — don't change that side.
+      - "${ATLAS_HOST_BIND_ADDR:-127.0.0.1}:${ATLAS_HOST_PORT:-8000}:8000"
     environment:
       # === Demo gating ===
       ATLAS_DEMO_MODE: "true"
