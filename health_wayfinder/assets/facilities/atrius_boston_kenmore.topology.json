@@ -1,0 +1,854 @@
+{
+  "version": "2026-04-26-osm-bootstrap",
+  "facility_id": "atrius_boston_kenmore",
+  "nodes": [
+    {
+      "id": "landmark_star_market",
+      "type": "landmark",
+      "label": "Star Market",
+      "description": "Star Market (supermarket) \u2014 visible street-level landmark.",
+      "keywords": [
+        "star market",
+        "supermarket"
+      ],
+      "lat": 42.34356,
+      "lng": -71.10064
+    },
+    {
+      "id": "transit_lansdowne_commuter_rail_south_station",
+      "type": "transit",
+      "label": "Lansdowne - Commuter Rail - South Station",
+      "description": "Lansdowne - Commuter Rail - South Station. TODO: describe pickup spot.",
+      "keywords": [
+        "lansdowne - commuter rail - south station"
+      ],
+      "lat": 42.34756,
+      "lng": -71.10032
+    },
+    {
+      "id": "parking_kenmore_lot",
+      "type": "parking",
+      "label": "Kenmore Lot",
+      "description": "Parking area: Kenmore Lot.",
+      "keywords": [
+        "kenmore lot",
+        "parking"
+      ],
+      "lat": 42.34698,
+      "lng": -71.10035
+    },
+    {
+      "id": "transit_lansdowne",
+      "type": "transit",
+      "label": "Lansdowne",
+      "description": "Lansdowne. TODO: describe pickup spot.",
+      "keywords": [
+        "lansdowne"
+      ],
+      "lat": 42.34752,
+      "lng": -71.09967
+    },
+    {
+      "id": "landmark_fenway_johnnies",
+      "type": "landmark",
+      "label": "Fenway Johnnies",
+      "description": "Fenway Johnnies (restaurant) \u2014 visible street-level landmark.",
+      "keywords": [
+        "fenway johnnies",
+        "restaurant"
+      ],
+      "lat": 42.3461,
+      "lng": -71.09926
+    },
+    {
+      "id": "parking_vip_parking",
+      "type": "parking",
+      "label": "VIP Parking",
+      "description": "Parking area: VIP Parking.",
+      "keywords": [
+        "vip parking",
+        "parking"
+      ],
+      "lat": 42.34545,
+      "lng": -71.09932
+    },
+    {
+      "id": "entrance_atrius_health",
+      "type": "entrance",
+      "label": "Atrius Health",
+      "description": "Atrius Health entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "atrius health"
+      ],
+      "lat": 42.3456,
+      "lng": -71.10135
+    },
+    {
+      "id": "transit_lansdowne_commuter_rail_outbound",
+      "type": "transit",
+      "label": "Lansdowne - Commuter Rail - Outbound",
+      "description": "Lansdowne - Commuter Rail - Outbound. TODO: describe pickup spot.",
+      "keywords": [
+        "lansdowne - commuter rail - outbound"
+      ],
+      "lat": 42.34758,
+      "lng": -71.09946
+    },
+    {
+      "id": "landmark_citgo_sign",
+      "type": "landmark",
+      "label": "Citgo sign",
+      "description": "The iconic Citgo sign atop 660 Beacon Street at Kenmore Square. Visible from over a mile away \u2014 patients commonly use it to orient.",
+      "keywords": [
+        "citgo",
+        "citgo sign",
+        "kenmore",
+        "kenmore square",
+        "the big red sign",
+        "letrero de citgo"
+      ],
+      "lat": 42.34897,
+      "lng": -71.09524
+    },
+    {
+      "id": "transit_kenmore_t",
+      "type": "transit",
+      "label": "Kenmore Square T (Green Line)",
+      "description": "Kenmore Square Green Line subway headhouse on Commonwealth Avenue. Major hub serving B/C/D branches. Several bus routes stop here too.",
+      "keywords": [
+        "kenmore",
+        "kenmore t",
+        "kenmore station",
+        "green line",
+        "the t",
+        "subway",
+        "metro",
+        "tren"
+      ],
+      "lat": 42.34866,
+      "lng": -71.09548
+    },
+    {
+      "id": "landmark_fenway_park",
+      "type": "landmark",
+      "label": "Fenway Park",
+      "description": "Fenway Park, home of the Red Sox. The main gates are on Yawkey Way. Look for the brick exterior and the green wall (Green Monster) on the third-base side.",
+      "keywords": [
+        "fenway",
+        "fenway park",
+        "the park",
+        "red sox",
+        "the green monster",
+        "yawkey way",
+        "estadio",
+        "fenway stadium"
+      ],
+      "lat": 42.34642,
+      "lng": -71.09734
+    },
+    {
+      "id": "landmark_bu_marsh_plaza",
+      "type": "landmark",
+      "label": "Boston University (Marsh Plaza)",
+      "description": "Boston University's Marsh Plaza on Commonwealth Avenue. Patients arriving from the west on Comm Ave often orient by the BU sign and chapel.",
+      "keywords": [
+        "bu",
+        "boston university",
+        "marsh plaza",
+        "bu chapel",
+        "la universidad",
+        "universidad de boston"
+      ],
+      "lat": 42.35088,
+      "lng": -71.10495
+    }
+  ],
+  "edges": [
+    {
+      "from": "parking_kenmore_lot",
+      "to": "entrance_atrius_health",
+      "distance_meters": 174,
+      "walk_minutes": 2.2,
+      "instruction": "Exit Kenmore Lot toward Brookline Avenue and walk south. Atrius Health is on your right after about two minutes \u2014 a tall office building set back from the street with the entrance at street level.",
+      "blocked": false
+    },
+    {
+      "from": "landmark_star_market",
+      "to": "entrance_atrius_health",
+      "distance_meters": 234,
+      "walk_minutes": 2.9,
+      "instruction": "From the Star Market entrance on Brookline Avenue, head north for about three minutes. Atrius Health is on your left, an office tower with glass doors and the Atrius signage at the entrance.",
+      "blocked": false
+    },
+    {
+      "from": "transit_lansdowne_commuter_rail_south_station",
+      "to": "entrance_atrius_health",
+      "distance_meters": 234,
+      "walk_minutes": 2.9,
+      "instruction": "Exit Lansdowne station and walk west on Brookline Avenue toward Kenmore. Atrius Health is on your right after roughly three minutes, just past Burlington Avenue.",
+      "blocked": false
+    },
+    {
+      "from": "entrance_atrius_health",
+      "to": "parking_vip_parking",
+      "distance_meters": 303,
+      "walk_minutes": 3.8,
+      "instruction": "Exit Atrius Health onto Brookline Avenue and walk south for about 1-2 minutes. The VIP Parking lot is on your left, just before Maitland Street.",
+      "blocked": false,
+      "geometry": [
+        [
+          42.3456,
+          -71.10135
+        ],
+        [
+          42.345587,
+          -71.101582
+        ],
+        [
+          42.345473,
+          -71.101574
+        ],
+        [
+          42.345449,
+          -71.101599
+        ],
+        [
+          42.345427,
+          -71.101622
+        ],
+        [
+          42.345365,
+          -71.10169
+        ],
+        [
+          42.345009,
+          -71.10107
+        ],
+        [
+          42.344993,
+          -71.101042
+        ],
+        [
+          42.344989,
+          -71.101032
+        ],
+        [
+          42.344988,
+          -71.10102
+        ],
+        [
+          42.344989,
+          -71.101013
+        ],
+        [
+          42.344991,
+          -71.101004
+        ],
+        [
+          42.344999,
+          -71.100991
+        ],
+        [
+          42.345013,
+          -71.100976
+        ],
+        [
+          42.345008,
+          -71.100965
+        ],
+        [
+          42.344974,
+          -71.100899
+        ],
+        [
+          42.344943,
+          -71.10084
+        ],
+        [
+          42.344936,
+          -71.100825
+        ],
+        [
+          42.344926,
+          -71.100832
+        ],
+        [
+          42.34492,
+          -71.100833
+        ],
+        [
+          42.344912,
+          -71.10083
+        ],
+        [
+          42.344901,
+          -71.100818
+        ],
+        [
+          42.344879,
+          -71.100779
+        ],
+        [
+          42.344867,
+          -71.100756
+        ],
+        [
+          42.344859,
+          -71.100739
+        ],
+        [
+          42.344854,
+          -71.100725
+        ],
+        [
+          42.344847,
+          -71.100701
+        ],
+        [
+          42.344842,
+          -71.100681
+        ],
+        [
+          42.344831,
+          -71.100621
+        ],
+        [
+          42.344823,
+          -71.100588
+        ],
+        [
+          42.344813,
+          -71.100552
+        ],
+        [
+          42.344803,
+          -71.100518
+        ],
+        [
+          42.344799,
+          -71.100506
+        ],
+        [
+          42.34485,
+          -71.100458
+        ],
+        [
+          42.344899,
+          -71.100388
+        ],
+        [
+          42.344932,
+          -71.100296
+        ],
+        [
+          42.345083,
+          -71.099737
+        ],
+        [
+          42.345153,
+          -71.099465
+        ],
+        [
+          42.345157,
+          -71.099404
+        ],
+        [
+          42.34545,
+          -71.09932
+        ]
+      ]
+    },
+    {
+      "from": "entrance_atrius_health",
+      "to": "landmark_fenway_johnnies",
+      "distance_meters": 181,
+      "walk_minutes": 2.3,
+      "instruction": "Exit Atrius Health onto Brookline Avenue and walk south for about 2-3 minutes. Fenway Johnnies (a small restaurant) is on your left, just past the residential blocks.",
+      "blocked": false
+    },
+    {
+      "from": "entrance_atrius_health",
+      "to": "transit_lansdowne",
+      "distance_meters": 533,
+      "walk_minutes": 6.7,
+      "instruction": "Exit Atrius Health and turn right onto Brookline Avenue. Walk north toward Kenmore Square \u2014 Lansdowne Street is the second left, behind Fenway Park, about a 5-minute walk.",
+      "blocked": false,
+      "geometry": [
+        [
+          42.3456,
+          -71.10135
+        ],
+        [
+          42.345587,
+          -71.101582
+        ],
+        [
+          42.345473,
+          -71.101574
+        ],
+        [
+          42.345449,
+          -71.101599
+        ],
+        [
+          42.345427,
+          -71.101622
+        ],
+        [
+          42.345365,
+          -71.10169
+        ],
+        [
+          42.345009,
+          -71.10107
+        ],
+        [
+          42.344993,
+          -71.101042
+        ],
+        [
+          42.344989,
+          -71.101032
+        ],
+        [
+          42.344988,
+          -71.10102
+        ],
+        [
+          42.344989,
+          -71.101013
+        ],
+        [
+          42.344991,
+          -71.101004
+        ],
+        [
+          42.344999,
+          -71.100991
+        ],
+        [
+          42.345013,
+          -71.100976
+        ],
+        [
+          42.345221,
+          -71.100757
+        ],
+        [
+          42.345488,
+          -71.100476
+        ],
+        [
+          42.345498,
+          -71.100494
+        ],
+        [
+          42.345505,
+          -71.100486
+        ],
+        [
+          42.345538,
+          -71.100447
+        ],
+        [
+          42.345565,
+          -71.100415
+        ],
+        [
+          42.345582,
+          -71.100396
+        ],
+        [
+          42.345575,
+          -71.100385
+        ],
+        [
+          42.346081,
+          -71.099853
+        ],
+        [
+          42.346087,
+          -71.099863
+        ],
+        [
+          42.346097,
+          -71.099851
+        ],
+        [
+          42.346125,
+          -71.099819
+        ],
+        [
+          42.346156,
+          -71.099786
+        ],
+        [
+          42.346163,
+          -71.099777
+        ],
+        [
+          42.346159,
+          -71.099771
+        ],
+        [
+          42.346481,
+          -71.099433
+        ],
+        [
+          42.346663,
+          -71.099241
+        ],
+        [
+          42.346707,
+          -71.099195
+        ],
+        [
+          42.346812,
+          -71.099085
+        ],
+        [
+          42.347193,
+          -71.099725
+        ],
+        [
+          42.347281,
+          -71.099883
+        ],
+        [
+          42.347307,
+          -71.099934
+        ],
+        [
+          42.347314,
+          -71.099952
+        ],
+        [
+          42.34732,
+          -71.099971
+        ],
+        [
+          42.347324,
+          -71.099994
+        ],
+        [
+          42.347347,
+          -71.099987
+        ],
+        [
+          42.347373,
+          -71.099982
+        ],
+        [
+          42.347401,
+          -71.099977
+        ],
+        [
+          42.347417,
+          -71.099979
+        ],
+        [
+          42.347434,
+          -71.099931
+        ],
+        [
+          42.347434,
+          -71.099852
+        ],
+        [
+          42.347435,
+          -71.099706
+        ],
+        [
+          42.347435,
+          -71.099674
+        ],
+        [
+          42.347435,
+          -71.099631
+        ],
+        [
+          42.347462,
+          -71.099631
+        ],
+        [
+          42.347476,
+          -71.099631
+        ],
+        [
+          42.347532,
+          -71.099632
+        ],
+        [
+          42.347532,
+          -71.099706
+        ],
+        [
+          42.34752,
+          -71.09967
+        ]
+      ]
+    },
+    {
+      "from": "entrance_atrius_health",
+      "to": "transit_lansdowne_commuter_rail_outbound",
+      "distance_meters": 543,
+      "walk_minutes": 6.8,
+      "instruction": "Exit Atrius Health onto Brookline Avenue and walk north toward Kenmore Square. Cross Beacon Street and turn right onto Brookline Avenue overpass \u2014 the Lansdowne commuter rail outbound platform is on Brookline Avenue near Lansdowne Street, about a 6-minute walk.",
+      "blocked": false,
+      "geometry": [
+        [
+          42.3456,
+          -71.10135
+        ],
+        [
+          42.345587,
+          -71.101582
+        ],
+        [
+          42.345473,
+          -71.101574
+        ],
+        [
+          42.345449,
+          -71.101599
+        ],
+        [
+          42.345427,
+          -71.101622
+        ],
+        [
+          42.345365,
+          -71.10169
+        ],
+        [
+          42.345009,
+          -71.10107
+        ],
+        [
+          42.344993,
+          -71.101042
+        ],
+        [
+          42.344989,
+          -71.101032
+        ],
+        [
+          42.344988,
+          -71.10102
+        ],
+        [
+          42.344989,
+          -71.101013
+        ],
+        [
+          42.344991,
+          -71.101004
+        ],
+        [
+          42.344999,
+          -71.100991
+        ],
+        [
+          42.345013,
+          -71.100976
+        ],
+        [
+          42.345221,
+          -71.100757
+        ],
+        [
+          42.345488,
+          -71.100476
+        ],
+        [
+          42.345498,
+          -71.100494
+        ],
+        [
+          42.345505,
+          -71.100486
+        ],
+        [
+          42.345538,
+          -71.100447
+        ],
+        [
+          42.345565,
+          -71.100415
+        ],
+        [
+          42.345582,
+          -71.100396
+        ],
+        [
+          42.345575,
+          -71.100385
+        ],
+        [
+          42.346081,
+          -71.099853
+        ],
+        [
+          42.346087,
+          -71.099863
+        ],
+        [
+          42.346097,
+          -71.099851
+        ],
+        [
+          42.346125,
+          -71.099819
+        ],
+        [
+          42.346156,
+          -71.099786
+        ],
+        [
+          42.346163,
+          -71.099777
+        ],
+        [
+          42.346159,
+          -71.099771
+        ],
+        [
+          42.346481,
+          -71.099433
+        ],
+        [
+          42.346663,
+          -71.099241
+        ],
+        [
+          42.346707,
+          -71.099195
+        ],
+        [
+          42.346812,
+          -71.099085
+        ],
+        [
+          42.347193,
+          -71.099725
+        ],
+        [
+          42.347281,
+          -71.099883
+        ],
+        [
+          42.347307,
+          -71.099934
+        ],
+        [
+          42.347314,
+          -71.099952
+        ],
+        [
+          42.34732,
+          -71.099971
+        ],
+        [
+          42.347324,
+          -71.099994
+        ],
+        [
+          42.347347,
+          -71.099987
+        ],
+        [
+          42.347373,
+          -71.099982
+        ],
+        [
+          42.347401,
+          -71.099977
+        ],
+        [
+          42.347417,
+          -71.099979
+        ],
+        [
+          42.347434,
+          -71.099931
+        ],
+        [
+          42.347434,
+          -71.099852
+        ],
+        [
+          42.347435,
+          -71.099706
+        ],
+        [
+          42.347435,
+          -71.099674
+        ],
+        [
+          42.347435,
+          -71.099631
+        ],
+        [
+          42.347462,
+          -71.099631
+        ],
+        [
+          42.347476,
+          -71.099631
+        ],
+        [
+          42.347532,
+          -71.099632
+        ],
+        [
+          42.34758,
+          -71.099632
+        ],
+        [
+          42.34758,
+          -71.099594
+        ],
+        [
+          42.347581,
+          -71.099534
+        ],
+        [
+          42.34758,
+          -71.09946
+        ]
+      ]
+    },
+    {
+      "from": "landmark_citgo_sign",
+      "to": "entrance_atrius_health",
+      "distance_meters": 627,
+      "walk_minutes": 7.8,
+      "instruction": "From the Citgo sign at Kenmore Square, head south on Brookline Avenue. Atrius Health is on your right after about five minutes \u2014 a tall office building between Burlington Avenue and the Massachusetts Turnpike.",
+      "blocked": false
+    },
+    {
+      "from": "transit_kenmore_t",
+      "to": "entrance_atrius_health",
+      "distance_meters": 590,
+      "walk_minutes": 7.4,
+      "instruction": "Exit Kenmore Square station onto Brookline Avenue and head south. Atrius Health is about a five-minute walk on your right \u2014 the office tower with glass entry doors at street level.",
+      "blocked": false
+    },
+    {
+      "from": "landmark_fenway_park",
+      "to": "entrance_atrius_health",
+      "distance_meters": 342,
+      "walk_minutes": 4.3,
+      "instruction": "From the front gates of Fenway Park on Yawkey Way, walk west on Brookline Avenue toward Kenmore Square. Atrius Health is on your left after about five minutes \u2014 a tall office building set back from the street.",
+      "blocked": false
+    },
+    {
+      "from": "landmark_bu_marsh_plaza",
+      "to": "entrance_atrius_health",
+      "distance_meters": 657,
+      "walk_minutes": 8.2,
+      "instruction": "From Boston University Marsh Plaza on Commonwealth Avenue, head east toward Kenmore Square, then south on Brookline Avenue. Atrius Health is about a seven-minute walk on your left.",
+      "blocked": false
+    }
+  ]
+}

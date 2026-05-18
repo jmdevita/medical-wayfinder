@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wayfinding Assistant Data Contract",
+  "description": "Data contract for the JSON array that the wayfinding assistant returns. Every assistant message must conform to this contract. Single source of truth used by: training data validation (validate.py), generation prompt (generation.txt), scoring rubric, and the Flutter app parser (response_parser.dart).",
+
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["type"],
+    "oneOf": [
+      {
+        "properties": {
+          "type": { "const": "destination" },
+          "department": { "type": "string", "minLength": 1 },
+          "building": { "type": "string", "minLength": 1 },
+          "floor": { "type": "string", "minLength": 1 }
+        },
+        "required": ["type", "department", "building", "floor"],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "type": { "const": "steps" },
+          "steps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": { "type": "string", "minLength": 1 },
+                "accessibility": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "enum": ["elevator", "ramp", "automatic_doors", "accessible_entrance", "arrived"]
+                    },
+                    { "type": "null" }
+                  ]
+                }
+              },
+              "required": ["text", "accessibility"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["type", "steps"],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "type": { "const": "disambig" },
+          "question": { "type": "string", "minLength": 1 },
+          "options": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        },
+        "required": ["type", "question", "options"],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "type": { "const": "guide_text" },
+          "text": { "type": "string", "minLength": 1 }
+        },
+        "required": ["type", "text"],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "type": { "const": "arrival" },
+          "check_in": { "type": "string", "minLength": 1 }
+        },
+        "required": ["type", "check_in"],
+        "additionalProperties": false
+      }
+    ]
+  }
+}

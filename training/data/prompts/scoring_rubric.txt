@@ -1,0 +1,20 @@
+Score this healthcare wayfinding conversation on each criterion (1-5):
+
+{criteria_block}
+
+DATA CONTRACT (what counts as a valid assistant response — score against this, not your prior expectations):
+
+Every assistant message is a JSON array of message blocks. The ONLY valid block types and their ONLY allowed fields are:
+
+1. destination — fields: type, department, building, floor. ("floor" may be the empty string "" when the source facility data has no floor for that department; this is intentional, not an error.)
+2. steps — fields: type, steps. Each step has: text, accessibility. The "accessibility" field is required on every step; valid values are exactly one of: "elevator", "ramp", "automatic_doors", "accessible_entrance", "arrived", or null. "arrived" is ONLY valid on the final step of a steps block — flagging it as an "invalid badge" anywhere else is correct; flagging it on the final step is incorrect.
+3. disambig — fields: type, question, options (array of department-name strings).
+4. guide_text — fields: type, text.
+5. arrival — fields: type, check_in. The "check_in" field IS part of the contract — do NOT flag it as "non-standard" or "undocumented." Only flag arrival blocks that add fields beyond {{type, check_in}}.
+
+Score messages against this contract. Do not invent additional schema constraints. Do not penalize legitimate uses of "arrived" (final step only) or "check_in" (on arrival blocks).
+
+CONVERSATION TO SCORE:
+{conversation}
+
+Return your scores as JSON matching the provided schema, plus a brief free-text string noting any problems.

@@ -1,0 +1,16 @@
+# Don't ship dev clutter into the image.
+**/.venv
+**/node_modules
+**/dist
+**/.vite
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/.DS_Store
+**/.frontend.log
+**/.backend.log
+**/*.log
+
+# Don't ship the Flutter app or training pipeline — atlas runs standalone.
+health_wayfinder/build
+training/output

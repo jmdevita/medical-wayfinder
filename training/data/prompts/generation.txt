@@ -1,0 +1,164 @@
+You are generating training data for a healthcare wayfinding AI assistant.
+
+TASK: Generate {batch_size} new multi-turn conversations between a patient and a wayfinding assistant.
+
+CATEGORY: {category}
+{category_instructions}
+
+FACILITY DATA (the assistant must use this for accurate directions):
+{facility_data}
+
+REAL PATIENT PHRASES (use these as inspiration for natural, conversational language):
+{real_phrases}
+
+FEW-SHOT EXAMPLES (match this quality and format exactly):
+{few_shot_examples}
+
+MESSAGE STRUCTURE:
+- Generate ONLY user and assistant turns. The pipeline injects the system
+  message (static wayfinding prompt) and CONTEXT block automatically; do not
+  emit a system message or write "CONTEXT:" / "USER:" prefixes inside user
+  content. Each "user" message is the raw patient utterance ("where's
+  pediatrics?", "I have a stomach ache").
+- The pipeline derives CONTEXT from the department named in your FIRST
+  assistant response, so make sure the first assistant turn either resolves
+  to a real department from the FACILITY DATA above (destination block) or
+  lists candidates for disambig.
+
+REQUIREMENTS:
+- Each conversation must be 4-8 turns (user + assistant messages)
+- Assistant responses MUST be valid JSON arrays of message blocks (see format below)
+- Assistant must use specific landmarks from the facility data (building features, signs, walkways)
+- Assistant must weave accessibility into the steps via the "accessibility" field
+- Each direction step must be a clear, standalone instruction suitable for display as an individual card
+- No filler phrases: "please feel free to ask", "I'd be happy to help", "don't hesitate", "as an AI"
+- If the category is Spanish, the ENTIRE conversation (user and assistant JSON text fields) must be in natural Spanish with consistent usted register
+- Department names and building numbers must match the facility data exactly — do not invent buildings or departments
+- The assistant should suggest the nearest parking area if the patient hasn't specified one
+- Vary patient phrasing — use colloquial language, not medical terminology
+
+CRITICAL RULES (do not violate — these address measured failure modes):
+
+1. ROUTE VERBATIM:
+   When the FACILITY DATA contains a department with a `directionsMap` or a
+   route block keyed by parking area, and that route is the basis for the
+   conversation, the assistant's `steps` array MUST reproduce that route
+   text VERBATIM — one step block per source step, copied character-for-
+   character. Do not paraphrase, abbreviate, or merge steps. Do not insert
+   new steps that are not in the source route. The route in the facility
+   data is the ground truth; the model's job is to deliver it, not to
+   rewrite it. You may add a final "arrived" step naming the destination
+   if the source route does not include one.
+
+   WRONG (paraphrased, landmarks lost):
+     Source: "Walk under the covered walkway and through the automatic glass doors into Building 3."
+     Output: "Head into Building 3."
+   RIGHT (verbatim, landmarks preserved):
+     Source: "Walk under the covered walkway and through the automatic glass doors into Building 3."
+     Output: "Walk under the covered walkway and through the automatic glass doors into Building 3."
+
+2. NO OVER-DISAMBIG:
+   If the patient names a department directly (e.g. "I need cardiology",
+   "where's the MRI", "necesito ir a farmacia"), the assistant MUST resolve
+   to that destination in the FIRST assistant turn with a `destination`
+   block — pick the default parking area for the route and proceed.
+   Do NOT ask `disambig` questions about which parking structure they used,
+   which building they parked at, or which location they prefer. Those are
+   over-disambig anti-patterns.
+
+   `disambig` is ONLY appropriate when the patient's query is genuinely
+   ambiguous between departments (e.g. "I have back pain or maybe chest
+   pain" → PT vs Cardiology), or when the facility has multiple distinct
+   locations of the same service and the patient hasn't named one.
+
+3. NO HALLUCINATED DETAILS:
+   - `destination.department` must be a department `name` field copied
+     EXACTLY from the facility data. No descriptive suffixes like
+     "Pharmacy (Cantara / Building 3)" — just "Pharmacy".
+   - `destination.building` must be a real building name from the facility
+     data. Do not invent.
+   - `destination.floor`: copy the department's `floor` field verbatim. If
+     the source `floor` is empty string `""`, emit `"floor": ""` — do NOT
+     invent values like "Upper Floors", "1st floor", "Ground floor" when
+     the source is empty. The app suppresses floor cues for empty values
+     by design.
+   - Do not invent suite numbers, area codes, room numbers, or hours not
+     present in the facility data.
+
+4. "arrived" BADGE PLACEMENT:
+   The "arrived" accessibility badge is ONLY valid on the FINAL step of a
+   `steps` block (used to signal the patient has reached the destination,
+   e.g. {{"text": "Reception is on your right.", "accessibility": "arrived"}}).
+   Never put "arrived" on intermediate steps. Never put "arrived" as a field
+   on an `arrival` block — `arrival` only has `type` and `check_in`. Other
+   accessibility badges ("elevator", "ramp", "automatic_doors",
+   "accessible_entrance") may appear on any step where the instruction
+   actually mentions that feature.
+
+5. NO ROUTE → CONCISE STEPS:
+   If no route block exists in the facility data for the patient's
+   parking area + destination, the assistant's `steps` array MUST be
+   CONCISE (3-5 steps maximum) and use only landmarks explicitly named
+   in the facility data. Do NOT invent suite numbers, room numbers,
+   specific elevator names, or floor sub-areas. Do NOT emit duplicate
+   or near-duplicate steps (e.g. "take the elevator to the lobby" then
+   "take the central elevator up to the lobby"). Prefer a short, clean
+   sequence like:
+     1. Walk to <real building name>
+     2. Enter through <described entrance>
+     3. [elevator] Take the elevator to <floor or department area>
+     4. [arrived] <department> is on this level
+   When in doubt, fewer steps is better than padded steps. The model is
+   being trained to be concise and accurate, not verbose.
+
+ASSISTANT RESPONSE FORMAT (data contract — must match exactly):
+Every assistant message must be a JSON array of message blocks. These are the ONLY allowed block types and fields. No extra fields allowed.
+
+1. "destination" — Confirm the department (required fields: department, building, floor)
+   {{"type": "destination", "department": "<name>", "building": "<building>", "floor": "<floor>"}}
+
+2. "steps" — Walking directions (required field: steps array, each step has text + accessibility)
+   {{"type": "steps", "steps": [
+     {{"text": "<instruction>", "accessibility": "<badge or null>"}},
+     ...
+   ]}}
+   Accessibility badges (ONLY these values or null): "elevator", "ramp", "automatic_doors", "accessible_entrance", "arrived"
+
+3. "disambig" — Clarify between departments (required fields: question, options with 2+ items)
+   {{"type": "disambig", "question": "<question>", "options": ["<dept1>", "<dept2>", ...]}}
+   Each option string MUST be a department name copied EXACTLY from the
+   facility data above (the "name" field on a department). No descriptive
+   suffixes like " — Building 3, basement" — the UI renders building/floor
+   itself from facility data, so embedding it here causes a name-lookup miss
+   when the patient taps the option.
+
+4. "guide_text" — Free text (required field: text)
+   {{"type": "guide_text", "text": "<message>"}}
+
+5. "arrival" — Check-in instructions (required field: check_in)
+   {{"type": "arrival", "check_in": "<instructions>"}}
+
+Rules for assistant responses:
+- ALWAYS a JSON array, even for single messages: [{{"type": "guide_text", "text": "..."}}]
+- Use "destination" + "steps" + "arrival" together for complete directions
+- Use "disambig" alone when clarification is needed
+- Never mix "disambig" with "steps" in the same response
+- No extra fields beyond what is listed above — the app parser will reject them
+
+OUTPUT FORMAT:
+Return a JSON array of {batch_size} conversations. Each conversation follows this structure:
+[
+  {{
+    "messages": [
+      {{"role": "user", "content": "<patient message — raw, no CONTEXT prefix>"}},
+      {{"role": "assistant", "content": "<JSON array of message blocks as a string>"}},
+      ...more turns...
+    ],
+    "category": "{category}",
+    "facility": "<facility name used>"
+  }}
+]
+
+IMPORTANT: The assistant "content" field must be a JSON string containing the message blocks array. The message blocks array is serialized as a string inside the content field.
+
+Return ONLY the JSON array. No markdown fences, no explanation, no other text.

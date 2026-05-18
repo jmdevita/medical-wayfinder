@@ -1,0 +1,343 @@
+{
+  "version": "2026-04-25-osm-bootstrap",
+  "facility_id": "massachusetts_general",
+  "nodes": [
+    {
+      "id": "entrance_warren_building",
+      "type": "entrance",
+      "label": "Warren Building",
+      "description": "Warren Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "warren building"
+      ],
+      "lat": 42.36364,
+      "lng": -71.06956
+    },
+    {
+      "id": "entrance_blake_building",
+      "type": "entrance",
+      "label": "Blake Building",
+      "description": "Blake Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "blake building"
+      ],
+      "lat": 42.36374,
+      "lng": -71.06908
+    },
+    {
+      "id": "entrance_ellison_building",
+      "type": "entrance",
+      "label": "Ellison Building",
+      "description": "Ellison Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "ellison building"
+      ],
+      "lat": 42.36329,
+      "lng": -71.06945
+    },
+    {
+      "id": "entrance_shriners_hospitals_for_children_boston",
+      "type": "entrance",
+      "label": "Shriners Hospitals for Children - Boston",
+      "description": "Shriners Hospitals for Children - Boston entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "shriners hospitals for children - boston"
+      ],
+      "lat": 42.36305,
+      "lng": -71.06646
+    },
+    {
+      "id": "entrance_massachusetts_eye_and_ear",
+      "type": "entrance",
+      "label": "Massachusetts Eye and Ear",
+      "description": "Massachusetts Eye and Ear entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "massachusetts eye and ear"
+      ],
+      "lat": 42.36282,
+      "lng": -71.07012
+    },
+    {
+      "id": "parking_fruit_street_garage",
+      "type": "parking",
+      "label": "Fruit Street Garage",
+      "description": "Parking area: Fruit Street Garage.",
+      "keywords": [
+        "fruit street garage",
+        "parking"
+      ],
+      "lat": 42.36202,
+      "lng": -71.06908
+    },
+    {
+      "id": "parking_charles_street_garage",
+      "type": "parking",
+      "label": "Charles Street Garage",
+      "description": "Parking area: Charles Street Garage.",
+      "keywords": [
+        "charles street garage",
+        "parking"
+      ],
+      "lat": 42.36018,
+      "lng": -71.07102
+    },
+    {
+      "id": "entrance_cox_building",
+      "type": "entrance",
+      "label": "Cox Building",
+      "description": "Cox Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "cox building"
+      ],
+      "lat": 42.364,
+      "lng": -71.06935
+    },
+    {
+      "id": "entrance_austen_building",
+      "type": "entrance",
+      "label": "Austen Building",
+      "description": "Austen Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "austen building"
+      ],
+      "lat": 42.36326,
+      "lng": -71.06986
+    },
+    {
+      "id": "entrance_grey_bigelow_building",
+      "type": "entrance",
+      "label": "Grey/Bigelow Building",
+      "description": "Grey/Bigelow Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "grey/bigelow building"
+      ],
+      "lat": 42.36369,
+      "lng": -71.06855
+    },
+    {
+      "id": "entrance_wang_ambulatory_care_center",
+      "type": "entrance",
+      "label": "Wang Ambulatory Care Center",
+      "description": "Wang Ambulatory Care Center entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "wang ambulatory care center"
+      ],
+      "lat": 42.36263,
+      "lng": -71.06825
+    },
+    {
+      "id": "entrance_thier_building",
+      "type": "entrance",
+      "label": "Thier Building",
+      "description": "Thier Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "thier building"
+      ],
+      "lat": 42.36304,
+      "lng": -71.06729
+    },
+    {
+      "id": "entrance_bartlett_building",
+      "type": "entrance",
+      "label": "Bartlett Building",
+      "description": "Bartlett Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "bartlett building"
+      ],
+      "lat": 42.36258,
+      "lng": -71.0673
+    },
+    {
+      "id": "entrance_mgh_yawkey_center",
+      "type": "entrance",
+      "label": "MGH Yawkey Center",
+      "description": "MGH Yawkey Center entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "mgh yawkey center"
+      ],
+      "lat": 42.36191,
+      "lng": -71.06958
+    },
+    {
+      "id": "entrance_massachusetts_general_hospital",
+      "type": "entrance",
+      "label": "Massachusetts General Hospital",
+      "description": "Massachusetts General Hospital entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "massachusetts general hospital"
+      ],
+      "lat": 42.36271,
+      "lng": -71.06923
+    },
+    {
+      "id": "entrance_russell_museum_of_medical_history_and_innovation",
+      "type": "entrance",
+      "label": "Russell Museum of Medical History and Innovation",
+      "description": "Russell Museum of Medical History and Innovation entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "russell museum of medical history and innovation"
+      ],
+      "lat": 42.36133,
+      "lng": -71.06902
+    },
+    {
+      "id": "parking_yawkey_garage",
+      "type": "parking",
+      "label": "Yawkey Garage",
+      "description": "Parking area: Yawkey Garage.",
+      "keywords": [
+        "yawkey garage",
+        "parking"
+      ],
+      "lat": 42.36161,
+      "lng": -71.06976
+    },
+    {
+      "id": "entrance_lunder_building",
+      "type": "entrance",
+      "label": "Lunder Building",
+      "description": "Lunder Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "lunder building"
+      ],
+      "lat": 42.36286,
+      "lng": -71.06939
+    },
+    {
+      "id": "parking_charles_river_plaza_garage",
+      "type": "parking",
+      "label": "Charles River Plaza Garage",
+      "description": "Parking area: Charles River Plaza Garage.",
+      "keywords": [
+        "charles river plaza garage",
+        "parking"
+      ],
+      "lat": 42.36165,
+      "lng": -71.06606
+    },
+    {
+      "id": "parking_north_grove_street_garage",
+      "type": "parking",
+      "label": "North Grove Street Garage",
+      "description": "Parking area: North Grove Street Garage.",
+      "keywords": [
+        "north grove street garage",
+        "parking"
+      ],
+      "lat": 42.36181,
+      "lng": -71.06823
+    },
+    {
+      "id": "parking_blossom_parking_garage",
+      "type": "parking",
+      "label": "Blossom Parking Garage",
+      "description": "Parking area: Blossom Parking Garage.",
+      "keywords": [
+        "blossom parking garage",
+        "parking"
+      ],
+      "lat": 42.36439,
+      "lng": -71.06663
+    },
+    {
+      "id": "transit_charles_mgh",
+      "type": "transit",
+      "label": "Charles/MGH",
+      "description": "Charles/MGH. TODO: describe pickup spot.",
+      "keywords": [
+        "charles/mgh"
+      ],
+      "lat": 42.36116,
+      "lng": -71.0708
+    },
+    {
+      "id": "transit_charles_mgh_ashmont_braintree",
+      "type": "transit",
+      "label": "Charles/MGH (Ashmont/Braintree)",
+      "description": "Charles/MGH (Ashmont/Braintree). TODO: describe pickup spot.",
+      "keywords": [
+        "charles/mgh (ashmont/braintree)"
+      ],
+      "lat": 42.36117,
+      "lng": -71.07136
+    },
+    {
+      "id": "transit_charles_mgh_alewife",
+      "type": "transit",
+      "label": "Charles/MGH (Alewife)",
+      "description": "Charles/MGH (Alewife). TODO: describe pickup spot.",
+      "keywords": [
+        "charles/mgh (alewife)"
+      ],
+      "lat": 42.36125,
+      "lng": -71.0713
+    },
+    {
+      "id": "transit_charles_mgh_red_line_alewife",
+      "type": "transit",
+      "label": "Charles/MGH - Red Line - Alewife",
+      "description": "Charles/MGH - Red Line - Alewife. TODO: describe pickup spot.",
+      "keywords": [
+        "charles/mgh - red line - alewife"
+      ],
+      "lat": 42.36132,
+      "lng": -71.07224
+    },
+    {
+      "id": "transit_charles_mgh_red_line_ashmont_braintree",
+      "type": "transit",
+      "label": "Charles/MGH - Red Line - Ashmont/Braintree",
+      "description": "Charles/MGH - Red Line - Ashmont/Braintree. TODO: describe pickup spot.",
+      "keywords": [
+        "charles/mgh - red line - ashmont/braintree"
+      ],
+      "lat": 42.36123,
+      "lng": -71.07217
+    },
+    {
+      "id": "entrance_white_building",
+      "type": "entrance",
+      "label": "White Building",
+      "description": "White Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "white building"
+      ],
+      "lat": 42.36314,
+      "lng": -71.06854
+    },
+    {
+      "id": "entrance_bulfinch_building",
+      "type": "entrance",
+      "label": "Bulfinch Building",
+      "description": "Bulfinch Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "bulfinch building"
+      ],
+      "lat": 42.36353,
+      "lng": -71.06783
+    },
+    {
+      "id": "entrance_jackson_building",
+      "type": "entrance",
+      "label": "Jackson Building",
+      "description": "Jackson Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "jackson building"
+      ],
+      "lat": 42.36374,
+      "lng": -71.06812
+    },
+    {
+      "id": "entrance_edwards_research_building",
+      "type": "entrance",
+      "label": "Edwards Research Building",
+      "description": "Edwards Research Building entrance. TODO: describe doors, signage.",
+      "keywords": [
+        "edwards research building"
+      ],
+      "lat": 42.36349,
+      "lng": -71.06733
+    }
+  ],
+  "edges": []
+}

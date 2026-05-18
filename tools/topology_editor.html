@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Medical Wayfinder — Topology Editor</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; }
+  #app { display: grid; grid-template-columns: 1fr 360px; grid-template-rows: 56px 1fr; height: 100vh; }
+  header { grid-column: 1 / -1; padding: 10px 18px; background: #1f2937; color: #fff; display: flex; align-items: center; gap: 12px; }
+  header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  header input[type="text"] { padding: 7px 10px; border-radius: 6px; border: 1px solid #374151; background: #111827; color: #fff; font-size: 13px; min-width: 360px; }
+  header button { padding: 7px 12px; border-radius: 6px; border: 1px solid #4b5563; background: #374151; color: #fff; font-size: 13px; cursor: pointer; }
+  header button:hover { background: #4b5563; }
+  header .status { color: #9ca3af; font-size: 12px; margin-left: auto; }
+  #map { background: #f3f4f6; }
+  #side { background: #fafafa; border-left: 1px solid #e5e7eb; overflow-y: auto; padding: 14px; }
+  #side h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin: 14px 0 6px; }
+  #side h2:first-child { margin-top: 0; }
+  .toolbar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+  .toolbar button { padding: 6px 10px; border: 1px solid #d1d5db; background: #fff; border-radius: 6px; cursor: pointer; font-size: 12px; }
+  .toolbar button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .toolbar button:hover:not(.active) { background: #f3f4f6; }
+  .meta-form label { display: block; font-size: 11px; color: #6b7280; margin-top: 6px; }
+  .meta-form input, .meta-form select, .meta-form textarea { width: 100%; padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; font-family: inherit; }
+  .meta-form textarea { min-height: 60px; resize: vertical; }
+  .list { display: flex; flex-direction: column; gap: 4px; }
+  .list .item { padding: 6px 8px; border: 1px solid #e5e7eb; background: #fff; border-radius: 4px; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .list .item:hover { border-color: #2563eb; }
+  .list .item.selected { background: #dbeafe; border-color: #2563eb; }
+  .list .item .swatch { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .list .item .label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .list .item .id { color: #9ca3af; font-family: ui-monospace, monospace; font-size: 10px; }
+  .list .item button { padding: 2px 6px; border: 0; background: transparent; cursor: pointer; color: #dc2626; font-size: 14px; }
+  .actions { margin-top: 10px; display: flex; gap: 6px; }
+  .actions button { flex: 1; padding: 7px; border-radius: 6px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 12px; }
+  .actions button.primary { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+  .modal { background: #fff; padding: 18px; border-radius: 8px; max-width: 720px; width: 92%; max-height: 90vh; overflow-y: auto; }
+  .modal h3 { margin: 0 0 10px; font-size: 15px; }
+  .modal .close-row { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
+  .modal .close-row button { padding: 7px 14px; border-radius: 6px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .modal .close-row button.primary { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .modal .close-row button.danger { background: #dc2626; color: #fff; border-color: #dc2626; }
+  .leaflet-tooltip.editor-label { background: rgba(255,255,255,0.92); border: 1px solid #d1d5db; border-radius: 4px; padding: 1px 6px; font-size: 11px; font-weight: 600; }
+  .help { background: #fef3c7; border: 1px solid #fde68a; padding: 8px 10px; border-radius: 6px; font-size: 12px; color: #78350f; margin-bottom: 10px; }
+  textarea.json { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; min-height: 420px; white-space: pre; width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; resize: vertical; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Topology Editor</h1>
+    <input type="text" id="search" placeholder="Search address (e.g. 13652 Cantara St, Panorama City, CA)..." />
+    <button id="searchBtn">Go</button>
+    <button id="importBtn">Import JSON</button>
+    <button id="exportBtn">Export JSON</button>
+    <button id="clearBtn">Clear</button>
+    <span class="status" id="status">Ready</span>
+  </header>
+  <div id="map"></div>
+  <aside id="side">
+    <h2>Mode</h2>
+    <div class="toolbar">
+      <button data-mode="select" class="active">Select / Drag</button>
+      <button data-mode="addNode">Add Node</button>
+      <button data-mode="addEdge">Add Edge</button>
+    </div>
+    <div class="help" id="helpText">Click a node or edge to inspect. Drag nodes to reposition.</div>
+
+    <h2>Facility</h2>
+    <div class="meta-form">
+      <label>Facility ID (slug)</label>
+      <input type="text" id="facilityId" />
+      <label>Display Name</label>
+      <input type="text" id="facilityName" />
+      <label>Topology Version</label>
+      <input type="text" id="facilityVersion" />
+    </div>
+
+    <h2>Nodes (<span id="nodeCount">0</span>)</h2>
+    <div class="list" id="nodeList"></div>
+
+    <h2>Edges (<span id="edgeCount">0</span>)</h2>
+    <div class="list" id="edgeList"></div>
+  </aside>
+</div>
+
+<script>
+const TYPE_COLORS = {
+  parking:  "#2563eb",
+  entrance: "#dc2626",
+  landmark: "#ea580c",
+  junction: "#6b7280",
+  transit:  "#7c3aed",
+  floor:    "#9ca3af",
+};
+const NODE_TYPES = Object.keys(TYPE_COLORS);
+
+const STORAGE_KEY = "wayfinder_topology_editor_v1";
+
+const state = {
+  mode: "select", // select | addNode | addEdge
+  facility_id: "new_facility",
+  name: "New Facility",
+  version: new Date().toISOString().slice(0, 10),
+  nodes: [],   // {id, type, label, description, keywords:[], lat, lng}
+  edges: [],   // {from, to, distance_meters, walk_minutes, instruction, blocked}
+  edgeStartId: null,
+  selectedNodeId: null,
+  selectedEdgeIdx: null,
+};
+
+const map = L.map('map', { zoomControl: true }).setView([34.228, -118.443], 17);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  maxZoom: 20,
+  subdomains: 'abcd',
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+}).addTo(map);
+
+const nodeMarkers = new Map(); // id -> Leaflet marker
+const edgeLines = [];          // [{idx, line}]
+
+function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+function makeId(prefix) {
+  let n = 1;
+  while (state.nodes.some(node => node.id === `${prefix}_${n}`)) n++;
+  return `${prefix}_${n}`;
+}
+
+function setMode(mode) {
+  state.mode = mode;
+  document.querySelectorAll('.toolbar button').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === mode);
+  });
+  state.edgeStartId = null;
+  document.getElementById('helpText').textContent = ({
+    select: "Click a node or edge to inspect. Drag nodes to reposition.",
+    addNode: "Click on the map to drop a new node.",
+    addEdge: "Click the FROM node, then the TO node to create an edge.",
+  })[mode];
+  redraw();
+}
+
+function redraw() {
+  // Clear
+  nodeMarkers.forEach(m => m.remove());
+  nodeMarkers.clear();
+  edgeLines.forEach(e => e.line.remove());
+  edgeLines.length = 0;
+
+  // Edges first
+  state.edges.forEach((e, idx) => {
+    const a = state.nodes.find(n => n.id === e.from);
+    const b = state.nodes.find(n => n.id === e.to);
+    if (!a || !b) return;
+    // Use the routed footway polyline if present, otherwise straight line.
+    const latLngs = (Array.isArray(e.geometry) && e.geometry.length >= 2)
+      ? e.geometry
+      : [[a.lat, a.lng], [b.lat, b.lng]];
+    const line = L.polyline(latLngs, {
+      color: e.blocked ? '#9ca3af' : (state.selectedEdgeIdx === idx ? '#2563eb' : '#374151'),
+      weight: state.selectedEdgeIdx === idx ? 5 : 3,
+      opacity: e.blocked ? 0.5 : 0.8,
+      dashArray: e.blocked ? '6,6' : null,
+    });
+    line.on('click', (ev) => {
+      L.DomEvent.stop(ev);
+      if (state.mode === 'select') openEdgeModal(idx);
+    });
+    line.addTo(map);
+    edgeLines.push({ idx, line });
+  });
+
+  // Nodes
+  state.nodes.forEach(n => {
+    const isSelected = state.selectedNodeId === n.id || state.edgeStartId === n.id;
+    const marker = L.circleMarker([n.lat, n.lng], {
+      radius: isSelected ? 11 : 8,
+      color: isSelected ? '#2563eb' : '#fff',
+      weight: isSelected ? 3 : 2,
+      fillColor: TYPE_COLORS[n.type] ?? '#374151',
+      fillOpacity: 0.95,
+    });
+    marker.bindTooltip(n.label || n.id, {
+      permanent: true, direction: 'top', offset: [0, -10], className: 'editor-label'
+    });
+    marker.on('click', (ev) => {
+      L.DomEvent.stop(ev);
+      handleNodeClick(n.id);
+    });
+    // Drag via mousedown → custom drag (Leaflet circleMarker doesn't natively drag).
+    marker.on('mousedown', (ev) => {
+      if (state.mode !== 'select') return;
+      L.DomEvent.stop(ev);
+      map.dragging.disable();
+      const onMove = (mEv) => {
+        n.lat = mEv.latlng.lat;
+        n.lng = mEv.latlng.lng;
+        marker.setLatLng(mEv.latlng);
+        // Update connected edges
+        edgeLines.forEach(({ idx, line }) => {
+          const e = state.edges[idx];
+          if (e.from === n.id || e.to === n.id) {
+            const a = state.nodes.find(nn => nn.id === e.from);
+            const b = state.nodes.find(nn => nn.id === e.to);
+            line.setLatLngs([[a.lat, a.lng], [b.lat, b.lng]]);
+          }
+        });
+      };
+      const onUp = () => {
+        map.off('mousemove', onMove);
+        map.off('mouseup', onUp);
+        map.dragging.enable();
+        // Recompute distance + walk_minutes for any edge touching this node.
+        // Drop any pre-routed footway geometry — it's stale now that an
+        // endpoint moved. Re-run draft_edges_for_facility.py to re-route.
+        state.edges.forEach((e) => {
+          if (e.from === n.id || e.to === n.id) {
+            e.distance_meters = estimateDistance(e.from, e.to);
+            e.walk_minutes = walkMinutesFor(e.distance_meters);
+            if (e.geometry) delete e.geometry;
+          }
+        });
+        save();
+        renderLists();
+      };
+      map.on('mousemove', onMove);
+      map.on('mouseup', onUp);
+    });
+    marker.addTo(map);
+    nodeMarkers.set(n.id, marker);
+  });
+
+  renderLists();
+  updateFacilityFields();
+}
+
+function handleNodeClick(id) {
+  if (state.mode === 'addEdge') {
+    if (!state.edgeStartId) {
+      state.edgeStartId = id;
+      setStatus(`From: ${id}. Now click destination.`);
+      redraw();
+      return;
+    }
+    if (state.edgeStartId === id) {
+      setStatus("Same node clicked — edge cancelled.");
+      state.edgeStartId = null;
+      redraw();
+      return;
+    }
+    const from = state.edgeStartId;
+    const to = id;
+    state.edgeStartId = null;
+    const dist = estimateDistance(from, to);
+    state.edges.push({
+      from, to,
+      distance_meters: dist,
+      walk_minutes: walkMinutesFor(dist),
+      instruction: "",
+      blocked: false,
+    });
+    save();
+    redraw();
+    openEdgeModal(state.edges.length - 1);
+    return;
+  }
+  if (state.mode === 'select') {
+    state.selectedNodeId = id;
+    state.selectedEdgeIdx = null;
+    redraw();
+    openNodeModal(id);
+  }
+}
+
+// Walking pace ~80 m/min (~3 mph) for a typical patient. Round to 1 decimal.
+function walkMinutesFor(distanceMeters) {
+  return Math.round((distanceMeters / 80) * 10) / 10;
+}
+
+function estimateDistance(fromId, toId) {
+  const a = state.nodes.find(n => n.id === fromId);
+  const b = state.nodes.find(n => n.id === toId);
+  if (!a || !b) return 0;
+  const R = 6371000;
+  const dLat = (b.lat - a.lat) * Math.PI / 180;
+  const dLng = (b.lng - a.lng) * Math.PI / 180;
+  const sa = Math.sin(dLat/2)**2 + Math.cos(a.lat * Math.PI/180) * Math.cos(b.lat * Math.PI/180) * Math.sin(dLng/2)**2;
+  const c = 2 * Math.atan2(Math.sqrt(sa), Math.sqrt(1 - sa));
+  return Math.round(R * c);
+}
+
+map.on('click', (ev) => {
+  if (state.mode !== 'addNode') {
+    state.selectedNodeId = null;
+    state.selectedEdgeIdx = null;
+    redraw();
+    return;
+  }
+  const id = makeId('node');
+  const node = {
+    id, type: 'landmark', label: id, description: '', keywords: [],
+    lat: ev.latlng.lat, lng: ev.latlng.lng,
+  };
+  state.nodes.push(node);
+  save();
+  redraw();
+  openNodeModal(id);
+});
+
+function renderLists() {
+  document.getElementById('nodeCount').textContent = state.nodes.length;
+  document.getElementById('edgeCount').textContent = state.edges.length;
+  const nodeList = document.getElementById('nodeList');
+  nodeList.innerHTML = '';
+  state.nodes.forEach(n => {
+    const div = document.createElement('div');
+    div.className = 'item' + (n.id === state.selectedNodeId ? ' selected' : '');
+    div.innerHTML = `
+      <span class="swatch" style="background:${TYPE_COLORS[n.type] ?? '#374151'}"></span>
+      <span class="label">${escapeHtml(n.label || n.id)}</span>
+      <span class="id">${escapeHtml(n.id)}</span>
+      <button title="Delete">×</button>
+    `;
+    div.addEventListener('click', (e) => {
+      if (e.target.tagName === 'BUTTON') {
+        if (confirm(`Delete node "${n.label || n.id}" and any edges using it?`)) {
+          state.edges = state.edges.filter(e => e.from !== n.id && e.to !== n.id);
+          state.nodes = state.nodes.filter(nn => nn.id !== n.id);
+          state.selectedNodeId = null;
+          save();
+          redraw();
+        }
+        return;
+      }
+      map.panTo([n.lat, n.lng]);
+      state.selectedNodeId = n.id;
+      state.selectedEdgeIdx = null;
+      redraw();
+      openNodeModal(n.id);
+    });
+    nodeList.appendChild(div);
+  });
+
+  const edgeList = document.getElementById('edgeList');
+  edgeList.innerHTML = '';
+  state.edges.forEach((e, idx) => {
+    const div = document.createElement('div');
+    div.className = 'item' + (idx === state.selectedEdgeIdx ? ' selected' : '');
+    div.innerHTML = `
+      <span class="label">${escapeHtml(e.from)} → ${escapeHtml(e.to)}</span>
+      <button title="Delete">×</button>
+    `;
+    div.addEventListener('click', (ev) => {
+      if (ev.target.tagName === 'BUTTON') {
+        state.edges.splice(idx, 1);
+        state.selectedEdgeIdx = null;
+        save();
+        redraw();
+        return;
+      }
+      state.selectedEdgeIdx = idx;
+      state.selectedNodeId = null;
+      redraw();
+      openEdgeModal(idx);
+    });
+    edgeList.appendChild(div);
+  });
+}
+
+function updateFacilityFields() {
+  document.getElementById('facilityId').value = state.facility_id;
+  document.getElementById('facilityName').value = state.name;
+  document.getElementById('facilityVersion').value = state.version;
+}
+
+['facilityId','facilityName','facilityVersion'].forEach(id => {
+  document.getElementById(id).addEventListener('change', e => {
+    if (id === 'facilityId') state.facility_id = e.target.value;
+    if (id === 'facilityName') state.name = e.target.value;
+    if (id === 'facilityVersion') state.version = e.target.value;
+    save();
+  });
+});
+
+function openNodeModal(id) {
+  const n = state.nodes.find(nn => nn.id === id);
+  if (!n) return;
+  const modal = makeModal(`
+    <h3>Edit node</h3>
+    <div class="meta-form">
+      <label>ID (must be unique)</label>
+      <input type="text" id="m_id" value="${escapeAttr(n.id)}">
+      <label>Type</label>
+      <select id="m_type">
+        ${NODE_TYPES.map(t => `<option value="${t}" ${n.type === t ? 'selected':''}>${t}</option>`).join('')}
+      </select>
+      <label>Label (shown to patient)</label>
+      <input type="text" id="m_label" value="${escapeAttr(n.label)}">
+      <label>Description</label>
+      <textarea id="m_desc">${escapeHtml(n.description)}</textarea>
+      <label>Keywords (comma-separated)</label>
+      <input type="text" id="m_keywords" value="${escapeAttr((n.keywords || []).join(', '))}">
+      <label>Coordinates (lat, lng)</label>
+      <input type="text" id="m_coords" value="${n.lat.toFixed(6)}, ${n.lng.toFixed(6)}">
+    </div>
+    <div class="close-row">
+      <button class="danger" id="m_delete">Delete</button>
+      <button id="m_cancel">Cancel</button>
+      <button class="primary" id="m_save">Save</button>
+    </div>
+  `);
+  document.getElementById('m_save').onclick = () => {
+    const newId = document.getElementById('m_id').value.trim();
+    if (newId !== n.id && state.nodes.some(nn => nn.id === newId)) {
+      alert('That ID is already in use.'); return;
+    }
+    if (newId !== n.id) {
+      state.edges.forEach(e => {
+        if (e.from === n.id) e.from = newId;
+        if (e.to === n.id) e.to = newId;
+      });
+      n.id = newId;
+    }
+    n.type = document.getElementById('m_type').value;
+    n.label = document.getElementById('m_label').value.trim();
+    n.description = document.getElementById('m_desc').value.trim();
+    n.keywords = document.getElementById('m_keywords').value.split(',').map(s => s.trim()).filter(Boolean);
+    const coords = document.getElementById('m_coords').value.split(',').map(s => parseFloat(s.trim()));
+    if (coords.length === 2 && !coords.some(isNaN)) { n.lat = coords[0]; n.lng = coords[1]; }
+    save();
+    modal.remove();
+    redraw();
+  };
+  document.getElementById('m_delete').onclick = () => {
+    if (confirm('Delete this node and any connected edges?')) {
+      state.edges = state.edges.filter(e => e.from !== n.id && e.to !== n.id);
+      state.nodes = state.nodes.filter(nn => nn.id !== n.id);
+      state.selectedNodeId = null;
+      save();
+      modal.remove();
+      redraw();
+    }
+  };
+  document.getElementById('m_cancel').onclick = () => modal.remove();
+}
+
+function openEdgeModal(idx) {
+  const e = state.edges[idx];
+  if (!e) return;
+  const modal = makeModal(`
+    <h3>Edit edge</h3>
+    <div class="meta-form">
+      <label>From → To</label>
+      <input type="text" value="${escapeAttr(e.from)} → ${escapeAttr(e.to)}" disabled>
+      <label>Instruction (the line the patient hears at this step)</label>
+      <textarea id="m_instr">${escapeHtml(e.instruction)}</textarea>
+      <label>Distance (meters) <span style="color:#9ca3af;font-weight:normal">— auto from coordinates, edit to override</span></label>
+      <input type="number" id="m_dist" value="${e.distance_meters || 0}">
+      <label>Walk minutes <span style="color:#9ca3af;font-weight:normal">— auto from distance / 80 m·min⁻¹</span></label>
+      <input type="number" step="0.1" id="m_walk" value="${e.walk_minutes || 0}">
+      <div style="margin-top:6px"><button type="button" id="m_recompute" style="padding:4px 10px;border:1px solid #d1d5db;background:#fff;border-radius:4px;cursor:pointer;font-size:11px">Recompute from coordinates</button></div>
+      <label style="margin-top:10px"><input type="checkbox" id="m_blocked" ${e.blocked ? 'checked':''}> Blocked (e.g. construction)</label>
+    </div>
+    <div class="close-row">
+      <button class="danger" id="m_delete">Delete</button>
+      <button id="m_cancel">Cancel</button>
+      <button class="primary" id="m_save">Save</button>
+    </div>
+  `);
+  document.getElementById('m_recompute').onclick = () => {
+    const d = estimateDistance(e.from, e.to);
+    document.getElementById('m_dist').value = d;
+    document.getElementById('m_walk').value = walkMinutesFor(d);
+  };
+  document.getElementById('m_save').onclick = () => {
+    e.instruction = document.getElementById('m_instr').value.trim();
+    e.distance_meters = parseInt(document.getElementById('m_dist').value, 10) || 0;
+    e.walk_minutes = parseFloat(document.getElementById('m_walk').value) || 0;
+    e.blocked = document.getElementById('m_blocked').checked;
+    save();
+    modal.remove();
+    redraw();
+  };
+  document.getElementById('m_delete').onclick = () => {
+    state.edges.splice(idx, 1);
+    state.selectedEdgeIdx = null;
+    save();
+    modal.remove();
+    redraw();
+  };
+  document.getElementById('m_cancel').onclick = () => modal.remove();
+}
+
+function makeModal(html) {
+  const bg = document.createElement('div');
+  bg.className = 'modal-bg';
+  bg.innerHTML = `<div class="modal">${html}</div>`;
+  bg.addEventListener('click', e => { if (e.target === bg) bg.remove(); });
+  document.body.appendChild(bg);
+  return bg;
+}
+
+function escapeHtml(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
+function escapeAttr(s) { return escapeHtml(s); }
+
+function save() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(serialize()));
+    setStatus(`Autosaved · ${state.nodes.length} nodes / ${state.edges.length} edges`);
+  } catch (e) {
+    setStatus('Save failed');
+  }
+}
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return false;
+    deserialize(JSON.parse(raw));
+    return true;
+  } catch (e) { return false; }
+}
+
+function serialize() {
+  return {
+    version: state.version,
+    facility_id: state.facility_id,
+    name: state.name,
+    nodes: state.nodes.map(n => ({
+      id: n.id, type: n.type, label: n.label, description: n.description,
+      keywords: n.keywords, lat: n.lat, lng: n.lng,
+    })),
+    edges: state.edges.map(e => {
+      const out = {
+        from: e.from, to: e.to,
+        distance_meters: e.distance_meters,
+        walk_minutes: e.walk_minutes,
+        instruction: e.instruction,
+        blocked: e.blocked,
+      };
+      if (Array.isArray(e.geometry) && e.geometry.length >= 2) {
+        out.geometry = e.geometry;
+      }
+      return out;
+    }),
+  };
+}
+
+function deserialize(obj) {
+  state.facility_id = obj.facility_id || 'facility';
+  state.name = obj.name || obj.facility_id || 'Facility';
+  state.version = obj.version || new Date().toISOString().slice(0, 10);
+  state.nodes = (obj.nodes || []).map(n => ({
+    id: n.id, type: n.type || 'landmark', label: n.label || n.id,
+    description: n.description || '',
+    keywords: Array.isArray(n.keywords) ? n.keywords : [],
+    lat: parseFloat(n.lat), lng: parseFloat(n.lng),
+  }));
+  state.edges = (obj.edges || []).map(e => {
+    const out = {
+      from: e.from, to: e.to,
+      distance_meters: e.distance_meters || 0,
+      walk_minutes: e.walk_minutes || 0,
+      instruction: e.instruction || '',
+      blocked: !!e.blocked,
+    };
+    if (Array.isArray(e.geometry) && e.geometry.length >= 2) {
+      out.geometry = e.geometry;
+    }
+    return out;
+  });
+  state.selectedNodeId = null;
+  state.selectedEdgeIdx = null;
+  state.edgeStartId = null;
+  redraw();
+  fitToNodes();
+}
+
+function fitToNodes() {
+  if (!state.nodes.length) return;
+  const pts = state.nodes.map(n => [n.lat, n.lng]);
+  map.fitBounds(L.latLngBounds(pts), { padding: [50, 50] });
+}
+
+document.querySelectorAll('.toolbar button').forEach(btn => {
+  btn.addEventListener('click', () => setMode(btn.dataset.mode));
+});
+
+document.getElementById('importBtn').onclick = () => {
+  const modal = makeModal(`
+    <h3>Import topology JSON</h3>
+    <p style="font-size:12px;color:#6b7280">Paste the contents of a <code>*.topology.json</code> file. Replaces the current state.</p>
+    <textarea class="json" id="imp_json" placeholder='{"facility_id":"...","nodes":[...],"edges":[...]}'></textarea>
+    <div class="close-row">
+      <button id="imp_cancel">Cancel</button>
+      <button class="primary" id="imp_load">Load</button>
+    </div>
+  `);
+  document.getElementById('imp_load').onclick = () => {
+    try {
+      const obj = JSON.parse(document.getElementById('imp_json').value);
+      deserialize(obj);
+      save();
+      modal.remove();
+    } catch (e) {
+      alert('Invalid JSON: ' + e.message);
+    }
+  };
+  document.getElementById('imp_cancel').onclick = () => modal.remove();
+};
+
+document.getElementById('exportBtn').onclick = () => {
+  const json = JSON.stringify(serialize(), null, 2);
+  const modal = makeModal(`
+    <h3>Export topology JSON</h3>
+    <p style="font-size:12px;color:#6b7280">Save as <code>health_wayfinder/assets/facilities/${escapeHtml(state.facility_id || 'facility')}.topology.json</code></p>
+    <textarea class="json" id="exp_json">${escapeHtml(json)}</textarea>
+    <div class="close-row">
+      <button id="exp_copy">Copy to clipboard</button>
+      <button id="exp_download">Download .json</button>
+      <button id="exp_close" class="primary">Close</button>
+    </div>
+  `);
+  document.getElementById('exp_copy').onclick = () => {
+    navigator.clipboard.writeText(json).then(() => setStatus('Copied to clipboard'));
+  };
+  document.getElementById('exp_download').onclick = () => {
+    const blob = new Blob([json], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${state.facility_id || 'facility'}.topology.json`;
+    a.click();
+  };
+  document.getElementById('exp_close').onclick = () => modal.remove();
+};
+
+document.getElementById('clearBtn').onclick = () => {
+  if (!confirm('Clear all nodes and edges? This cannot be undone (but you can re-import from JSON).')) return;
+  state.nodes = []; state.edges = [];
+  state.selectedNodeId = null; state.selectedEdgeIdx = null;
+  save(); redraw();
+};
+
+// Address search via Nominatim (OSM's free geocoder; rate-limited to 1 req/sec)
+async function searchAddress(q) {
+  if (!q.trim()) return;
+  setStatus('Searching…');
+  try {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&limit=1`;
+    const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+    const results = await res.json();
+    if (!results.length) { setStatus('No results'); return; }
+    const r = results[0];
+    map.setView([parseFloat(r.lat), parseFloat(r.lon)], 19);
+    setStatus(`Centered on ${r.display_name}`);
+  } catch (e) {
+    setStatus('Search failed');
+  }
+}
+document.getElementById('searchBtn').onclick = () => searchAddress(document.getElementById('search').value);
+document.getElementById('search').addEventListener('keydown', e => {
+  if (e.key === 'Enter') searchAddress(e.target.value);
+});
+
+// Boot
+if (!load()) {
+  // Fresh start — center on a sensible default
+  state.facility_id = 'new_facility';
+  state.name = 'New Facility';
+}
+redraw();
+setStatus(state.nodes.length ? 'Loaded autosave' : 'Ready');
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+{
+  "version": "2026-04-25",
+  "facility_id": "southern_jp",
+  "nodes": [
+    {
+      "id": "green_st_t_stop",
+      "type": "transit",
+      "label": "Green Street Orange Line stop",
+      "description": "MBTA Orange Line Green Street station, four blocks down Green Street from the health center.",
+      "keywords": ["green street stop", "orange line", "t stop", "subway", "mbta", "metro", "tren"],
+      "lat": 42.31050,
+      "lng": -71.10720
+    },
+    {
+      "id": "centre_bus_stop",
+      "type": "transit",
+      "label": "Route 39 bus stop on Centre St",
+      "description": "Route 39 bus stop on Centre Street near 640. Connects to Forest Hills and Copley Square.",
+      "keywords": ["bus", "route 39", "39 bus", "bus stop", "autobus"],
+      "lat": 42.30595,
+      "lng": -71.11340
+    },
+    {
+      "id": "burroughs_lot",
+      "type": "parking",
+      "label": "Burroughs Street public lot",
+      "description": "Public parking lot on Burroughs Street, one block past the health center, 2-hour limit.",
+      "keywords": ["burroughs", "burroughs lot", "public lot", "burroughs parking"],
+      "lat": 42.30620,
+      "lng": -71.11400
+    },
+    {
+      "id": "centre_st_meters",
+      "type": "parking",
+      "label": "Centre Street metered parking",
+      "description": "Metered street parking on Centre Street near 640. 1- and 2-hour meters, often full during business hours.",
+      "keywords": ["centre street parking", "street parking", "meters", "metered", "parquimetro"],
+      "lat": 42.30580,
+      "lng": -71.11360
+    },
+    {
+      "id": "under_building_parking",
+      "type": "parking",
+      "label": "Under-building patient parking",
+      "description": "Five patient-reserved spaces under the building, accessed from Green Street (one-way). Arrive early.",
+      "keywords": ["under building", "underground parking", "patient parking", "garage", "under-building"],
+      "lat": 42.30575,
+      "lng": -71.11345
+    },
+    {
+      "id": "post_office",
+      "type": "landmark",
+      "label": "Post office across the street",
+      "description": "U.S. Post Office directly across Centre Street from the health center entrance. The clearest landmark for finding 640.",
+      "keywords": ["post office", "postal", "correo", "across the street"],
+      "lat": 42.30585,
+      "lng": -71.11365
+    },
+    {
+      "id": "centre_green_corner",
+      "type": "junction",
+      "label": "Corner of Centre St and Green St",
+      "description": "Street corner where Centre Street meets Green Street. Health center is on this corner.",
+      "keywords": ["corner", "centre and green", "intersection", "esquina"],
+      "lat": 42.30582,
+      "lng": -71.11352
+    },
+    {
+      "id": "main_entrance",
+      "type": "entrance",
+      "label": "Main entrance (640 Centre St)",
+      "description": "Main entrance to the health center at 640 Centre Street. Automatic accessible doors.",
+      "keywords": ["main entrance", "640 centre", "front door", "entrance", "entrada principal"],
+      "lat": 42.30580,
+      "lng": -71.11350
+    },
+    {
+      "id": "front_desk",
+      "type": "floor",
+      "label": "1st floor front desk",
+      "description": "Front desk on the left as you enter. Check-in for all departments.",
+      "keywords": ["front desk", "reception", "check in", "lobby", "recepcion"],
+      "lat": 42.30580,
+      "lng": -71.11350
+    },
+    {
+      "id": "lab_window",
+      "type": "floor",
+      "label": "Lab window",
+      "description": "Phlebotomy / lab window down the main hallway on your right. Walk-ins accepted.",
+      "keywords": ["lab", "lab window", "phlebotomy", "blood draw", "laboratorio"],
+      "lat": 42.30580,
+      "lng": -71.11350
+    },
+    {
+      "id": "behavioral_health_hall",
+      "type": "floor",
+      "label": "Behavioral Health hallway",
+      "description": "Behavioral Health offices down the hall to the right from the front desk.",
+      "keywords": ["behavioral health", "mental health", "counseling", "therapy", "salud mental"],
+      "lat": 42.30580,
+      "lng": -71.11350
+    }
+  ],
+  "edges": [
+    {
+      "from": "green_st_t_stop",
+      "to": "centre_green_corner",
+      "distance_meters": 320,
+      "walk_minutes": 5.0,
+      "instruction": "Exit the Green Street T stop and turn left — walk four blocks up Green Street, past the auto shop, to the corner of Centre Street.",
+      "blocked": false
+    },
+    {
+      "from": "centre_green_corner",
+      "to": "post_office",
+      "distance_meters": 15,
+      "walk_minutes": 0.3,
+      "instruction": "At the corner, the post office is on your right across Centre Street.",
+      "blocked": false
+    },
+    {
+      "from": "post_office",
+      "to": "main_entrance",
+      "distance_meters": 20,
+      "walk_minutes": 0.4,
+      "instruction": "From the post office, the health center is directly across the street at 640 Centre St.",
+      "blocked": false
+    },
+    {
+      "from": "centre_green_corner",
+      "to": "main_entrance",
+      "distance_meters": 5,
+      "walk_minutes": 0.1,
+      "instruction": "The main entrance is right on the corner — look for 640 Centre Street with the automatic doors.",
+      "blocked": false
+    },
+    {
+      "from": "centre_bus_stop",
+      "to": "main_entrance",
+      "distance_meters": 30,
+      "walk_minutes": 0.5,
+      "instruction": "Step off the bus and walk along Centre Street to 640 — the health center is on the corner of Green St, across from the post office.",
+      "blocked": false
+    },
+    {
+      "from": "centre_st_meters",
+      "to": "main_entrance",
+      "distance_meters": 25,
+      "walk_minutes": 0.5,
+      "instruction": "From the meters, walk along Centre Street to 640 — the health center is on the corner across from the post office.",
+      "blocked": false
+    },
+    {
+      "from": "burroughs_lot",
+      "to": "main_entrance",
+      "distance_meters": 110,
+      "walk_minutes": 2.0,
+      "instruction": "From the Burroughs lot, walk back along Centre Street toward Green Street — the health center is one block down on the corner across from the post office.",
+      "blocked": false
+    },
+    {
+      "from": "under_building_parking",
+      "to": "main_entrance",
+      "distance_meters": 15,
+      "walk_minutes": 0.5,
+      "instruction": "From the under-building parking, take the elevator up to the 1st floor lobby.",
+      "blocked": false
+    },
+    {
+      "from": "main_entrance",
+      "to": "front_desk",
+      "distance_meters": 8,
+      "walk_minutes": 0.2,
+      "instruction": "Inside the main entrance, the front desk is on your left.",
+      "blocked": false
+    },
+    {
+      "from": "front_desk",
+      "to": "lab_window",
+      "distance_meters": 20,
+      "walk_minutes": 0.4,
+      "instruction": "From the front desk, walk down the main hallway — the lab window is on your right.",
+      "blocked": false
+    },
+    {
+      "from": "front_desk",
+      "to": "behavioral_health_hall",
+      "distance_meters": 15,
+      "walk_minutes": 0.3,
+      "instruction": "From the front desk, head down the hall to the right to reach Behavioral Health offices.",
+      "blocked": false
+    }
+  ]
+}

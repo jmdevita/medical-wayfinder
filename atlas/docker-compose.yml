@@ -1,0 +1,61 @@
+# Local-mode docker-compose. Runs the same image we'd push to a host, but
+# with bind mounts so edits in the dashboard land back in the repo.
+#
+# Build context is the repo root so the Dockerfile can COPY tools/ in.
+
+services:
+  redis:
+    image: redis:7-alpine
+    # `appendonly yes` flushes writes to disk so jobs survive `docker compose
+    # restart` of the redis service itself, not just the atlas container.
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  atlas:
+    build:
+      context: ..
+      dockerfile: atlas/Dockerfile
+    image: wayfinder-atlas:dev
+    ports:
+      - "8000:8000"
+    # docker-compose auto-loads atlas/.env (alongside this file). Anything
+    # listed under `environment:` here either has a literal value or is
+    # forwarded from the host env / .env via ${VAR:-default}.
+    environment:
+      ATLAS_CORS_ORIGINS: ""
+      # Persistent + multi-replica-ready job runner. The hostname `redis`
+      # resolves via compose's default network.
+      ATLAS_REDIS_URL: redis://redis:6379/0
+      # Required for the Street View edge-walker. Set in atlas/.env.
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY:-}
+      # Forward optional auth + rate-limit toggles from atlas/.env.
+      ATLAS_AUTH_ENABLED: ${ATLAS_AUTH_ENABLED:-}
+      ATLAS_GITHUB_OAUTH_CLIENT_ID: ${ATLAS_GITHUB_OAUTH_CLIENT_ID:-}
+      ATLAS_GITHUB_OAUTH_CLIENT_SECRET: ${ATLAS_GITHUB_OAUTH_CLIENT_SECRET:-}
+      ATLAS_SESSION_SECRET: ${ATLAS_SESSION_SECRET:-}
+      ATLAS_RATE_LIMIT_ENABLED: ${ATLAS_RATE_LIMIT_ENABLED:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+      STREETVIEW_VISION_MODEL: ${STREETVIEW_VISION_MODEL:-}
+    depends_on:
+      redis:
+        # Wait until redis-cli ping succeeds — otherwise the lifespan ping
+        # in atlas would race the redis container's startup.
+        condition: service_healthy
+    volumes:
+      # Live data — edits the dashboard makes survive container restarts.
+      - ./data:/data
+      # If you want publish to land in the Flutter assets, mount that directory:
+      # - ../health_wayfinder/assets/facilities:/repo/health_wayfinder/assets/facilities
+    restart: unless-stopped
+
+volumes:
+  redis-data:

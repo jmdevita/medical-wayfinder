@@ -1,0 +1,608 @@
+{
+  "version": "2026-04-25-osm",
+  "facility_id": "kaiser_panorama_city",
+  "nodes": [
+    {
+      "id": "cantara_parking",
+      "type": "parking",
+      "label": "Cantara Street Parking Structures",
+      "description": "West-side parking structures off Cantara Street. Serves Buildings 2, 3, 3A, and 4. Rooftop parking available on the member structure.",
+      "keywords": [
+        "cantara",
+        "cantara parking",
+        "cantara structure",
+        "west parking",
+        "member parking"
+      ],
+      "lat": 34.22068,
+      "lng": -118.4294
+    },
+    {
+      "id": "ventura_parking",
+      "type": "parking",
+      "label": "Ventura Canyon / Willard Parking Structure",
+      "description": "East-side parking structure off Roscoe Boulevard. Serves Buildings 5, 6, the Hospital, and the Emergency Department.",
+      "keywords": [
+        "ventura",
+        "willard",
+        "ventura canyon",
+        "ventura parking",
+        "willard structure",
+        "east parking",
+        "roscoe parking"
+      ],
+      "lat": 34.21837,
+      "lng": -118.4294
+    },
+    {
+      "id": "patient_dropoff_3a",
+      "type": "parking",
+      "label": "Building 3A patient drop-off",
+      "description": "Patient drop-off and pickup loop in front of Building 3A.",
+      "keywords": [
+        "drop off",
+        "drop-off",
+        "pickup",
+        "building 3a drop"
+      ],
+      "lat": 34.2212,
+      "lng": -118.4302
+    },
+    {
+      "id": "building_2_entrance",
+      "type": "entrance",
+      "label": "Building 2",
+      "description": "Building 2 main entrance, the first building you see from Cantara parking. Automatic accessible doors.",
+      "keywords": [
+        "building 2",
+        "b2",
+        "first building",
+        "edificio 2"
+      ],
+      "lat": 34.22107,
+      "lng": -118.43175
+    },
+    {
+      "id": "building_3_entrance",
+      "type": "entrance",
+      "label": "Building 3",
+      "description": "Building 3 main entrance behind a covered walkway with glass automatic doors. Houses lab, X-ray, OB/GYN, pharmacy.",
+      "keywords": [
+        "building 3",
+        "b3",
+        "covered walkway building",
+        "glass doors building",
+        "edificio 3"
+      ],
+      "lat": 34.22115,
+      "lng": -118.4304
+    },
+    {
+      "id": "building_3a_entrance",
+      "type": "entrance",
+      "label": "Building 3A",
+      "description": "Building 3A annex entrance, attached to Building 3, near the patient drop-off loop.",
+      "keywords": [
+        "building 3a",
+        "3a",
+        "annex",
+        "edificio 3a"
+      ],
+      "lat": 34.22115,
+      "lng": -118.4302
+    },
+    {
+      "id": "building_4_entrance",
+      "type": "entrance",
+      "label": "Building 4",
+      "description": "Building 4 main entrance, past Building 3 on the right when walking from Cantara. Automatic accessible doors.",
+      "keywords": [
+        "building 4",
+        "b4",
+        "past building 3",
+        "edificio 4"
+      ],
+      "lat": 34.21948,
+      "lng": -118.43014
+    },
+    {
+      "id": "building_5_entrance",
+      "type": "entrance",
+      "label": "Building 5",
+      "description": "Building 5 ground-floor entrance. Newer 3-story specialty building with a glass atrium, opened 2014. Automatic accessible doors.",
+      "keywords": [
+        "building 5",
+        "b5",
+        "glass building",
+        "glass atrium",
+        "atrium",
+        "new building",
+        "newer building",
+        "specialty building",
+        "edificio 5"
+      ],
+      "lat": 34.21818,
+      "lng": -118.43054
+    },
+    {
+      "id": "building_6_entrance",
+      "type": "entrance",
+      "label": "Building 6",
+      "description": "Building 6 ground-floor entrance, directly ahead from Ventura Canyon parking. Pharmacy, urgent care, dermatology, allergy.",
+      "keywords": [
+        "building 6",
+        "b6",
+        "pharmacy building",
+        "urgent care building",
+        "edificio 6"
+      ],
+      "lat": 34.21746,
+      "lng": -118.4297
+    },
+    {
+      "id": "hospital_main_entrance",
+      "type": "entrance",
+      "label": "Hospital main entrance",
+      "description": "Main hospital entrance with the large Kaiser sign. Automatic doors, accessible.",
+      "keywords": [
+        "hospital",
+        "main hospital",
+        "kaiser sign",
+        "main entrance",
+        "hospital entrance",
+        "hospital principal"
+      ],
+      "lat": 34.22022,
+      "lng": -118.43192
+    },
+    {
+      "id": "emergency_entrance",
+      "type": "entrance",
+      "label": "Emergency Department entrance",
+      "description": "Separate emergency entrance with red signage. Open 24/7. Automatic doors, fully accessible.",
+      "keywords": [
+        "emergency",
+        "er",
+        "emergency entrance",
+        "red sign",
+        "emergency room",
+        "sala de emergencias",
+        "urgencias"
+      ],
+      "lat": 34.220119999999994,
+      "lng": -118.43192
+    },
+    {
+      "id": "covered_walkway",
+      "type": "landmark",
+      "label": "Covered walkway to Building 3",
+      "description": "Covered outdoor walkway leading to the Building 3 glass-door entrance. Patients pass under it walking from Cantara parking.",
+      "keywords": [
+        "covered walkway",
+        "walkway",
+        "covered path",
+        "pasillo cubierto"
+      ],
+      "lat": 34.22115,
+      "lng": -118.431
+    },
+    {
+      "id": "fountain_courtyard",
+      "type": "landmark",
+      "label": "Courtyard fountain",
+      "description": "Open courtyard with a fountain between Building 3 and Building 4. A common cross-campus reference point.",
+      "keywords": [
+        "fountain",
+        "courtyard",
+        "fuente",
+        "patio"
+      ],
+      "lat": 34.2202,
+      "lng": -118.4303
+    },
+    {
+      "id": "glass_atrium_b5",
+      "type": "landmark",
+      "label": "Building 5 glass atrium",
+      "description": "Three-story glass atrium on the east side of campus. The most recognizable building on campus.",
+      "keywords": [
+        "glass atrium",
+        "glass front",
+        "atrium",
+        "glass building",
+        "atrio de cristal"
+      ],
+      "lat": 34.21818,
+      "lng": -118.43054
+    },
+    {
+      "id": "red_er_sign",
+      "type": "landmark",
+      "label": "Red Emergency sign",
+      "description": "Large red EMERGENCY sign on the east side of the hospital, marking the separate ER entrance.",
+      "keywords": [
+        "red sign",
+        "emergency sign",
+        "red emergency",
+        "letrero rojo"
+      ],
+      "lat": 34.22022,
+      "lng": -118.4315
+    },
+    {
+      "id": "b5_hospital_bridge",
+      "type": "landmark",
+      "label": "Building 5 to Hospital bridge",
+      "description": "Enclosed pedestrian bridge connecting Building 5 to the Hospital, accessible from the upper level.",
+      "keywords": [
+        "bridge",
+        "skybridge",
+        "b5 bridge",
+        "hospital bridge",
+        "puente"
+      ],
+      "lat": 34.2192,
+      "lng": -118.4312
+    },
+    {
+      "id": "kaiser_main_sign",
+      "type": "landmark",
+      "label": "Kaiser hospital sign",
+      "description": "Large Kaiser sign at the front of the hospital, visible from Ventura Canyon parking.",
+      "keywords": [
+        "kaiser sign",
+        "main sign",
+        "letrero kaiser"
+      ],
+      "lat": 34.22025,
+      "lng": -118.43165
+    },
+    {
+      "id": "building_3_basement",
+      "type": "floor",
+      "label": "Building 3 basement (Area 060)",
+      "description": "Basement level of Building 3. Lab/Blood Draw and X-ray/Bone Density.",
+      "keywords": [
+        "building 3 basement",
+        "basement b3",
+        "lab floor",
+        "area 060"
+      ],
+      "lat": 34.22115,
+      "lng": -118.4304
+    },
+    {
+      "id": "building_3_floor_1",
+      "type": "floor",
+      "label": "Building 3 1st floor (Area 162)",
+      "description": "Building 3 ground floor. Pharmacy and OB/GYN front desk.",
+      "keywords": [
+        "building 3 first floor",
+        "b3 lobby",
+        "area 162"
+      ],
+      "lat": 34.22115,
+      "lng": -118.4304
+    },
+    {
+      "id": "building_4_floor_3",
+      "type": "floor",
+      "label": "Building 4 3rd floor",
+      "description": "Building 4 third floor. Internal Medicine, Ophthalmology, and Cardiology (Area 308).",
+      "keywords": [
+        "building 4 third floor",
+        "b4 third",
+        "area 308"
+      ],
+      "lat": 34.21948,
+      "lng": -118.43014
+    },
+    {
+      "id": "building_5_floor_1",
+      "type": "floor",
+      "label": "Building 5 Level 1 (Area 121)",
+      "description": "Building 5 first level. Lab/Blood Draw reception and ground-floor imaging.",
+      "keywords": [
+        "building 5 level 1",
+        "b5 level 1",
+        "area 121"
+      ],
+      "lat": 34.21818,
+      "lng": -118.43054
+    },
+    {
+      "id": "building_5_floor_2",
+      "type": "floor",
+      "label": "Building 5 Level 2",
+      "description": "Building 5 second level. Audiology and Hearing.",
+      "keywords": [
+        "building 5 level 2",
+        "b5 level 2"
+      ],
+      "lat": 34.21818,
+      "lng": -118.43054
+    },
+    {
+      "id": "building_6_floor_1",
+      "type": "floor",
+      "label": "Building 6 ground floor (Area 189)",
+      "description": "Building 6 ground floor. Pharmacy, Urgent Care, Dermatology check-in.",
+      "keywords": [
+        "building 6 ground floor",
+        "b6 ground",
+        "area 189"
+      ],
+      "lat": 34.21746,
+      "lng": -118.4297
+    },
+    {
+      "id": "building_6_floor_2",
+      "type": "floor",
+      "label": "Building 6 Floor 2 (Areas 290/291)",
+      "description": "Building 6 second floor. Allergy (Area 290) and upper Dermatology (Area 291).",
+      "keywords": [
+        "building 6 second floor",
+        "b6 second",
+        "area 290",
+        "area 291"
+      ],
+      "lat": 34.21746,
+      "lng": -118.4297
+    },
+    {
+      "id": "hospital_radiology",
+      "type": "floor",
+      "label": "Hospital Radiology",
+      "description": "Hospital main level Radiology / Diagnostic Imaging reception.",
+      "keywords": [
+        "hospital radiology",
+        "diagnostic imaging",
+        "radiologia"
+      ],
+      "lat": 34.22022,
+      "lng": -118.43192
+    }
+  ],
+  "edges": [
+    {
+      "from": "cantara_parking",
+      "to": "building_2_entrance",
+      "distance_meters": 60,
+      "walk_minutes": 1.0,
+      "instruction": "Exit Cantara parking toward campus — Building 2 is on your left, the first building you see.",
+      "blocked": false
+    },
+    {
+      "from": "cantara_parking",
+      "to": "covered_walkway",
+      "distance_meters": 70,
+      "walk_minutes": 1.0,
+      "instruction": "Exit Cantara parking toward campus — head straight for the covered walkway with the glass doors.",
+      "blocked": false
+    },
+    {
+      "from": "covered_walkway",
+      "to": "building_3_entrance",
+      "distance_meters": 15,
+      "walk_minutes": 0.3,
+      "instruction": "Walk under the covered walkway and through the automatic glass doors into Building 3.",
+      "blocked": false
+    },
+    {
+      "from": "covered_walkway",
+      "to": "building_3a_entrance",
+      "distance_meters": 20,
+      "walk_minutes": 0.4,
+      "instruction": "From the covered walkway, Building 3A is just to your right, attached to Building 3.",
+      "blocked": false
+    },
+    {
+      "from": "patient_dropoff_3a",
+      "to": "building_3a_entrance",
+      "distance_meters": 10,
+      "walk_minutes": 0.2,
+      "instruction": "Step out of the drop-off loop and through the automatic doors into Building 3A.",
+      "blocked": false
+    },
+    {
+      "from": "building_3_entrance",
+      "to": "fountain_courtyard",
+      "distance_meters": 30,
+      "walk_minutes": 0.5,
+      "instruction": "Walk past Building 3 toward the courtyard — the fountain is on your right.",
+      "blocked": false
+    },
+    {
+      "from": "fountain_courtyard",
+      "to": "building_4_entrance",
+      "distance_meters": 25,
+      "walk_minutes": 0.4,
+      "instruction": "Past the fountain, Building 4 is straight ahead on your right.",
+      "blocked": false
+    },
+    {
+      "from": "building_3_entrance",
+      "to": "building_4_entrance",
+      "distance_meters": 50,
+      "walk_minutes": 0.8,
+      "instruction": "From Building 3, Building 4 is the next building over on your right.",
+      "blocked": false
+    },
+    {
+      "from": "fountain_courtyard",
+      "to": "building_5_entrance",
+      "distance_meters": 90,
+      "walk_minutes": 1.5,
+      "instruction": "From the fountain, keep walking east across campus — Building 5 with the glass atrium is straight ahead.",
+      "blocked": false
+    },
+    {
+      "from": "building_4_entrance",
+      "to": "building_5_entrance",
+      "distance_meters": 80,
+      "walk_minutes": 1.3,
+      "instruction": "From Building 4, walk east across the courtyard — Building 5's glass atrium is the next building.",
+      "blocked": false
+    },
+    {
+      "from": "ventura_parking",
+      "to": "building_6_entrance",
+      "distance_meters": 60,
+      "walk_minutes": 1.0,
+      "instruction": "Exit Ventura Canyon parking toward Roscoe Blvd — Building 6 is directly ahead, look for the pharmacy and urgent care signs.",
+      "blocked": false
+    },
+    {
+      "from": "ventura_parking",
+      "to": "building_5_entrance",
+      "distance_meters": 90,
+      "walk_minutes": 1.5,
+      "instruction": "Exit Ventura Canyon parking — Building 5 with the glass atrium is to your left.",
+      "blocked": false
+    },
+    {
+      "from": "ventura_parking",
+      "to": "kaiser_main_sign",
+      "distance_meters": 110,
+      "walk_minutes": 1.7,
+      "instruction": "Exit Ventura Canyon parking and head left toward the large Kaiser sign at the hospital.",
+      "blocked": false
+    },
+    {
+      "from": "kaiser_main_sign",
+      "to": "hospital_main_entrance",
+      "distance_meters": 15,
+      "walk_minutes": 0.3,
+      "instruction": "The main hospital entrance is just past the Kaiser sign — automatic doors.",
+      "blocked": false
+    },
+    {
+      "from": "ventura_parking",
+      "to": "red_er_sign",
+      "distance_meters": 100,
+      "walk_minutes": 1.6,
+      "instruction": "Exit Ventura Canyon parking — look for the red EMERGENCY sign on the east side of the hospital.",
+      "blocked": false
+    },
+    {
+      "from": "red_er_sign",
+      "to": "emergency_entrance",
+      "distance_meters": 10,
+      "walk_minutes": 0.2,
+      "instruction": "Walk straight under the red sign through the automatic doors — this is the emergency entrance, separate from the main hospital doors.",
+      "blocked": false
+    },
+    {
+      "from": "building_6_entrance",
+      "to": "building_5_entrance",
+      "distance_meters": 50,
+      "walk_minutes": 0.8,
+      "instruction": "From Building 6, Building 5 with the glass atrium is the next building west.",
+      "blocked": false
+    },
+    {
+      "from": "building_5_entrance",
+      "to": "glass_atrium_b5",
+      "distance_meters": 5,
+      "walk_minutes": 0.1,
+      "instruction": "You're at the glass atrium entrance — Building 5.",
+      "blocked": false
+    },
+    {
+      "from": "building_5_entrance",
+      "to": "b5_hospital_bridge",
+      "distance_meters": 20,
+      "walk_minutes": 0.4,
+      "instruction": "Inside Building 5, take the elevator up and follow signs to the bridge to the hospital.",
+      "blocked": false
+    },
+    {
+      "from": "b5_hospital_bridge",
+      "to": "hospital_main_entrance",
+      "distance_meters": 40,
+      "walk_minutes": 0.7,
+      "instruction": "Cross the enclosed bridge — it lands on the upper level of the hospital, near the main entrance lobby.",
+      "blocked": false
+    },
+    {
+      "from": "hospital_main_entrance",
+      "to": "emergency_entrance",
+      "distance_meters": 30,
+      "walk_minutes": 0.5,
+      "instruction": "Step outside the main entrance and walk to the right — the emergency entrance with the red sign is around the side.",
+      "blocked": false
+    },
+    {
+      "from": "building_3_entrance",
+      "to": "building_3_basement",
+      "distance_meters": 8,
+      "walk_minutes": 0.3,
+      "instruction": "Inside Building 3, take the elevator down to the basement level.",
+      "blocked": false
+    },
+    {
+      "from": "building_3_entrance",
+      "to": "building_3_floor_1",
+      "distance_meters": 5,
+      "walk_minutes": 0.1,
+      "instruction": "You're on the Building 3 ground floor — pharmacy is to your right, OB/GYN is straight ahead.",
+      "blocked": false
+    },
+    {
+      "from": "building_4_entrance",
+      "to": "building_4_floor_3",
+      "distance_meters": 10,
+      "walk_minutes": 0.4,
+      "instruction": "Inside Building 4, take the elevator to the 3rd floor.",
+      "blocked": false
+    },
+    {
+      "from": "building_5_entrance",
+      "to": "building_5_floor_1",
+      "distance_meters": 5,
+      "walk_minutes": 0.1,
+      "instruction": "You're on Building 5 Level 1 — reception is straight ahead.",
+      "blocked": false
+    },
+    {
+      "from": "building_5_floor_1",
+      "to": "building_5_floor_2",
+      "distance_meters": 8,
+      "walk_minutes": 0.3,
+      "instruction": "Take the elevator from Level 1 up to Level 2.",
+      "blocked": false
+    },
+    {
+      "from": "building_6_entrance",
+      "to": "building_6_floor_1",
+      "distance_meters": 5,
+      "walk_minutes": 0.1,
+      "instruction": "You're on the Building 6 ground floor — pharmacy and urgent care check-in are straight ahead.",
+      "blocked": false
+    },
+    {
+      "from": "building_6_entrance",
+      "to": "building_6_floor_2",
+      "distance_meters": 8,
+      "walk_minutes": 0.3,
+      "instruction": "Inside Building 6, take the elevator up to the 2nd floor.",
+      "blocked": false
+    },
+    {
+      "from": "hospital_main_entrance",
+      "to": "hospital_radiology",
+      "distance_meters": 20,
+      "walk_minutes": 0.5,
+      "instruction": "Inside the main hospital lobby, follow the signs to Radiology.",
+      "blocked": false
+    },
+    {
+      "from": "cantara_parking",
+      "to": "patient_dropoff_3a",
+      "distance_meters": 80,
+      "walk_minutes": 1.2,
+      "instruction": "From Cantara parking, follow the loop road around to the Building 3A drop-off zone.",
+      "blocked": false
+    }
+  ]
+}

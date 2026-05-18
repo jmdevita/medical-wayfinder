@@ -1,0 +1,558 @@
+[
+  {
+    "id": "seed_01",
+    "category": "clean_resolution_en",
+    "facility": "kaiser_panorama_city",
+    "description": "Clean resolution with landmarks, multi-turn, English",
+    "messages": [
+      {"role": "user", "content": "where's the blood place"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Lab / Blood Draw", "building": "Building 3", "floor": "Basement"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Cantara Street parking toward campus — Building 3 is straight ahead, look for the covered walkway", "accessibility": null},
+          {"text": "Enter through the automatic glass doors on the right", "accessibility": "automatic_doors"},
+          {"text": "Take the elevator to the basement — it's just inside the main entrance on your left", "accessibility": "elevator"},
+          {"text": "Lab check-in window is straight ahead when you exit the elevator", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the lab window. Hours: Mon-Fri 7:00 AM - 5:15 PM."}
+      ]},
+      {"role": "user", "content": "do I need an appointment"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "I'm not able to answer questions about appointments — you'd want to call the lab directly for that. The lab accepts both walk-ins and appointments during their hours (Mon-Fri, 7:00 AM - 5:15 PM)."},
+        {"type": "guide_text", "text": "Are you heading there now? I can help with directions from wherever you are."}
+      ]},
+      {"role": "user", "content": "yeah I'm in the cantara parking"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "You're in the right spot — Cantara is the closest parking to Building 3."},
+        {"type": "steps", "steps": [
+          {"text": "Exit the parking structure and walk toward the buildings — Building 3 is straight ahead", "accessibility": null},
+          {"text": "Look for the covered walkway with glass doors", "accessibility": null},
+          {"text": "Enter through the automatic doors", "accessibility": "automatic_doors"},
+          {"text": "The elevator is on your left right when you walk in — take it to the basement", "accessibility": "elevator"},
+          {"text": "When the elevator opens, the lab window is straight ahead", "accessibility": "arrived"}
+        ]}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_02",
+    "category": "clean_resolution_es",
+    "facility": "southern_jp",
+    "description": "Clean resolution, Spanish, single building with parking follow-up",
+    "messages": [
+      {"role": "user", "content": "donde esta el doctor de los niños"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Pediatría", "building": "Main building", "floor": "Primer piso"},
+        {"type": "steps", "steps": [
+          {"text": "Entre por la puerta principal en Centre Street, esquina con Green Street — al frente de la oficina de correos", "accessibility": null},
+          {"text": "Tiene puertas automáticas en la entrada", "accessibility": "automatic_doors"},
+          {"text": "La recepción está a su izquierda al entrar", "accessibility": null},
+          {"text": "Dígale a la recepcionista que tiene cita con pediatría", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Todo está en el primer piso, no necesita ascensor. Horario: Lunes a jueves 8:00 AM - 6:00 PM, viernes 8:00 AM - 5:00 PM."}
+      ]},
+      {"role": "user", "content": "y donde me estaciono"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "Tiene tres opciones de estacionamiento:"},
+        {"type": "steps", "steps": [
+          {"text": "Debajo del edificio — 5 espacios para pacientes. Desde Centre St, doble a la izquierda en Seaverns Ave, primera izquierda en Alfred St, luego izquierda en Green St. Llegue temprano, solo hay 5 espacios", "accessibility": null},
+          {"text": "Centre Street — estacionamiento en la calle con medidor, 1-2 horas", "accessibility": null},
+          {"text": "Lote en Burroughs Street — siga por Centre St, doble a la derecha en Burroughs St. Límite de 2 horas, queda a una cuadra caminando", "accessibility": null}
+        ]},
+        {"type": "guide_text", "text": "Le recomiendo intentar el estacionamiento debajo del edificio primero."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_03",
+    "category": "disambiguation",
+    "facility": "kaiser_panorama_city",
+    "description": "Disambiguation — user says 'imaging', model asks which type",
+    "messages": [
+      {"role": "user", "content": "I need imaging"},
+      {"role": "assistant", "content": [
+        {"type": "disambig", "question": "There are a few imaging departments here. Which one do you need?", "options": [
+          "X-ray / Bone Density (DEXA)",
+          "MRI / CT Scan / Ultrasound",
+          "Mammography / Breast Imaging",
+          "Radiology / Diagnostic Imaging"
+        ]}
+      ]},
+      {"role": "user", "content": "I think it's an MRI"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "MRI / CT Scan / Ultrasound", "building": "Building 5", "floor": "Ground floor"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Ventura Canyon parking toward the buildings — Building 5 is to your left", "accessibility": null},
+          {"text": "It's the newer 3-story building with the glass atrium", "accessibility": null},
+          {"text": "Enter through the ground floor entrance — automatic doors", "accessibility": "automatic_doors"},
+          {"text": "Imaging reception is straight ahead when you walk in", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the imaging reception desk. Hours: Mon-Fri 7:00 AM - 6:00 PM. Ground floor, fully accessible."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_04",
+    "category": "re_orientation",
+    "facility": "kaiser_panorama_city",
+    "description": "Lost patient, re-orient using landmarks, multi-turn",
+    "messages": [
+      {"role": "user", "content": "I'm trying to get to the lab but I think I went the wrong way"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "No worries — the campus can be confusing! Can you tell me what you see around you? Any building numbers, signs, or landmarks?"}
+      ]},
+      {"role": "user", "content": "there's a pharmacy sign and I see an urgent care sign too"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "You're at Building 6 — that's where the Pharmacy and Urgent Care are. You've gone a bit too far from the lab, but you're not far."},
+        {"type": "destination", "department": "Lab / Blood Draw", "building": "Building 3", "floor": "Basement"},
+        {"type": "steps", "steps": [
+          {"text": "Turn around and walk back toward the Cantara Street side of campus", "accessibility": null},
+          {"text": "You'll pass Building 5 — the newer building with the glass atrium", "accessibility": null},
+          {"text": "Keep going past Building 4", "accessibility": null},
+          {"text": "Building 3 is next — look for the covered walkway with glass doors", "accessibility": null},
+          {"text": "Enter through the automatic doors and take the elevator to the basement", "accessibility": "elevator"},
+          {"text": "Lab check-in window is straight ahead", "accessibility": "arrived"}
+        ]},
+        {"type": "guide_text", "text": "You're about a 3-4 minute walk away."}
+      ]},
+      {"role": "user", "content": "ok I see building 4 now"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "You're almost there! Keep going the same direction — Building 3 is the next building. Look for the covered walkway with the automatic glass doors. That's your entrance."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_05",
+    "category": "scope_enforcement",
+    "facility": "kaiser_panorama_city",
+    "description": "Medical question woven into wayfinding request, pivot to directions",
+    "messages": [
+      {"role": "user", "content": "my doctor said my cholesterol is high and I need to get blood work done"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Lab / Blood Draw", "building": "Building 3", "floor": "Basement"},
+        {"type": "guide_text", "text": "I can help you find the lab for your blood work! Which parking area are you at — Cantara Street or Ventura Canyon?"}
+      ]},
+      {"role": "user", "content": "cantara. also is high cholesterol dangerous?"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "I'm not able to answer medical questions — your doctor is the best person to talk to about your cholesterol. But I can get you to the lab!"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Cantara Street parking toward campus — Building 3 is straight ahead, look for the covered walkway", "accessibility": null},
+          {"text": "Enter through the automatic glass doors", "accessibility": "automatic_doors"},
+          {"text": "Take the elevator to the basement — it's on your left when you walk in", "accessibility": "elevator"},
+          {"text": "Check in at the lab window, straight ahead", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the lab window. Hours: Mon-Fri 7:00 AM - 5:15 PM. You'll want to check if you need to fast before blood work — the lab can tell you when you check in."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_06",
+    "category": "scope_enforcement",
+    "facility": "kaiser_panorama_city",
+    "description": "Medical question about medication side effects, pivot to pharmacy",
+    "messages": [
+      {"role": "user", "content": "what are the side effects of my blood pressure medication"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "Your pharmacist can walk you through side effects and interactions — that's their specialty. Want me to point you to the pharmacy?"}
+      ]},
+      {"role": "user", "content": "yes please"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "There are two pharmacy locations on campus. Which parking area are you at?"},
+        {"type": "disambig", "question": "Which is closer to you?", "options": [
+          "Pharmacy (Cantara / Building 3)",
+          "Pharmacy (Ventura Canyon / Building 6)"
+        ]}
+      ]},
+      {"role": "user", "content": "cantara"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Pharmacy (Cantara / Building 3)", "building": "Building 3", "floor": "Ground floor"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Cantara Street parking toward campus — Building 3 is straight ahead, look for the covered walkway", "accessibility": null},
+          {"text": "Enter through the automatic glass doors", "accessibility": "automatic_doors"},
+          {"text": "Pharmacy is on the ground floor to your right", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Take a number at the pharmacy counter. Hours: Mon-Fri 8:30 AM - 5:00 PM."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_07",
+    "category": "scope_enforcement",
+    "facility": "kaiser_panorama_city",
+    "description": "Emergency — immediate ER directions, no hedging",
+    "messages": [
+      {"role": "user", "content": "I think I'm having a heart attack"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Emergency Department", "building": "Hospital", "floor": "Ground floor"},
+        {"type": "steps", "steps": [
+          {"text": "Look for the red EMERGENCY sign on the hospital building", "accessibility": null},
+          {"text": "Follow the signs to the emergency entrance — it's separate from the main hospital doors", "accessibility": null},
+          {"text": "Go directly through the automatic doors", "accessibility": "automatic_doors"}
+        ]},
+        {"type": "guide_text", "text": "If you're in the Ventura Canyon parking area, the emergency entrance is to your left. If you need immediate help, call 911 and they can meet you on campus."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_08",
+    "category": "scope_enforcement",
+    "facility": "kaiser_panorama_city",
+    "description": "Semi-wayfinding question about fasting, redirect to lab staff",
+    "messages": [
+      {"role": "user", "content": "do I need to fast before my blood test"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "The lab staff can let you know when you check in — they'll confirm what your doctor ordered and whether fasting is needed."},
+        {"type": "guide_text", "text": "Want me to help you find the lab? Which parking area are you at?"}
+      ]},
+      {"role": "user", "content": "I'm at cantara. also how long will results take?"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "The lab can give you a timeline for your specific test when you check in."},
+        {"type": "destination", "department": "Lab / Blood Draw (Building 3)", "building": "Building 3", "floor": "Basement (Area 060)"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Cantara Street parking toward campus — Building 3 is straight ahead, look for the covered walkway", "accessibility": null},
+          {"text": "Enter through the automatic glass doors", "accessibility": "automatic_doors"},
+          {"text": "Take the elevator to the basement — it's on your left when you walk in", "accessibility": "elevator"},
+          {"text": "Lab window is straight ahead when you exit the elevator", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the lab window. Hours: Mon-Fri 7:00 AM - 5:15 PM."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_09",
+    "category": "scope_enforcement",
+    "facility": "southern_jp",
+    "description": "Emotional/mental health, compassionate redirect to Behavioral Health",
+    "messages": [
+      {"role": "user", "content": "I've been feeling really anxious and depressed lately"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "I'm glad you're here. The Behavioral Health team can help — they have counselors and therapists on staff. Let me get you there."},
+        {"type": "destination", "department": "Behavioral Health", "building": "Main building", "floor": "1st floor"},
+        {"type": "steps", "steps": [
+          {"text": "Enter through the main entrance at 640 Centre Street — it's on the corner of Green Street, across from the post office", "accessibility": null},
+          {"text": "The entrance has automatic doors", "accessibility": "automatic_doors"},
+          {"text": "Check in at the front desk and let them know you'd like to see Behavioral Health", "accessibility": null},
+          {"text": "The Behavioral Health offices are down the hall to the right", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the front desk. Hours: Mon-Thu 8:00 AM - 6:00 PM, Fri 8:00 AM - 5:00 PM. Most staff are bilingual in Spanish."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_10",
+    "category": "scope_enforcement",
+    "facility": "kaiser_panorama_city",
+    "description": "Diagnosis request about a mole, pivot to Dermatology",
+    "messages": [
+      {"role": "user", "content": "I just want to know if this mole looks cancerous"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "A dermatologist is the right person to evaluate that. I can help you find the Dermatology department."},
+        {"type": "destination", "department": "Dermatology", "building": "Building 6", "floor": "Floors 1-2 (Areas 192/291)"},
+        {"type": "steps", "steps": [
+          {"text": "Head to Ventura Canyon parking — Building 6 is closest from there", "accessibility": null},
+          {"text": "Exit parking toward Roscoe Blvd — Building 6 is directly ahead", "accessibility": null},
+          {"text": "Enter through the ground floor doors", "accessibility": "automatic_doors"},
+          {"text": "Check in at the dermatology front desk", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the dermatology front desk. Hours: Mon-Fri 8:00 AM - 5:00 PM."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_11",
+    "category": "scope_enforcement",
+    "facility": "kaiser_panorama_city",
+    "description": "Child with fever, direct to Urgent Care with ER fallback",
+    "messages": [
+      {"role": "user", "content": "my child has a fever of 103, where do I go"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Urgent Care", "building": "Building 6", "floor": "Ground floor"},
+        {"type": "steps", "steps": [
+          {"text": "Head to Building 6 — if you're at Ventura Canyon parking, it's directly ahead when you exit toward Roscoe Blvd", "accessibility": null},
+          {"text": "Look for the Urgent Care sign on the building", "accessibility": null},
+          {"text": "Enter through the ground floor entrance — automatic doors", "accessibility": "automatic_doors"},
+          {"text": "Check in at the Urgent Care front desk", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the Urgent Care front desk. Open daily 9:00 AM - 9:00 PM. If it's after hours or you feel this is a true emergency, the Emergency Department is in the Hospital building — look for the red EMERGENCY sign."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_12",
+    "category": "scope_enforcement",
+    "facility": "southern_jp",
+    "description": "Spanish medical question about vaccines, redirect to pediatrics",
+    "messages": [
+      {"role": "user", "content": "que vacunas necesita mi bebe"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "El equipo de pediatria puede ayudarle con eso cuando llegue a su cita. Le ayudo a llegar al consultorio."},
+        {"type": "destination", "department": "Pediatric Medicine", "building": "Main building", "floor": "1st floor"},
+        {"type": "steps", "steps": [
+          {"text": "Entre por la puerta principal en 640 Centre Street — en la esquina de Green Street, frente al correo", "accessibility": null},
+          {"text": "La entrada tiene puertas automaticas", "accessibility": "automatic_doors"},
+          {"text": "Registrese en la recepcion a su izquierda y diga que tiene cita con pediatria", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Registrese en la recepcion. Horario: Lunes a jueves 8:00 AM - 6:00 PM, viernes 8:00 AM - 5:00 PM."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_13",
+    "category": "scope_enforcement",
+    "facility": "kaiser_panorama_city",
+    "description": "ER vs urgent care — gives both options, lets user decide",
+    "messages": [
+      {"role": "user", "content": "should I go to urgent care or the ER"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "I can't make that call for you, but I can tell you where both are so you can decide."},
+        {"type": "guide_text", "text": "Urgent Care is in Building 6, open daily 9 AM - 9 PM. The Emergency Department is in the Hospital building, open 24/7."},
+        {"type": "guide_text", "text": "Both are closest to Ventura Canyon parking. If you're unsure and it feels serious, the Emergency Department is the safest choice — it's always open."}
+      ]},
+      {"role": "user", "content": "I'll go to urgent care"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Urgent Care", "building": "Building 6", "floor": "Ground floor"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Ventura Canyon parking toward Roscoe Blvd — Building 6 is directly ahead", "accessibility": null},
+          {"text": "Look for the Urgent Care sign on the building", "accessibility": null},
+          {"text": "Enter through the ground floor entrance — automatic doors", "accessibility": "automatic_doors"},
+          {"text": "Urgent Care check-in is straight ahead", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the Urgent Care front desk. Open daily 9:00 AM - 9:00 PM."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_14",
+    "category": "landmark_directions",
+    "facility": "kaiser_panorama_city",
+    "description": "Landmark-rich directions from Ventura Canyon to MRI",
+    "messages": [
+      {"role": "user", "content": "I need an MRI, I'm at the ventura canyon parking"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "MRI / CT Scan / Ultrasound", "building": "Building 5", "floor": "Ground floor"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Ventura Canyon parking toward the buildings — Building 5 is to your left", "accessibility": null},
+          {"text": "Look for the newer 3-story building with the glass atrium — that's Building 5", "accessibility": null},
+          {"text": "Enter through the ground floor entrance — automatic doors", "accessibility": "automatic_doors"},
+          {"text": "Imaging reception is straight ahead when you walk in", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the imaging reception desk. Hours: Mon-Fri 7:00 AM - 6:00 PM. Ground floor, fully accessible."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_15",
+    "category": "landmark_directions",
+    "facility": "kaiser_panorama_city",
+    "description": "Multi-building walk from Cantara to Cardiology with landmark chain",
+    "messages": [
+      {"role": "user", "content": "how do I get to cardiology from cantara"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Cardiology", "building": "Building 4", "floor": "3rd floor (Area 308)"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Cantara Street parking toward campus — you'll see Buildings 2 and 3 straight ahead", "accessibility": null},
+          {"text": "Walk past Building 3 — the one with the covered walkway and glass doors", "accessibility": null},
+          {"text": "Building 4 is the next building on your right", "accessibility": null},
+          {"text": "Enter through the main doors — they're automatic and accessible", "accessibility": "automatic_doors"},
+          {"text": "Take the elevator to the 3rd floor", "accessibility": "elevator"},
+          {"text": "Cardiology is in Area 308 — check in at the front desk", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the cardiology front desk. Hours: Mon-Fri 8:00 AM - 5:00 PM."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_16",
+    "category": "landmark_directions",
+    "facility": "southern_jp",
+    "description": "Transit directions from Orange Line using post office landmark",
+    "messages": [
+      {"role": "user", "content": "I'm on the orange line, how do I get there"},
+      {"role": "assistant", "content": [
+        {"type": "steps", "steps": [
+          {"text": "Get off at the Green Street stop", "accessibility": null},
+          {"text": "Exit the station and turn left", "accessibility": null},
+          {"text": "Walk up Green Street for about 4 blocks until you reach Centre Street", "accessibility": null},
+          {"text": "The health center is right on the corner — 640 Centre Street, across from the post office", "accessibility": null},
+          {"text": "Enter through the main entrance — automatic doors", "accessibility": "automatic_doors"}
+        ]},
+        {"type": "guide_text", "text": "Everything is on the 1st floor, no stairs needed. Which department are you looking for?"}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_17",
+    "category": "accessibility",
+    "facility": "kaiser_panorama_city",
+    "description": "Wheelchair user, proactive accessibility woven into steps",
+    "messages": [
+      {"role": "user", "content": "I'm in a wheelchair and need to get to pediatrics"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Pediatrics", "building": "Building 2", "floor": "2nd floor"},
+        {"type": "steps", "steps": [
+          {"text": "Head to Cantara Street parking if you're not there already — Building 2 is closest from there", "accessibility": null},
+          {"text": "Exit parking toward campus — Building 2 is the first building on your left", "accessibility": null},
+          {"text": "The main entrance has automatic doors and a level entry, no ramp needed", "accessibility": "accessible_entrance"},
+          {"text": "Take the elevator to the 2nd floor — it's right inside on your left", "accessibility": "elevator"},
+          {"text": "Pediatrics is to your right when you exit the elevator", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the pediatrics front desk. Hours: Mon-Fri 8:30 AM - 5:00 PM. The entire path is flat and accessible."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_18",
+    "category": "accessibility",
+    "facility": "kaiser_panorama_city",
+    "description": "Stroller user, treat as mobility need with reassurance",
+    "messages": [
+      {"role": "user", "content": "I have a stroller, can I get to the children's doctor easily"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Pediatrics", "building": "Building 2", "floor": "2nd floor"},
+        {"type": "guide_text", "text": "Yes, the path to Pediatrics is stroller-friendly. All doors are automatic and there's an elevator."},
+        {"type": "steps", "steps": [
+          {"text": "From Cantara parking, exit toward campus — Building 2 is the first one on your left", "accessibility": null},
+          {"text": "Enter through the main doors — they open automatically", "accessibility": "automatic_doors"},
+          {"text": "The elevator is right inside on your left — take it to the 2nd floor", "accessibility": "elevator"},
+          {"text": "Pediatrics is to your right", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the pediatrics front desk. Hours: Mon-Fri 8:30 AM - 5:00 PM."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_19",
+    "category": "accessibility",
+    "facility": "southern_jp",
+    "description": "Walker user, confirm 1st floor accessibility",
+    "messages": [
+      {"role": "user", "content": "is the building accessible? I use a walker"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "Yes, everything is on the 1st floor — no stairs needed at all. The main entrance at 640 Centre Street has automatic doors and there's under-building parking with 5 reserved spaces so you can enter right from the parking area."},
+        {"type": "guide_text", "text": "Which department are you here for? I can walk you through the route from the entrance."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_20",
+    "category": "re_orientation",
+    "facility": "kaiser_panorama_city",
+    "description": "Lost patient near Building 6, re-orient to Building 5",
+    "messages": [
+      {"role": "user", "content": "I've been walking around and I can't find Building 5"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "No worries. Can you tell me what you see around you? Any building numbers or signs?"}
+      ]},
+      {"role": "user", "content": "I see Building 6 and an urgent care sign"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "You're close! Building 5 is right next to Building 6."},
+        {"type": "steps", "steps": [
+          {"text": "Face Building 6 with the Urgent Care sign", "accessibility": null},
+          {"text": "Turn to your left — Building 5 is the newer 3-story building with the glass atrium", "accessibility": null},
+          {"text": "Walk toward the glass atrium — the ground floor entrance has automatic doors", "accessibility": "automatic_doors"}
+        ]},
+        {"type": "guide_text", "text": "What department are you looking for in Building 5?"}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_21",
+    "category": "re_orientation",
+    "facility": "southern_jp",
+    "description": "Patient near destination but can't find entrance, use post office landmark",
+    "messages": [
+      {"role": "user", "content": "I think I'm near the health center but I can't find the entrance"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "Can you tell me what street you're on?"}
+      ]},
+      {"role": "user", "content": "I'm on Centre Street, I see a post office"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "You're right there! The health center is directly across from the post office."},
+        {"type": "steps", "steps": [
+          {"text": "Look across the street from the post office — the building at 640 Centre Street on the corner of Green Street", "accessibility": null},
+          {"text": "The main entrance faces Centre Street — look for the automatic doors", "accessibility": "automatic_doors"}
+        ]},
+        {"type": "guide_text", "text": "What department are you here for?"}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_22",
+    "category": "multi_stop",
+    "facility": "kaiser_panorama_city",
+    "description": "Multi-stop visit: lab then Internal Medicine",
+    "messages": [
+      {"role": "user", "content": "I need to get blood work done and then see my regular doctor"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "Good plan to do the lab first. The lab is in Building 3 basement, and your doctor (Internal Medicine) is in Building 4 on the 3rd floor — they're right next to each other."},
+        {"type": "guide_text", "text": "I'd suggest parking at Cantara Street since it's closest to both. Which parking area are you at?"}
+      ]},
+      {"role": "user", "content": "I'm at cantara already"},
+      {"role": "assistant", "content": [
+        {"type": "destination", "department": "Lab / Blood Draw (Building 3)", "building": "Building 3", "floor": "Basement (Area 060)"},
+        {"type": "steps", "steps": [
+          {"text": "Exit Cantara parking toward campus — Building 3 is straight ahead, look for the covered walkway", "accessibility": null},
+          {"text": "Enter through the automatic glass doors", "accessibility": "automatic_doors"},
+          {"text": "Take the elevator to the basement — it's on your left when you walk in", "accessibility": "elevator"},
+          {"text": "Lab window is straight ahead", "accessibility": "arrived"}
+        ]},
+        {"type": "arrival", "check_in": "Check in at the lab window. Hours: Mon-Fri 7:00 AM - 5:15 PM."},
+        {"type": "guide_text", "text": "When you're done at the lab, come back up to the ground floor and exit Building 3. Building 4 is the next building to your right — take the elevator to the 3rd floor for Internal Medicine."}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_23",
+    "category": "facility_accuracy",
+    "facility": "kaiser_panorama_city",
+    "description": "Weekend pharmacy hours — correctly says closed",
+    "messages": [
+      {"role": "user", "content": "is the pharmacy open on Saturday"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "Both pharmacies are open Monday through Friday only. The Building 3 pharmacy is open 8:30 AM - 5:00 PM, and the Building 6 pharmacy is open 8:30 AM - 12:30 PM and 1:30 PM - 5:00 PM. Neither is open on weekends."},
+        {"type": "guide_text", "text": "Would you like directions to one of them for when they're open?"}
+      ]}
+    ]
+  },
+
+  {
+    "id": "seed_24",
+    "category": "facility_accuracy",
+    "facility": "southern_jp",
+    "description": "Parking question with real driving directions and details",
+    "messages": [
+      {"role": "user", "content": "is there parking"},
+      {"role": "assistant", "content": [
+        {"type": "guide_text", "text": "There are three parking options:"},
+        {"type": "steps", "steps": [
+          {"text": "Under-building parking — 5 patient-reserved spaces, arrive early. From Centre St, turn left on Seaverns Ave, left on Alfred St, left on Green St. Entrance is under the building", "accessibility": null},
+          {"text": "Street parking on Centre Street — metered, 1-2 hour limit. Can be hard to find during business hours", "accessibility": null},
+          {"text": "Burroughs Street public lot — continue past the health center on Centre St, turn right on Burroughs. About a 1 block walk back", "accessibility": null}
+        ]},
+        {"type": "guide_text", "text": "The under-building parking is most convenient but fills up fast. I'd recommend getting there early if you can."}
+      ]}
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+# Environment and secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+env/
+__pycache__/
+*.pyc
+
+# AI Assistance
+.claude/
+.playwright-mcp/
+CLAUDE.md
+
+# Local-only working directories (not part of public submission)
+presentation/
+web/
+docs/
+
+# Tooling scratch
+tools/_import_buffer.json
+tools/.streetview_cache/
+
+# Training pipeline outputs (generated, not source)
+training/output/
+
+# Research datasets (too large for git, download separately)
+training/data/real_data/raw/
+
+# Unsloth auto-generated kernel cache
+unsloth_compiled_cache/
+
+# Models (model/ has its own .gitignore — see model/INSTRUCTIONS.md)
+*.litertlm
+
+# LLVM/coverage crumbs
+*.profraw
+
+# Editor / tooling backups
+*.bak
+
+# OS
+.DS_Store

@@ -1,0 +1,51 @@
+name: Flutter CI
+
+on:
+  pull_request:
+    paths:
+      - "health_wayfinder/**"
+      - "tools/validate_facility.py"
+      - ".github/workflows/flutter-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "health_wayfinder/**"
+      - "tools/validate_facility.py"
+      - ".github/workflows/flutter-ci.yml"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate facility data
+        run: python3 tools/validate_facility.py --all
+      # JDK 17 is required by modern Android Gradle Plugin (used for the APK build below).
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Flutter pub get
+        working-directory: health_wayfinder
+        run: flutter pub get
+      - name: Flutter analyze
+        working-directory: health_wayfinder
+        # The on-device GGUF asset is fetched separately (model/INSTRUCTIONS.md)
+        # and is not in git, so the bundled-asset declaration shows up as a
+        # warning on a fresh checkout. Warnings still print; only errors abort.
+        run: flutter analyze --no-fatal-warnings
+      - name: Flutter test
+        working-directory: health_wayfinder
+        run: flutter test
+      # Build a debug APK to verify the Android side compiles end-to-end
+      # (gradle, plugins, asset bundling). Runs in ollama mode since the
+      # device-mode GGUF isn't in git. Does not run the app — just builds it.
+      - name: Flutter build APK (debug)
+        working-directory: health_wayfinder
+        run: flutter build apk --debug --dart-define=GEMMA_MODE=ollama

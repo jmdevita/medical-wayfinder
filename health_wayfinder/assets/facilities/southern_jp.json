@@ -1,0 +1,103 @@
+{
+  "id": "southern_jp",
+  "name": "Southern Jamaica Plain Health Center",
+  "address": "640 Centre St, Jamaica Plain, MA 02130",
+  "type": "Community health center",
+  "campus_description": "Single building on the corner of Centre Street and Green Street, across from the post office. Part of Brigham and Women's Hospital / Mass General Brigham network. Founded 1971, moved to current building in 1998. Serves 10,000+ patients with 45,000+ visits annually. Most physicians and staff are bilingual in Spanish. The building has parking underneath (5 patient-reserved spaces) accessed from Green Street.",
+  "buildings": [
+    { "name": "Main building", "lat": 42.30580, "lng": -71.11350 }
+  ],
+  "parking": [
+    {
+      "name": "Under-building parking (5 spaces)",
+      "nearest_buildings": ["Main building"],
+      "entrance_note": "From Centre St, turn left on Seaverns Ave, first left on Alfred St, then left on Green St (one-way). Parking entrance is under the building. Only 5 patient-reserved spaces — arrive early."
+    },
+    {
+      "name": "Street parking on Centre St",
+      "nearest_buildings": ["Main building"],
+      "entrance_note": "1-hour and 2-hour metered parking on Centre Street. Can be difficult to find during business hours."
+    },
+    {
+      "name": "Burroughs Street public lot",
+      "nearest_buildings": ["Main building"],
+      "entrance_note": "Continue past the health center on Centre St, turn right on Burroughs St. Lot is immediately on your left. 2-hour limit. About 1 block walk back to the health center."
+    }
+  ],
+  "transit": {
+    "orange_line": "Green Street stop — exit station, turn left, walk 4 blocks up Green St to Centre St. Health center is on the corner.",
+    "bus": "Route 39 from Forest Hills or Copley Square stops on Centre St near the building."
+  },
+  "departments": [
+    {
+      "name": "Adult Medicine",
+      "aliases": ["regular doctor", "my doctor", "primary care", "internal medicine", "adult care", "doctor regular", "mi doctor", "medicina interna", "adult medicine"],
+      "building": "Main building",
+      "floor": "1st floor",
+      "hours": "Mon-Thu, 8:00 AM - 6:00 PM; Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the front desk",
+      "directions": "From Centre Street, look for the building at 640 on the corner of Green Street, across from the post office. Enter through the main entrance (automatic doors, accessible). Check in at the front desk. They will direct you to your provider's office."
+    },
+    {
+      "name": "Pediatric Medicine",
+      "aliases": ["kids doctor", "children's doctor", "pediatrics", "pediatria", "doctor de los ninos", "doctor de niños", "pediatric medicine"],
+      "building": "Main building",
+      "floor": "1st floor",
+      "hours": "Mon-Thu, 8:00 AM - 6:00 PM; Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the front desk on the left when you enter",
+      "directions": "From Centre Street, enter through the main entrance at 640 (automatic doors, accessible). Check in at the front desk on your left. Tell them you have an appointment with pediatrics."
+    },
+    {
+      "name": "Family Medicine",
+      "aliases": ["family doctor", "family medicine", "doctor de familia", "medicina familiar"],
+      "building": "Main building",
+      "floor": "1st floor",
+      "hours": "Mon-Thu, 8:00 AM - 6:00 PM; Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the front desk",
+      "directions": "From Centre Street, enter through the main entrance at 640 (automatic doors, accessible). Check in at the front desk. They will direct you to your provider."
+    },
+    {
+      "name": "Women's Health / OB/GYN",
+      "aliases": ["women's health", "gynecology", "OB/GYN", "pregnancy", "prenatal", "midwife", "family planning", "salud de la mujer", "ginecologia", "embarazo", "partera"],
+      "building": "Main building",
+      "floor": "1st floor",
+      "hours": "Mon-Thu, 8:00 AM - 6:00 PM; Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the front desk",
+      "directions": "From Centre Street, enter through the main entrance at 640 (automatic doors, accessible). Check in at the front desk and let them know you're here for Women's Health."
+    },
+    {
+      "name": "Behavioral Health",
+      "aliases": ["mental health", "counseling", "therapy", "psychiatry", "salud mental", "consejeria", "terapia", "substance abuse"],
+      "building": "Main building",
+      "floor": "1st floor",
+      "hours": "Mon-Thu, 8:00 AM - 6:00 PM; Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the front desk",
+      "directions": "From Centre Street, enter through the main entrance at 640 (automatic doors, accessible). Check in at the front desk. Behavioral health offices are down the hall to the right."
+    },
+    {
+      "name": "Phlebotomy / Blood Draw",
+      "aliases": ["blood place", "blood test", "lab", "laboratory", "laboratorio", "sangre", "phlebotomy", "blood work", "blood draw", "blood drawn", "draw blood", "get blood drawn", "blood sample"],
+      "building": "Main building",
+      "floor": "1st floor",
+      "hours": "Walk-ins: Mon-Thu 8:30 AM - 5:30 PM, Fri 8:30 AM - 4:45 PM. Appointments: Mon-Thu 8:30 AM - 5:45 PM, Fri 8:30 AM - 5:15 PM",
+      "accessible": true,
+      "check_in": "Check in at the lab window",
+      "directions": "From Centre Street, enter through the main entrance at 640 (automatic doors, accessible). The lab is down the main hallway on your right. Check in at the lab window. Walk-ins accepted."
+    },
+    {
+      "name": "Health Promotion Center",
+      "aliases": ["wellness", "health promotion", "classes", "Zumba", "exercise", "cooking class", "bienestar", "clases"],
+      "building": "Main building",
+      "floor": "1st floor",
+      "hours": "Varies by program",
+      "accessible": true,
+      "check_in": "Ask at the front desk for today's schedule",
+      "directions": "From Centre Street, enter through the main entrance at 640 (automatic doors, accessible). Ask at the front desk for the Health Promotion Center — they offer wellness programs, exercise classes, and cooking classes."
+    }
+  ]
+}

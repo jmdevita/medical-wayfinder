@@ -1,0 +1,5 @@
+# Don't commit large downloaded GGUFs. The tiny stub `model.gguf` IS tracked
+# so the Flutter asset bundler (CI, analyze, test) has something to point at.
+# Real downloads overwrite the stub locally — see INSTRUCTIONS.md.
+*.gguf
+!model.gguf

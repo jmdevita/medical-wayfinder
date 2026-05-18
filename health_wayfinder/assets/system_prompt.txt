@@ -1,0 +1,1 @@
+../../training/data/prompts/system_prompt.txt

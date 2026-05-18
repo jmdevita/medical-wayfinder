@@ -1,0 +1,5 @@
+.frontend.log
+.backend.log
+.DS_Store
+.env
+.env.local

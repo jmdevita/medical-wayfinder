@@ -1,0 +1,36 @@
+{
+  "name": "criteria_score",
+  "notes_field": "notes",
+  "criteria": [
+    {
+      "key": "correctness",
+      "label": "CORRECTNESS",
+      "description": "Does the response resolve the patient's query to the correct department from the Available list (or correctly identify a service-not-offered / directory / medical case)? Resolving directly when the query maps clearly to one department is correct; using disambig as a safety hedge when one department is obviously right is wrong.",
+      "scale": "5 = correct department + correct case  |  3 = correct case but wrong department, or hedging with disambig when resolution was clear  |  1 = wrong department, wrong case, or hallucinated a department not in Available"
+    },
+    {
+      "key": "format",
+      "label": "FORMAT (data contract)",
+      "description": "Is the response a valid JSON array using ONLY the 5 allowed block types (destination, steps, disambig, guide_text, arrival) with no extra fields? Accessibility badges must be one of the 5 allowed values or null. No markdown fences, no preamble.",
+      "scale": "5 = strict contract compliance  |  3 = parses as JSON but has wrong block type / extra field / invalid badge  |  1 = unparseable, wrapped in markdown, or uses invented block types"
+    },
+    {
+      "key": "landmarks",
+      "label": "LANDMARKS (verbatim from CONTEXT)",
+      "description": "For wayfinding (case 1): when CONTEXT has a numbered Route, do steps[].text copy each numbered line verbatim or near-verbatim, preserving building names, signage cues, and direction words? When CONTEXT only has a Directions: line, does the response split that prose into 2-4 steps without dropping landmark detail? Generic phrases like 'walk to building 3' or 'enter through main doors' lose information and score low. For non-wayfinding cases, score 5 by default.",
+      "scale": "5 = verbatim or near-verbatim, all landmark detail preserved  |  3 = paraphrased but still landmark-specific  |  1 = generic template phrases that drop the CONTEXT specifics"
+    },
+    {
+      "key": "accessibility",
+      "label": "ACCESSIBILITY",
+      "description": "For wayfinding responses, is the correct badge ('elevator', 'ramp', 'automatic_doors', 'accessible_entrance') attached to each step whose text mentions that feature? Is 'arrived' set on the final arrival step? For accessibility-focused queries (wheelchair, stroller, mobility), does the response proactively emphasize the accessible path? Score 5 by default when CONTEXT has no accessibility features and the query isn't accessibility-focused.",
+      "scale": "5 = badges correctly attached where features appear; accessibility-focused queries surface elevator/ramp/accessible_entrance steps  |  3 = some badges missing or misplaced  |  1 = accessibility info ignored when features are present in CONTEXT"
+    },
+    {
+      "key": "scope_handling",
+      "label": "SCOPE HANDLING",
+      "description": "Medical questions: redirect cleanly to the most relevant Available department WITHOUT AI-disclaimer language ('I'm an AI', 'I'm just a', 'please consult a physician'). Service-not-offered / facility-info questions: surface the Main phone or refer to the patient's provider — NEVER tell the patient to 'go to the front desk', 'ask reception', 'check with staff', or 'find a sign'. For all other queries score 5 by default.",
+      "scale": "5 = clean redirect, no disclaimers, no front-desk punt  |  3 = redirects but hedges or mentions a desk/sign  |  1 = AI-disclaimer language, gives medical advice, or refers patient to find a desk/staff inside the building"
+    }
+  ]
+}

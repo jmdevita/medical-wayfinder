@@ -1,0 +1,363 @@
+{
+  "id": "kaiser_panorama_city",
+  "name": "Kaiser Permanente Panorama City",
+  "address": "13652 Cantara St, Panorama City, CA 91402",
+  "main_phone": "818-375-2000",
+  "type": "Hospital",
+  "campus_description": "Multi-building campus with 6 medical office buildings (Buildings 2-6), a hospital, and a 3A annex. Two main parking areas: Cantara Street structures serve Buildings 2, 3, 4. Ventura Canyon / Willard structure serves Buildings 5, 6, Hospital, and Emergency. A bridge connects Building 5 to the hospital. Building 5 is a newer 3-story specialty building with a glass atrium (opened 2014). A tram shuttle runs between parking and buildings during varying hours.",
+  "buildings": [
+    {
+      "name": "Building 2",
+      "lat": 34.22107,
+      "lng": -118.43175
+    },
+    {
+      "name": "Building 3",
+      "lat": 34.22115,
+      "lng": -118.4304
+    },
+    {
+      "name": "Building 3A",
+      "lat": 34.22115,
+      "lng": -118.4302
+    },
+    {
+      "name": "Building 4",
+      "lat": 34.21948,
+      "lng": -118.43014
+    },
+    {
+      "name": "Building 5",
+      "lat": 34.21818,
+      "lng": -118.43054
+    },
+    {
+      "name": "Building 6",
+      "lat": 34.21746,
+      "lng": -118.4297
+    },
+    {
+      "name": "Hospital",
+      "lat": 34.22022,
+      "lng": -118.43192
+    }
+  ],
+  "parking": [
+    {
+      "name": "Cantara Street Parking Structures",
+      "nearest_buildings": [
+        "Building 2",
+        "Building 3",
+        "Building 3A",
+        "Building 4"
+      ],
+      "entrance_note": "Exit toward campus. Buildings 2, 3, and 4 are straight ahead. Patient drop-off/pickup at Building 3A. You can also park on the roof of the member parking structure."
+    },
+    {
+      "name": "Ventura Canyon / Willard Parking Structure",
+      "nearest_buildings": [
+        "Building 5",
+        "Building 6",
+        "Hospital"
+      ],
+      "entrance_note": "Exit toward Roscoe Blvd. Building 6 and Urgent Care are ahead. Building 5 and Hospital are to your left. Emergency Department has a separate entrance with red signage."
+    }
+  ],
+  "departments": [
+    {
+      "name": "Lab / Blood Draw (Building 3)",
+      "aliases": [
+        "blood place",
+        "blood test",
+        "lab",
+        "laboratory",
+        "phlebotomy",
+        "blood work",
+        "blood draw",
+        "blood drawn",
+        "draw blood",
+        "get blood drawn",
+        "blood sample",
+        "donde me sacan sangre",
+        "laboratorio",
+        "sangre"
+      ],
+      "building": "Building 3",
+      "floor": "Basement (Area 060)",
+      "hours": "Mon-Fri, 7:00 AM - 5:15 PM",
+      "accessible": true,
+      "check_in": "Check in at the lab window",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 3 is straight ahead — look for the covered walkway with glass doors. Enter through automatic doors. Take elevator to basement level. Lab window is straight ahead when you exit the elevator."
+    },
+    {
+      "name": "Lab / Blood Draw (Building 5)",
+      "aliases": [
+        "blood place building 5",
+        "lab building 5"
+      ],
+      "building": "Building 5",
+      "floor": "Level 1 (Area 121)",
+      "hours": "Mon-Fri, 9:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the lab reception desk",
+      "directions_from_ventura": "Exit Ventura Canyon parking. Building 5 is to your left — the newer 3-story building with the glass atrium. Enter through the ground floor entrance (automatic doors). Lab reception is on Level 1."
+    },
+    {
+      "name": "X-ray / Bone Density (DEXA)",
+      "aliases": [
+        "x-ray",
+        "xray",
+        "bone density",
+        "DEXA",
+        "radiografia"
+      ],
+      "building": "Building 3",
+      "floor": "Basement",
+      "hours": "Mon-Fri, 8:00 AM - 4:30 PM",
+      "accessible": true,
+      "check_in": "Check in at the radiology window",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 3 is straight ahead. Enter through automatic glass doors. Take elevator to basement. Radiology is past the lab on your right."
+    },
+    {
+      "name": "MRI / CT Scan / Ultrasound",
+      "aliases": [
+        "MRI",
+        "CT scan",
+        "ultrasound",
+        "imaging",
+        "resonancia",
+        "scan"
+      ],
+      "building": "Building 5",
+      "floor": "Ground floor",
+      "hours": "Mon-Fri, 7:00 AM - 6:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the imaging reception desk",
+      "directions_from_ventura": "Exit Ventura Canyon parking. Building 5 is the newer 3-story building with the glass atrium, to your left. Enter through the ground floor entrance (automatic doors). Imaging reception is straight ahead."
+    },
+    {
+      "name": "Mammography / Breast Imaging",
+      "aliases": [
+        "mammogram",
+        "breast imaging",
+        "mammography",
+        "mamografia"
+      ],
+      "building": "Building 5",
+      "floor": "Ground floor",
+      "hours": "Mon-Fri, 8:00 AM - 4:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the breast imaging desk",
+      "directions_from_ventura": "Exit Ventura Canyon parking. Building 5 is the newer building with the glass atrium, to your left. Enter through the ground floor entrance (automatic doors). Breast imaging is to the right past imaging reception."
+    },
+    {
+      "name": "Radiology / Diagnostic Imaging",
+      "aliases": [
+        "radiology",
+        "diagnostic imaging",
+        "hospital imaging",
+        "radiologia"
+      ],
+      "building": "Hospital",
+      "floor": "Main hospital level",
+      "hours": "Mon-Fri, 7:00 AM - 6:00 PM",
+      "accessible": true,
+      "check_in": "Check in at hospital radiology reception",
+      "topology_node_id": "hospital_main_entrance",
+      "directions_from_ventura": "Exit Ventura Canyon parking. The hospital is to your left past Building 5 — look for the large Kaiser sign and the emergency entrance nearby. Enter through the main hospital entrance (automatic doors). Follow signs to Radiology."
+    },
+    {
+      "name": "Pediatrics",
+      "aliases": [
+        "kids doctor",
+        "children's doctor",
+        "pediatrics",
+        "pediatria",
+        "doctor de los ninos",
+        "doctor de niños"
+      ],
+      "building": "Building 2",
+      "floor": "2nd floor",
+      "hours": "Mon-Fri, 8:30 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the pediatrics front desk",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 2 is on your left — the first building you see. Enter through main doors (automatic, accessible). Take elevator to 2nd floor. Pediatrics is to your right."
+    },
+    {
+      "name": "Pharmacy (Cantara / Building 3)",
+      "aliases": [
+        "pharmacy",
+        "prescription",
+        "medication",
+        "farmacia",
+        "medicina",
+        "north pharmacy"
+      ],
+      "building": "Building 3",
+      "floor": "Ground floor",
+      "hours": "Mon-Fri, 8:30 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Take a number at the pharmacy counter",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 3 is straight ahead. Enter through automatic glass doors. Pharmacy is on the ground floor to your right."
+    },
+    {
+      "name": "Pharmacy (Ventura Canyon / Building 6)",
+      "aliases": [
+        "pharmacy building 6",
+        "ventura pharmacy",
+        "farmacia"
+      ],
+      "building": "Building 6",
+      "floor": "Ground floor (Area 189)",
+      "hours": "Mon-Fri, 8:30 AM - 12:30 PM & 1:30 PM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Take a number at the pharmacy counter",
+      "directions_from_ventura": "Exit Ventura Canyon parking toward Roscoe Blvd. Building 6 is directly ahead — look for the pharmacy sign. Enter through ground floor doors (automatic, accessible). Pharmacy counter is straight ahead."
+    },
+    {
+      "name": "Internal Medicine / Adult Care",
+      "aliases": [
+        "regular doctor",
+        "my doctor",
+        "primary care",
+        "internal medicine",
+        "adult care",
+        "doctor regular",
+        "mi doctor"
+      ],
+      "building": "Building 4",
+      "floor": "3rd floor",
+      "hours": "Mon-Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the front desk on 3rd floor",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 4 is past Building 3 on your right. Enter through main doors (automatic, accessible). Take elevator to 3rd floor. Check in at the front desk."
+    },
+    {
+      "name": "OB/GYN",
+      "aliases": [
+        "women's health",
+        "gynecology",
+        "obstetrics",
+        "pregnancy",
+        "prenatal",
+        "salud de la mujer",
+        "ginecologia"
+      ],
+      "building": "Building 3",
+      "floor": "1st floor (Area 162)",
+      "hours": "Mon-Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the OB/GYN front desk",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 3 is straight ahead. Enter through automatic glass doors. OB/GYN is on the 1st floor — follow signs from the lobby."
+    },
+    {
+      "name": "Ophthalmology / Eye Care",
+      "aliases": [
+        "eye doctor",
+        "vision",
+        "ophthalmology",
+        "optometry",
+        "oculista",
+        "ojos"
+      ],
+      "building": "Building 4",
+      "floor": "3rd floor",
+      "hours": "Mon-Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the ophthalmology desk",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 4 is past Building 3 on your right. Enter through main doors (automatic, accessible). Take elevator to 3rd floor. Ophthalmology is straight ahead."
+    },
+    {
+      "name": "Cardiology",
+      "aliases": [
+        "heart doctor",
+        "cardiology",
+        "cardiologia",
+        "corazon"
+      ],
+      "building": "Building 4",
+      "floor": "3rd floor (Area 308)",
+      "hours": "Mon-Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the cardiology front desk",
+      "directions_from_cantara": "Exit Cantara St parking toward campus. Building 4 is past Building 3 on your right. Enter through main doors (automatic, accessible). Take elevator to 3rd floor. Cardiology is in Area 308."
+    },
+    {
+      "name": "Dermatology",
+      "aliases": [
+        "skin doctor",
+        "dermatology",
+        "dermatologia",
+        "piel"
+      ],
+      "building": "Building 6",
+      "floor": "Floors 1-2 (Areas 192/291)",
+      "hours": "Mon-Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the dermatology front desk",
+      "directions_from_ventura": "Exit Ventura Canyon parking toward Roscoe Blvd. Building 6 is directly ahead. Enter through ground floor doors (automatic, accessible). Dermatology is on the 1st and 2nd floors — check in at the front desk."
+    },
+    {
+      "name": "Allergy",
+      "aliases": [
+        "allergy",
+        "allergist",
+        "alergia"
+      ],
+      "building": "Building 6",
+      "floor": "Floor 2 (Area 290)",
+      "hours": "Mon-Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the allergy department desk",
+      "directions_from_ventura": "Exit Ventura Canyon parking toward Roscoe Blvd. Building 6 is directly ahead. Enter through ground floor doors (automatic, accessible). Take elevator to 2nd floor. Allergy is in Area 290."
+    },
+    {
+      "name": "Audiology / Hearing",
+      "aliases": [
+        "hearing test",
+        "audiology",
+        "audiologia",
+        "oido"
+      ],
+      "building": "Building 5",
+      "floor": "Level 2",
+      "hours": "Mon-Fri, 8:00 AM - 5:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the audiology desk",
+      "directions_from_ventura": "Exit Ventura Canyon parking. Building 5 is the newer 3-story building with the glass atrium, to your left. Enter through the ground floor entrance (automatic doors). Take elevator to Level 2. Audiology is on your right."
+    },
+    {
+      "name": "Urgent Care",
+      "aliases": [
+        "urgent care",
+        "walk-in",
+        "urgencias",
+        "cuidado urgente"
+      ],
+      "building": "Building 6",
+      "floor": "Ground floor",
+      "hours": "Daily, 9:00 AM - 9:00 PM",
+      "accessible": true,
+      "check_in": "Check in at the urgent care front desk",
+      "directions_from_ventura": "Exit Ventura Canyon parking toward Roscoe Blvd. Building 6 is directly ahead — look for the Urgent Care sign. Enter through the ground floor entrance (automatic doors). Urgent care check-in is straight ahead."
+    },
+    {
+      "name": "Emergency Department",
+      "aliases": [
+        "emergency",
+        "ER",
+        "emergency room",
+        "urgencias",
+        "emergencia",
+        "sala de emergencias"
+      ],
+      "building": "Hospital",
+      "floor": "Ground floor",
+      "hours": "24/7",
+      "accessible": true,
+      "check_in": "Go directly to the emergency entrance — do not go to the main hospital entrance",
+      "topology_node_id": "emergency_entrance",
+      "directions_from_ventura": "Exit Ventura Canyon parking and look for the red EMERGENCY sign on the hospital building. Follow the signs to the emergency entrance — it's separate from the main hospital doors. Automatic doors, fully accessible."
+    }
+  ]
+}

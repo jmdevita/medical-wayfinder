@@ -1,0 +1,391 @@
+{
+  "id": "tufts_medical_center",
+  "name": "Tufts Medical Center",
+  "address": "800 Washington Street, Boston, MA 02111",
+  "type": "Hospital",
+  "main_phone": "617-636-5000",
+  "campus_description": "Tufts Medical Center is an 11-building academic hospital campus in downtown Boston, bordered by Washington Street, Tremont Street, Kneeland Street, and Harrison Avenue. The main entrance is at 800 Washington Street (Atrium), directly across from the MBTA Orange Line Tufts Medical Center station. Patient buildings include Proger, Pratt/Farnsworth/Ziskind, North, South, Floating, and the Biewend outpatient building on Tremont Street. A third-floor corridor connects every patient building. NOTE: floor numbers in the Pratt-Ziskind-Farnsworth complex shift up by one compared to Proger (Proger 3 = Pratt 4). Key outdoor landmarks: a 12-foot bronze teddy bear sculpture stands on the Washington Street sidewalk in front of the Floating Building entrance (755 Washington), right beside the American flag pole — patients commonly orient by it. The Wang Theatre marquee sits directly across Tremont Street from the Biewend Building. Tufts serves a multilingual patient population bordering Boston's Chinatown, with free interpreter services in 240+ languages.",
+  "buildings": [
+    {
+      "name": "Atrium",
+      "lat": 42.34955,
+      "lng": -71.06292
+    },
+    {
+      "name": "Proger Building",
+      "lat": 42.34985,
+      "lng": -71.06320
+    },
+    {
+      "name": "Pratt Building",
+      "lat": 42.34935,
+      "lng": -71.06200
+    },
+    {
+      "name": "Farnsworth Building",
+      "lat": 42.34920,
+      "lng": -71.06150
+    },
+    {
+      "name": "Ziskind Building",
+      "lat": 42.34970,
+      "lng": -71.06220
+    },
+    {
+      "name": "North Building",
+      "lat": 42.34880,
+      "lng": -71.06290
+    },
+    {
+      "name": "South Building",
+      "lat": 42.34800,
+      "lng": -71.06280
+    },
+    {
+      "name": "Floating Building",
+      "lat": 42.34965,
+      "lng": -71.06340
+    },
+    {
+      "name": "Biewend Building",
+      "lat": 42.35030,
+      "lng": -71.06500
+    },
+    {
+      "name": "Rehabilitation Building",
+      "lat": 42.34870,
+      "lng": -71.06100
+    },
+    {
+      "name": "Tupper Building",
+      "lat": 42.35030,
+      "lng": -71.06280
+    }
+  ],
+  "parking": [
+    {
+      "name": "Tremont Street Garage",
+      "nearest_buildings": [
+        "Atrium",
+        "Proger Building",
+        "Pratt Building",
+        "Floating Building",
+        "North Building",
+        "South Building",
+        "Biewend Building"
+      ],
+      "entrance_note": "Primary patient garage at 274 Tremont Street, next to the Wang Theatre. 24/7 access with discounted patient/visitor rates when validated inside the hospital. For an accessible route: take the garage elevator to the Ground level, follow the corridor left to the Floating Building elevators (Plaza level), then go up two floors to the 3rd floor corridor — this corridor connects to every patient building. For a faster non-accessible route: take the garage stairs and exit at the 3rd floor, then take a right toward the Atrium.",
+      "lat": 42.35070,
+      "lng": -71.06480
+    },
+    {
+      "name": "Patient Valet — Washington Street",
+      "nearest_buildings": [
+        "Atrium",
+        "North Building",
+        "South Building"
+      ],
+      "entrance_note": "Patient valet curb on Washington Street between the North and South buildings, weekdays 5:45 am – 6:00 pm. Phone 617-636-8970. After 6 pm all valeted cars are relocated to the Tremont Street Garage.",
+      "lat": 42.34920,
+      "lng": -71.06280
+    }
+  ],
+  "departments": [
+    {
+      "name": "Emergency Department",
+      "building": "North Building",
+      "floor": "1st floor",
+      "hours": "24/7",
+      "aliases": [
+        "emergency",
+        "ER",
+        "emergency room",
+        "urgencias",
+        "emergencia",
+        "sala de emergencia",
+        "ED",
+        "trauma",
+        "trauma center",
+        "level 1 trauma",
+        "急診室",
+        "急诊室"
+      ],
+      "check_in": "Go directly to the Emergency Department entrance at 830 Washington Street and check in at the ED registration desk.",
+      "directions": "The Emergency Department entrance is on Washington Street between the North and South buildings, marked with red signage. Ambulance bay is on the same frontage.",
+      "accessible": true
+    },
+    {
+      "name": "Primary Care",
+      "building": "Biewend Building",
+      "floor": "Floors 4–6",
+      "hours": "Mon–Thu 8:00 am–8:00 pm; Fri 8:00 am–5:00 pm; Sat 8:00 am–12:00 pm",
+      "aliases": [
+        "primary care",
+        "internal medicine",
+        "PCP",
+        "family doctor",
+        "general practice",
+        "atención primaria",
+        "medicina interna",
+        "doctor visit",
+        "annual physical",
+        "checkup",
+        "看家庭醫生"
+      ],
+      "check_in": "Enter Biewend at 260 Tremont Street, take the elevators to your provider's floor (4, 5, or 6), and check in at the Primary Care reception.",
+      "directions": "Biewend Building, 260 Tremont Street — directly across Tremont Street from the Wang Theatre (large Renaissance Revival facade with columns). It's a separate outpatient building two blocks from the main hospital, and is also connected via the 3rd floor corridor if you came in through 800 Washington.",
+      "accessible": true
+    },
+    {
+      "name": "Cardiology",
+      "building": "South Building",
+      "floor": "6th floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "cardiology",
+        "heart doctor",
+        "cardiologist",
+        "cardiología",
+        "heart checkup",
+        "heart appointment",
+        "cardiac care",
+        "chest pain followup",
+        "心臟科",
+        "心脏科"
+      ],
+      "check_in": "Check in at the Cardiology reception on the 6th floor of the South Building.",
+      "directions": "From the 800 Washington Street main entrance: walk past Au Bon Pain on your left and take a right in front of the Information desk to the Atrium elevators. Use these to reach the 6th floor and turn right into the South Building.",
+      "accessible": true
+    },
+    {
+      "name": "Cardiac Ultrasound and Echocardiography",
+      "building": "Pratt Building",
+      "floor": "4th floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "cardiac ultrasound",
+        "echocardiogram",
+        "echo",
+        "heart ultrasound",
+        "ecocardiograma",
+        "ultrasonido cardíaco",
+        "cardiac echo",
+        "stress echo"
+      ],
+      "check_in": "Check in at the Cardiac Ultrasound reception on the 4th floor of the Pratt Building.",
+      "directions": "From the 800 Washington Street main entrance: enter the Atrium, take the Atrium elevators to the 3rd floor, then follow the 3rd floor corridor — your first right leads into the Pratt Building. You will arrive on Pratt's 4th floor. Note: floor numbers in Pratt-Ziskind-Farnsworth shift up by one compared to Proger (Proger 3 = Pratt 4).",
+      "accessible": true
+    },
+    {
+      "name": "Cancer Center",
+      "building": "South Building",
+      "floor": "8th floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "cancer center",
+        "oncology",
+        "chemotherapy",
+        "chemo",
+        "oncología",
+        "tratamiento de cáncer",
+        "infusion",
+        "infusion center",
+        "tumor clinic",
+        "hematology oncology",
+        "腫瘤科",
+        "肿瘤科"
+      ],
+      "check_in": "Check in at the Cancer Center reception on the 8th floor of the South Building.",
+      "directions": "From the 800 Washington Street main entrance: walk past Au Bon Pain on your left and take a right in front of the Information desk to the Atrium elevators. Take these to the 8th floor and turn right into the South Building.",
+      "accessible": true
+    },
+    {
+      "name": "Radiology and Imaging",
+      "building": "Floating Building",
+      "floor": "4th floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "radiology",
+        "imaging",
+        "x-ray",
+        "rayos x",
+        "radiografía",
+        "ct scan",
+        "mri",
+        "ultrasound",
+        "ecografía",
+        "imagen",
+        "scan",
+        "放射科",
+        "影像科"
+      ],
+      "check_in": "Check in at the Imaging reception on the 4th floor of the Floating Building.",
+      "directions": "The Floating Building entrance is at 755 Washington Street, marked by the big bronze teddy bear on the sidewalk. Step through the doors and you are on the Plaza level — take the Floating elevators up to the 4th floor.",
+      "accessible": true
+    },
+    {
+      "name": "Lab / Blood Draw",
+      "building": "South Building",
+      "floor": "5th floor",
+      "hours": "Mon–Fri 8:00 am–4:30 pm",
+      "aliases": [
+        "lab",
+        "laboratory",
+        "blood draw",
+        "phlebotomy",
+        "blood work",
+        "lab work",
+        "laboratorio",
+        "extracción de sangre",
+        "análisis de sangre",
+        "blood test",
+        "blood lab",
+        "抽血"
+      ],
+      "check_in": "Check in at the Lab reception window on the 5th floor of the South Building. No appointment needed for most outpatient draws.",
+      "directions": "From the 800 Washington Street main entrance: walk past Au Bon Pain on your left and take a right in front of the Information desk to the Atrium elevators. Take these to the 5th floor and turn right into the South Building.",
+      "accessible": true
+    },
+    {
+      "name": "Pharmacy",
+      "building": "Atrium",
+      "floor": "3rd floor",
+      "hours": "Mon–Fri 9:00 am–5:30 pm",
+      "aliases": [
+        "pharmacy",
+        "drugstore",
+        "prescription",
+        "farmacia",
+        "receta",
+        "pick up medication",
+        "outpatient pharmacy",
+        "藥房",
+        "药房"
+      ],
+      "check_in": "Drop off your prescription at the Pharmacy window on the 3rd floor of the Atrium. The pharmacy is along the 3rd floor corridor.",
+      "directions": "From the 800 Washington Street main entrance: enter the Atrium, take the Atrium elevators to the 3rd floor — the pharmacy is on the 3rd floor corridor.",
+      "accessible": true
+    },
+    {
+      "name": "Obstetrics and Gynecology",
+      "building": "South Building",
+      "floor": "2nd floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "OB/GYN",
+        "obgyn",
+        "obstetrics",
+        "gynecology",
+        "women's health",
+        "ginecología",
+        "obstetricia",
+        "prenatal visit",
+        "pregnancy checkup",
+        "婦科",
+        "妇产科"
+      ],
+      "check_in": "Check in at the OB/GYN reception on the 2nd floor of the South Building.",
+      "directions": "From the 800 Washington Street main entrance: walk past Au Bon Pain on your left and take a right in front of the Information desk to the Atrium elevators. Take these to the 2nd floor and turn right into the South Building.",
+      "accessible": true
+    },
+    {
+      "name": "Outpatient Surgery",
+      "building": "Proger Building",
+      "floor": "3rd floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "outpatient surgery",
+        "same-day surgery",
+        "ambulatory surgery",
+        "cirugía ambulatoria",
+        "day surgery",
+        "operating room",
+        "OR",
+        "procedure",
+        "手術中心",
+        "手术中心"
+      ],
+      "check_in": "Check in at the Outpatient Surgery reception on the 3rd floor of the Proger Building.",
+      "directions": "From the 800 Washington Street main entrance: walk past Au Bon Pain into the Atrium, take the double staircase up one floor to Proger 1 (or the accessible elevator between Au Bon Pain and the staircase), then take the yellow Proger elevators to the 3rd floor.",
+      "accessible": true
+    },
+    {
+      "name": "Pre-Operative Testing",
+      "building": "South Building",
+      "floor": "5th floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "pre-op",
+        "pre-operative testing",
+        "pre-admission testing",
+        "PAT",
+        "pre-surgery testing",
+        "pruebas preoperatorias",
+        "surgery clearance",
+        "EKG before surgery"
+      ],
+      "check_in": "Check in at Pre-Operative Testing on the 5th floor of the South Building. Phone 617-636-7866 to confirm appointment.",
+      "directions": "From the 800 Washington Street main entrance: take the Atrium elevators to the 5th floor and turn right into the South Building.",
+      "accessible": true
+    },
+    {
+      "name": "Physical Therapy",
+      "building": "Rehabilitation Building",
+      "floor": "Street level",
+      "hours": "Mon/Wed/Fri 7:30 am–6:00 pm; Tue/Thu 6:30 am–6:00 pm",
+      "aliases": [
+        "physical therapy",
+        "PT",
+        "rehab",
+        "rehabilitation",
+        "terapia física",
+        "fisioterapia",
+        "rehabilitación",
+        "post-surgery rehab",
+        "injury recovery"
+      ],
+      "check_in": "Enter the Rehabilitation Building at 185 Harrison Avenue and check in at the Physical Therapy reception on the street level.",
+      "directions": "The Rehabilitation Building is a standalone facility at 185 Harrison Avenue, on the east side of campus. Enter directly from the Harrison Avenue sidewalk.",
+      "accessible": true
+    },
+    {
+      "name": "Endoscopy",
+      "building": "Floating Building",
+      "floor": "6th floor",
+      "hours": "Mon–Fri 8:00 am–5:00 pm",
+      "aliases": [
+        "endoscopy",
+        "colonoscopy",
+        "upper endoscopy",
+        "EGD",
+        "endoscopia",
+        "colonoscopia",
+        "GI procedure",
+        "scope",
+        "胃鏡"
+      ],
+      "check_in": "Check in at Endoscopy on the 6th floor of the Floating Building.",
+      "directions": "The Floating Building entrance is at 755 Washington Street, right behind the big bronze teddy bear sculpture. Take the Floating elevators from the Plaza level up to the 6th floor.",
+      "accessible": true
+    },
+    {
+      "name": "Patient Registration and Admitting",
+      "building": "Proger Building",
+      "floor": "1st floor",
+      "hours": "Mon–Fri 7:00 am–6:00 pm",
+      "aliases": [
+        "registration",
+        "admitting",
+        "patient registration",
+        "check-in",
+        "admisión",
+        "registro de paciente",
+        "new patient",
+        "intake"
+      ],
+      "check_in": "Stop at the Admitting Office on the 1st floor of the Proger Building. Phone 617-636-6000.",
+      "directions": "From the 800 Washington Street main entrance: walk straight past Au Bon Pain into the Atrium, take the double staircase or accessible elevator up one floor to Proger 1 — the Admitting Office is on this floor.",
+      "accessible": true
+    }
+  ]
+}

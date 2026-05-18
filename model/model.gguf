@@ -1,0 +1,1 @@
+PLACEHOLDER — see model/INSTRUCTIONS.md for how to fetch the real fine-tuned GGUF from Hugging Face. The Flutter asset bundler needs this file to exist; replace it with the real ~3.2 GB GGUF before running in device mode.

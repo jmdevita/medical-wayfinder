@@ -1,0 +1,421 @@
+[
+  {"id": "eval_001", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "I need to get my blood drawn",
+   "expected_department": "Lab / Blood Draw",
+   "expected": "Resolve to Lab / Blood Draw in Building 3"},
+
+  {"id": "eval_002", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "where do I pick up my prescription",
+   "expected_department": "Pharmacy",
+   "expected": "Resolve to Pharmacy (Building 3 or Building 6)"},
+
+  {"id": "eval_003", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "my kid has an appointment",
+   "expected_department": "Pediatrics",
+   "expected": "Resolve to Pediatrics in Building 2"},
+
+  {"id": "eval_004", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "I need to see the eye doctor",
+   "expected_department": "Ophthalmology",
+   "expected": "Resolve to Ophthalmology in Building 4"},
+
+  {"id": "eval_005", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "I have a heart checkup",
+   "expected_department": "Cardiology",
+   "expected": "Resolve to Cardiology in Building 4"},
+
+  {"id": "eval_006", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "where's the ER",
+   "expected_department": "Emergency",
+   "expected": "Resolve to Emergency Department in Hospital, mention red signage"},
+
+  {"id": "eval_007", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "I need an x-ray",
+   "expected_department": "X-ray",
+   "expected": "Resolve to X-ray / Bone Density in Building 3 basement"},
+
+  {"id": "eval_008", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "my skin has a rash, where do I go",
+   "expected_department": "Dermatology",
+   "expected": "Resolve to Dermatology in Building 6 (NOT give medical advice about the rash)"},
+
+  {"id": "eval_009", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "I have a walk-in, where's urgent care",
+   "expected_department": "Urgent Care",
+   "expected": "Resolve to Urgent Care in Building 6, mention daily 9AM-9PM hours"},
+
+  {"id": "eval_010", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "I need to see my regular doctor",
+   "expected_department": "Internal Medicine",
+   "expected": "Resolve to Internal Medicine / Adult Care in Building 4"},
+
+  {"id": "eval_011", "facility": "southern_jp", "category": "department_resolution",
+   "user_message": "I have a blood test appointment",
+   "expected_department": "Phlebotomy",
+   "expected": "Resolve to Phlebotomy / Blood Draw, mention walk-in hours"},
+
+  {"id": "eval_012", "facility": "southern_jp", "category": "department_resolution",
+   "user_message": "I need to see a counselor",
+   "expected_department": "Behavioral Health",
+   "expected": "Resolve to Behavioral Health"},
+
+  {"id": "eval_013", "facility": "southern_jp", "category": "department_resolution",
+   "user_message": "where do I get my medicine",
+   "expected_department": "Pharmacy",
+   "expected": "Resolve to Pharmacy, mention taking a number"},
+
+  {"id": "eval_014", "facility": "southern_jp", "category": "department_resolution",
+   "user_message": "I'm pregnant and need to see someone",
+   "expected_department": "Women's Health",
+   "expected": "Resolve to Women's Health / OB/GYN"},
+
+  {"id": "eval_015", "facility": "southern_jp", "category": "department_resolution",
+   "user_message": "my family doctor is here",
+   "expected_department": "Family Medicine",
+   "expected": "Resolve to Family Medicine or Adult Medicine"},
+
+  {"id": "eval_016", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "necesito hacerme un análisis de sangre",
+   "expected_department": "Lab",
+   "expected": "Resolve to Lab, respond in Spanish"},
+
+  {"id": "eval_017", "facility": "southern_jp", "category": "department_resolution",
+   "user_message": "mi hijo tiene cita con el pediatra",
+   "expected_department": "Pediatric Medicine",
+   "expected": "Resolve to Pediatric Medicine, respond in Spanish"},
+
+  {"id": "eval_018", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "donde queda la farmacia",
+   "expected_department": "Pharmacy",
+   "expected": "Resolve to Pharmacy, respond entirely in Spanish"},
+
+  {"id": "eval_019", "facility": "southern_jp", "category": "department_resolution",
+   "user_message": "necesito ver al doctor",
+   "expected_department": "Adult Medicine",
+   "expected": "Resolve to Adult Medicine, respond in Spanish"},
+
+  {"id": "eval_020", "facility": "kaiser_panorama_city", "category": "department_resolution",
+   "user_message": "tengo cita con el oculista",
+   "expected_department": "Ophthalmology",
+   "expected": "Resolve to Ophthalmology, respond in Spanish"},
+
+  {"id": "eval_021", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "how do I get to the lab from cantara parking",
+   "expected": "Mention covered walkway, glass doors, elevator location — not just 'walk to Building 3'"},
+
+  {"id": "eval_022", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "I'm at ventura canyon parking and need MRI",
+   "expected": "Mention glass atrium on Building 5, ground floor entrance, automatic doors"},
+
+  {"id": "eval_023", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "how do I find urgent care",
+   "expected": "Suggest Ventura Canyon parking, mention Urgent Care sign on Building 6"},
+
+  {"id": "eval_024", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "where's the emergency room and how do I get there",
+   "expected": "Mention red EMERGENCY sign, separate entrance from main hospital doors"},
+
+  {"id": "eval_025", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "I need the pharmacy near cantara",
+   "expected": "Direct to Building 3 pharmacy, mention it's on ground floor to the right"},
+
+  {"id": "eval_026", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "directions to pediatrics please",
+   "expected": "Building 2 is first building from Cantara, mention main doors, elevator to 2nd floor"},
+
+  {"id": "eval_027", "facility": "southern_jp", "category": "landmark_directions",
+   "user_message": "how do I find the health center from the street",
+   "expected": "Mention 640 Centre St, corner of Green St, across from the post office"},
+
+  {"id": "eval_028", "facility": "southern_jp", "category": "landmark_directions",
+   "user_message": "I'm on the orange line, how do I get there",
+   "expected": "Green Street stop, turn left, walk 4 blocks up Green St to Centre St"},
+
+  {"id": "eval_029", "facility": "southern_jp", "category": "landmark_directions",
+   "user_message": "how do I get to the lab",
+   "expected": "Main entrance automatic doors, lab is down main hallway on right, lab window"},
+
+  {"id": "eval_030", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "I need an allergy appointment, where is it",
+   "expected": "Building 6, Ventura Canyon parking closest, elevator to 2nd floor, Area 290"},
+
+  {"id": "eval_031", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "where do I go for a hearing test",
+   "expected": "Building 5, glass atrium landmark, elevator to Level 2, audiology on right"},
+
+  {"id": "eval_032", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "I need to see OB/GYN",
+   "expected": "Building 3, 1st floor Area 162, Cantara parking closest, automatic glass doors"},
+
+  {"id": "eval_033", "facility": "southern_jp", "category": "landmark_directions",
+   "user_message": "I need behavioral health services",
+   "expected": "Main entrance, front desk, offices down the hall to the right"},
+
+  {"id": "eval_034", "facility": "kaiser_panorama_city", "category": "landmark_directions",
+   "user_message": "where is internal medicine",
+   "expected": "Building 4, past Building 3, elevator to 3rd floor, front desk"},
+
+  {"id": "eval_035", "facility": "southern_jp", "category": "landmark_directions",
+   "user_message": "I want to sign up for a cooking class",
+   "expected": "Health Promotion Center, ask at front desk for schedule"},
+
+  {"id": "eval_036", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "I need the lab",
+   "expected": "Mentions automatic doors AND elevator in the step instructions, not appended as a note"},
+
+  {"id": "eval_037", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "how do I get to pediatrics",
+   "expected": "Mentions elevator to 2nd floor in the steps, mentions accessible entrance"},
+
+  {"id": "eval_038", "facility": "southern_jp", "category": "accessibility",
+   "user_message": "where's the front desk",
+   "expected": "Mentions automatic doors at entrance in the step, not as a footnote"},
+
+  {"id": "eval_039", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "I need to get to cardiology on the 3rd floor",
+   "expected": "Elevator mentioned as a step, not 'if you need an elevator, let me know'"},
+
+  {"id": "eval_040", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "I'm in a wheelchair and need the pharmacy",
+   "expected": "Proactively confirms ground floor, automatic doors. Doesn't say 'the pharmacy is accessible' as an afterthought"},
+
+  {"id": "eval_041", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "I have a stroller, can I get to the children's doctor easily",
+   "expected": "Confirms elevator available, automatic doors, clear path. Treats stroller like a mobility need"},
+
+  {"id": "eval_042", "facility": "southern_jp", "category": "accessibility",
+   "user_message": "is the building accessible",
+   "expected": "Confirms automatic doors, everything on 1st floor, no elevator needed. Mentions under-building parking"},
+
+  {"id": "eval_043", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "where's the MRI place",
+   "expected": "Ground floor Building 5, automatic doors — accessibility is in the steps themselves"},
+
+  {"id": "eval_044", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "I need to get to the basement for x-ray",
+   "expected": "Mentions elevator to basement specifically, not 'stairs or elevator'"},
+
+  {"id": "eval_045", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "audiology please",
+   "expected": "Elevator to Level 2 mentioned as a step, automatic doors at entrance"},
+
+  {"id": "eval_046", "facility": "southern_jp", "category": "accessibility",
+   "user_message": "I need to get blood drawn and I use a walker",
+   "expected": "Confirms all on 1st floor, automatic doors, no stairs. Reassuring tone about accessibility"},
+
+  {"id": "eval_047", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "dermatology appointment",
+   "expected": "Ground floor accessible, mentions automatic doors at Building 6"},
+
+  {"id": "eval_048", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "I can't walk very far, what's closest to ventura parking",
+   "expected": "Lists Building 6 and Building 5 as closest. Mentions ground floor departments. Practical help for limited mobility"},
+
+  {"id": "eval_049", "facility": "southern_jp", "category": "accessibility",
+   "user_message": "is there accessible parking",
+   "expected": "Mentions under-building parking (5 spaces, arrive early). Doesn't just say 'yes it's accessible'"},
+
+  {"id": "eval_050", "facility": "kaiser_panorama_city", "category": "accessibility",
+   "user_message": "emergency with mobility issues",
+   "expected": "Emergency entrance is ground floor, automatic doors, fully accessible. Direct path from Ventura parking"},
+
+  {"id": "eval_051", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "hola, necesito ir al laboratorio",
+   "expected": "Full Spanish response, consistent usted, natural phrasing"},
+
+  {"id": "eval_052", "facility": "southern_jp", "category": "multilingual",
+   "user_message": "buenos días, tengo cita médica",
+   "expected": "Responds in Spanish, asks which department in Spanish, natural tone"},
+
+  {"id": "eval_053", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "mi esposa necesita una mamografía",
+   "expected": "Mammography in Building 5, entire response in Spanish"},
+
+  {"id": "eval_054", "facility": "southern_jp", "category": "multilingual",
+   "user_message": "estoy buscando salud mental",
+   "expected": "Behavioral Health, response in Spanish, mentions bilingual staff"},
+
+  {"id": "eval_055", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "tengo una emergencia",
+   "expected": "Emergency directions in Spanish, urgent but calm tone, red sign landmark in Spanish"},
+
+  {"id": "eval_056", "facility": "southern_jp", "category": "multilingual",
+   "user_message": "donde me estaciono",
+   "expected": "All 3 parking options described in Spanish with driving directions"},
+
+  {"id": "eval_057", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "necesito ver al cardiólogo",
+   "expected": "Cardiology in Building 4, full Spanish, elevator to 3rd floor"},
+
+  {"id": "eval_058", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "la farmacia por favor",
+   "expected": "Pharmacy directions in Spanish, suggests nearest parking"},
+
+  {"id": "eval_059", "facility": "southern_jp", "category": "multilingual",
+   "user_message": "mi niña está enferma",
+   "expected": "Pediatric Medicine, Spanish response, check-in at front desk on the left"},
+
+  {"id": "eval_060", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "donde están los ojos... el doctor de ojos",
+   "expected": "Ophthalmology, handles informal Spanish phrasing naturally"},
+
+  {"id": "eval_061", "facility": "southern_jp", "category": "multilingual",
+   "user_message": "quiero las clases de ejercicio",
+   "expected": "Health Promotion Center, mentions Zumba/classes, response in Spanish"},
+
+  {"id": "eval_062", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "me mandaron a hacerme un ultrasonido",
+   "expected": "MRI/CT/Ultrasound in Building 5, Spanish response with landmarks"},
+
+  {"id": "eval_063", "facility": "southern_jp", "category": "multilingual",
+   "user_message": "como llego desde la estación del tren",
+   "expected": "Orange Line Green Street stop directions in Spanish"},
+
+  {"id": "eval_064", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "estoy perdido, veo un letrero que dice urgencias",
+   "expected": "Identifies Building 6/Urgent Care area, re-orients in Spanish"},
+
+  {"id": "eval_065", "facility": "kaiser_panorama_city", "category": "multilingual",
+   "user_message": "necesito recoger mi receta",
+   "expected": "Pharmacy directions in Spanish, 'receta' = prescription resolved correctly"},
+
+  {"id": "eval_066", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "I think I'm having a heart attack",
+   "expected": "URGENT: direct to Emergency immediately, no hedging, no 'I can't answer medical questions' — just give ER directions fast"},
+
+  {"id": "eval_067", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "is my blood pressure too high",
+   "expected": "Redirect + pivot: 'I can't answer medical questions. Are you looking for the lab or your doctor's office?'"},
+
+  {"id": "eval_068", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "what are the side effects of my medication",
+   "expected": "Redirect + pivot to pharmacy: 'Your pharmacist can help with that. Need directions to the pharmacy?'"},
+
+  {"id": "eval_069", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "do I need to fast before my blood test",
+   "expected": "Semi-wayfinding question — can mention the lab can answer when they check in, then give directions"},
+
+  {"id": "eval_070", "facility": "southern_jp", "category": "scope_enforcement",
+   "user_message": "I've been feeling really anxious and depressed",
+   "expected": "Compassionate redirect to Behavioral Health, not dismissive. 'I can help you find Behavioral Health'"},
+
+  {"id": "eval_071", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "my child has a fever of 103",
+   "expected": "Direct to Urgent Care or Emergency depending on severity. Don't give medical advice about the fever"},
+
+  {"id": "eval_072", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "should I go to urgent care or the ER",
+   "expected": "Can give directions to both but doesn't make the medical judgment. 'If you're unsure, the Emergency Department is open 24/7'"},
+
+  {"id": "eval_073", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "can you diagnose what's wrong with my knee",
+   "expected": "Clear redirect, pivot to relevant department (orthopedics or primary care)"},
+
+  {"id": "eval_074", "facility": "southern_jp", "category": "scope_enforcement",
+   "user_message": "is the flu going around",
+   "expected": "Redirect, offer to help find Adult Medicine or the front desk"},
+
+  {"id": "eval_075", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "what does my lab result mean",
+   "expected": "Redirect to their doctor, can offer directions to Internal Medicine"},
+
+  {"id": "eval_076", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "I need a refill on my blood pressure medicine and also where's the pharmacy",
+   "expected": "Skip the refill question (medical), give pharmacy directions immediately"},
+
+  {"id": "eval_077", "facility": "southern_jp", "category": "scope_enforcement",
+   "user_message": "I think my son has ADHD, who do I talk to",
+   "expected": "Direct to Behavioral Health or Pediatrics, don't diagnose"},
+
+  {"id": "eval_078", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "I just want to know if this mole looks cancerous",
+   "expected": "Redirect, pivot to Dermatology in Building 6"},
+
+  {"id": "eval_079", "facility": "kaiser_panorama_city", "category": "scope_enforcement",
+   "user_message": "how long will the lab results take",
+   "expected": "Redirect to lab staff for timing, give lab directions"},
+
+  {"id": "eval_080", "facility": "southern_jp", "category": "scope_enforcement",
+   "user_message": "can you tell me what vaccines my baby needs",
+   "expected": "Redirect to Pediatric Medicine, give directions"},
+
+  {"id": "eval_081", "facility": "kaiser_panorama_city", "category": "facility_accuracy",
+   "user_message": "what floor is the lab on",
+   "expected": "Basement (Area 060) in Building 3. NOT ground floor, NOT 1st floor"},
+
+  {"id": "eval_082", "facility": "kaiser_panorama_city", "category": "facility_accuracy",
+   "user_message": "is the pharmacy open on Saturday",
+   "expected": "Building 3 pharmacy: Mon-Fri only. Building 6 pharmacy: Mon-Fri only. Neither open Saturday"},
+
+  {"id": "eval_083", "facility": "kaiser_panorama_city", "category": "facility_accuracy",
+   "user_message": "what time does urgent care close",
+   "expected": "Daily 9AM-9PM (not just weekdays)"},
+
+  {"id": "eval_084", "facility": "southern_jp", "category": "facility_accuracy",
+   "user_message": "are you open on Friday at 5:30",
+   "expected": "Friday hours are 8AM-5PM, so 5:30 would be closed. Should mention this"},
+
+  {"id": "eval_085", "facility": "southern_jp", "category": "facility_accuracy",
+   "user_message": "how many parking spots do you have",
+   "expected": "5 patient-reserved spots under the building. Also street parking and Burroughs lot"},
+
+  {"id": "eval_086", "facility": "kaiser_panorama_city", "category": "facility_accuracy",
+   "user_message": "is there a lab in Building 5",
+   "expected": "Yes — Lab / Blood Draw in Building 5, Level 1, Mon-Fri 9AM-5PM (different hours from Building 3 lab)"},
+
+  {"id": "eval_087", "facility": "kaiser_panorama_city", "category": "facility_accuracy",
+   "user_message": "which building is mammography in",
+   "expected": "Building 5, ground floor. NOT Building 3"},
+
+  {"id": "eval_088", "facility": "southern_jp", "category": "facility_accuracy",
+   "user_message": "do you have a pharmacy here",
+   "expected": "Yes, 1st floor, Mon-Fri 9AM-5:30PM, take a number"},
+
+  {"id": "eval_089", "facility": "kaiser_panorama_city", "category": "facility_accuracy",
+   "user_message": "where can I park for Building 5",
+   "expected": "Ventura Canyon / Willard parking (NOT Cantara — that's for Buildings 2-4)"},
+
+  {"id": "eval_090", "facility": "southern_jp", "category": "facility_accuracy",
+   "user_message": "what bus goes here",
+   "expected": "Route 39 from Forest Hills or Copley Square"},
+
+  {"id": "eval_091", "facility": "kaiser_panorama_city", "category": "step_format",
+   "user_message": "give me directions to the lab from cantara",
+   "expected": "Numbered steps, each is a standalone instruction. No 'please feel free to ask' or 'I'd be happy to help'"},
+
+  {"id": "eval_092", "facility": "southern_jp", "category": "step_format",
+   "user_message": "how do I get to pediatrics",
+   "expected": "Short, clear steps. Not a paragraph. Each step is one action"},
+
+  {"id": "eval_093", "facility": "kaiser_panorama_city", "category": "step_format",
+   "user_message": "MRI from ventura parking",
+   "expected": "Steps reference landmarks. No step says just 'go to Building 5' without visual cue"},
+
+  {"id": "eval_094", "facility": "kaiser_panorama_city", "category": "step_format",
+   "user_message": "how to get to dermatology",
+   "expected": "Concise response. Under 150 words for the directions portion"},
+
+  {"id": "eval_095", "facility": "southern_jp", "category": "step_format",
+   "user_message": "directions to the pharmacy please",
+   "expected": "Steps work as individual cards: '1. Enter through automatic doors' not '1. First, you'll want to...'"},
+
+  {"id": "eval_096", "facility": "kaiser_panorama_city", "category": "step_format",
+   "user_message": "where's the allergy department",
+   "expected": "No filler phrases. Warm but concise. Gets to the point."},
+
+  {"id": "eval_097", "facility": "kaiser_panorama_city", "category": "step_format",
+   "user_message": "tell me how to get to the emergency room",
+   "expected": "Very concise — emergency directions should be the shortest. 2-3 steps max"},
+
+  {"id": "eval_098", "facility": "southern_jp", "category": "step_format",
+   "user_message": "blood draw directions",
+   "expected": "Minimal response — single building, simple path. Should be 3 steps max"},
+
+  {"id": "eval_099", "facility": "kaiser_panorama_city", "category": "step_format",
+   "user_message": "ophthalmology from cantara",
+   "expected": "Each step has exactly one action. Not 'Exit parking and walk toward Building 4 and enter through doors'"},
+
+  {"id": "eval_100", "facility": "kaiser_panorama_city", "category": "step_format",
+   "user_message": "I need to go to internal medicine, building 4 right?",
+   "expected": "Confirms Building 4, gives steps. Doesn't repeat what patient already knows. Efficient."}
+]

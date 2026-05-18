@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+.vite
+.tanstack
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js
+.DS_Store
+*.local
+.env
+.env.local
+src/routeTree.gen.ts

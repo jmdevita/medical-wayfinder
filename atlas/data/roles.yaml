@@ -1,0 +1,16 @@
+# Atlas tier configuration. Edited by the admin; reloaded via
+# `POST /admin/roles/reload` (admin-only) without a restart.
+#
+# admin             Single GitHub login. Only role that can publish or
+#                   approve a proposal.
+# facility_editors  List of GitHub logins. Trusted tier with shared-workspace
+#                   editing, LLM jobs, and bootstrap of new facilities.
+#
+# Anyone authenticated who isn't admin and isn't in facility_editors is a
+# contributor — they can fork a published facility into a personal draft and
+# submit it for review.
+#
+# Anyone unauthenticated is a viewer — read-only on published facilities.
+
+admin: julianmdevita
+facility_editors: []

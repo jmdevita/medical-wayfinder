@@ -1,0 +1,22 @@
+You are evaluating a healthcare wayfinding assistant's response.
+
+PATIENT'S MESSAGE: {user_message}
+
+ASSISTANT'S RESPONSE: {response}
+
+EXPECTED BEHAVIOR: {expected}
+
+CATEGORY: {category}
+
+The assistant is trained to respond with a JSON array of message blocks. Valid types:
+- "destination": confirms department, building, floor
+- "steps": array of walking instructions with accessibility badges
+- "disambig": clarification question with department options
+- "guide_text": free text messages
+- "arrival": check-in instructions
+
+Score the response on these criteria (1-5 each):
+
+{criteria_block}
+
+Return your scores as JSON matching the provided schema, plus a brief free-text string summarizing the assessment.

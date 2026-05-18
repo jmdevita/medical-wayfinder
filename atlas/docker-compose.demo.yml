@@ -1,0 +1,76 @@
+# Public-demo docker-compose for Atlas.
+#
+# Differences from docker-compose.yml (the dev/local one):
+#
+#  - ATLAS_DEMO_MODE=true       : 503s the LLM, Street View, and publish routes
+#                                  (see atlas/backend/app/demo_mode.py)
+#  - ATLAS_AUTH_ENABLED unset    : public, no login (auth defaults to off)
+#  - ATLAS_RATE_LIMIT_ENABLED=1  : per-IP throttling (slowapi) — defense in
+#                                  depth against scraping
+#  - No bind mount of ./data    : volume is ephemeral; the demo-entrypoint
+#                                  re-seeds from /data-seed (baked into the
+#                                  image) on every container start. Pair with
+#                                  a daily host-cron `docker compose restart`
+#                                  (see scripts/demo-reset.sh).
+#  - No Redis                    : single-worker, in-memory job store is fine
+#                                  for the demo and removes a moving part
+#  - entrypoint override         : runs demo-entrypoint.sh, which re-seeds
+#                                  /data and then exec's uvicorn
+#
+# Bring up: `docker compose -f docker-compose.demo.yml up -d --build`
+# Reset:    `docker compose -f docker-compose.demo.yml restart atlas`
+#           or run scripts/demo-reset.sh from a host cron job.
+
+services:
+  atlas:
+    build:
+      context: ..
+      dockerfile: atlas/Dockerfile
+    image: wayfinder-atlas:demo
+    container_name: atlas-demo
+    ports:
+      # Expose only on localhost — put nginx/caddy/traefik in front for TLS
+      # and public reachability. Change to "8000:8000" if you're terminating
+      # TLS upstream and want the container reachable on all interfaces.
+      - "127.0.0.1:8000:8000"
+    environment:
+      # === Demo gating ===
+      ATLAS_DEMO_MODE: "true"
+
+      # === Auth / public access ===
+      # Unset (or "false") leaves auth bypassed — every request acts as admin.
+      # We rely on demo_mode + rate limits to keep the deployment safe.
+      ATLAS_AUTH_ENABLED: "false"
+
+      # === Rate limits (defense in depth) ===
+      ATLAS_RATE_LIMIT_ENABLED: "true"
+      # Override individual ceilings via env if needed; defaults in
+      # atlas/backend/app/rate_limits.py are already conservative.
+
+      # === CORS ===
+      # Set to your public demo URL (and localhost during smoke testing).
+      ATLAS_CORS_ORIGINS: "${ATLAS_DEMO_PUBLIC_URL:-http://localhost:8000}"
+
+      # === Misc ===
+      # The OPENAI_* and GOOGLE_MAPS_API_KEY vars are deliberately NOT
+      # forwarded here — demo_mode blocks the routes that would call them
+      # anyway, and not setting them removes any chance of an accidental
+      # charge if a route is added without the demo_block dependency.
+
+    # Re-seed /data from /data-seed on every restart, then exec uvicorn.
+    entrypoint: ["/app/atlas-scripts/demo-entrypoint.sh"]
+
+    # Auto-restart the container if it crashes. Combined with the entrypoint's
+    # reseed step, this also gives you a "cron-induced restart = state reset"
+    # primitive — see scripts/demo-reset.sh.
+    restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8000/api/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+# No named volumes — the demo is intentionally stateless. State lives in the
+# container's ephemeral filesystem and gets wiped on every restart.

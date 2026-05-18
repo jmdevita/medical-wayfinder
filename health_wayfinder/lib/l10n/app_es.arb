@@ -1,0 +1,134 @@
+{
+  "@@locale": "es",
+  "appTitle": "Medical Wayfinder",
+  "homeTitle": "¿Adónde necesita\nir?",
+  "homeSubtitle": "Toque y dígame",
+  "homeTextPlaceholder": "O escriba aquí...",
+  "facilityPickerTitle": "Elegir un centro",
+  "facilityPickerSearch": "Buscar hospitales, clínicas...",
+  "facilityPickerNearby": "Cercanos",
+  "facilityPickerRecent": "Recientes",
+  "destinationLabel": "SU DESTINO",
+  "showMeTheWay": "Mostrar el camino",
+  "notRightJustAsk": "¿Incorrecto? Pregúnteme",
+  "orJustTellMeMore": "O dígame más",
+  "findingDestination": "Buscando su destino...",
+  "locatingYou": "Ubicándolo...",
+  "originPickerTitle": "¿Desde dónde está empezando?",
+  "originPickerSubtitle": "Elija el lugar más cercano para guiarlo desde ahí.",
+  "originPickerSkip": "Omitir",
+  "whichOne": "¿CUÁL?",
+  "disambigQuestion": "Hay varias opciones. ¿Cuál necesita?",
+  "disambigFallback": "¿No está seguro? La recepción puede ayudarle.",
+  "stepLabel": "PASO {number}",
+  "@stepLabel": {
+    "placeholders": {
+      "number": { "type": "int" }
+    }
+  },
+  "progressFormat": "{current} de {total}",
+  "@progressFormat": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "lostTapAndTellMe": "¿Perdido? Toque y dígame",
+  "listening": "Escuchando...",
+  "back": "Atrás",
+  "nextStep": "Siguiente",
+  "done": "Listo",
+  "backToSteps": "Volver a los pasos",
+  "youreHere": "¡Ya llegó!",
+  "startNewSearch": "Nueva búsqueda",
+  "startOver": "Empezar de nuevo",
+  "helpTitle": "Vamos a encontrar el camino",
+  "helpInputPlaceholder": "Dígame qué ve...",
+  "guideInputPlaceholder": "Escriba aquí...",
+  "guideSubtitle": "Toque para hablar con su guía",
+  "guideShowWay": "¡Vamos allá! Deslice por cada paso.",
+  "guideShowWayAccessible": "¡Vamos allá! Me aseguraré de usar rutas accesibles. Deslice por cada paso.",
+  "accessible": "Accesible",
+  "wheelchairAccessible": "Accesible para sillas de ruedas",
+  "youveArrived": "Ya llegó",
+  "accessibilityToggle": "Necesito rutas accesibles",
+  "distanceMi": "{distance} mi",
+  "@distanceMi": {
+    "placeholders": {
+      "distance": { "type": "double" }
+    }
+  },
+  "photoCheckingLocation": "Verificando su ubicación desde la foto...",
+  "stepExitParking": "Salga del estacionamiento hacia el campus",
+  "stepBuildingAhead": "{building} está adelante",
+  "@stepBuildingAhead": {
+    "placeholders": {
+      "building": { "type": "String" }
+    }
+  },
+  "stepEnterAccessible": "Entre por la entrada accesible (puertas automáticas)",
+  "stepEnterMain": "Entre por la puerta principal",
+  "stepElevatorTo": "Tome el ascensor al {floor}",
+  "@stepElevatorTo": {
+    "placeholders": {
+      "floor": { "type": "String" }
+    }
+  },
+  "stepGoToFloor": "Vaya al {floor}",
+  "@stepGoToFloor": {
+    "placeholders": {
+      "floor": { "type": "String" }
+    }
+  },
+  "stepCheckInDefault": "Regístrese en la recepción",
+  "destinationFound": "Encontré {name} en {building}, {floor}.",
+  "@destinationFound": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "building": { "type": "String" },
+      "floor": { "type": "String" }
+    }
+  },
+  "destinationFoundNoFloor": "Encontré {name} en {building}.",
+  "@destinationFoundNoFloor": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "building": { "type": "String" }
+    }
+  },
+  "noFacilitiesTitle": "No hay centros disponibles",
+  "noFacilitiesBody": "No pudimos cargar ningún centro. Reinstala la aplicación o contacta con soporte.",
+  "errorTroubleResponding": "Lo siento, tengo problemas para responder en este momento.",
+  "thinking": "Pensando…",
+  "badgeElevator": "Ascensor",
+  "badgeRamp": "Rampa",
+  "badgeAutomaticDoors": "Puertas automáticas",
+  "badgeAccessibleEntrance": "Entrada accesible",
+  "photoAtBuilding": "Según la ubicación de la foto, ¡está justo en {building}! Busque la entrada cercana.",
+  "@photoAtBuilding": {
+    "placeholders": {
+      "building": { "type": "String" }
+    }
+  },
+  "photoNearBuilding": "Según la ubicación de la foto, está a unos {meters} metros de {building}. Está cerca — siga avanzando hacia allí.",
+  "@photoNearBuilding": {
+    "placeholders": {
+      "meters": { "type": "int" },
+      "building": { "type": "String" }
+    }
+  },
+  "photoHeadTowardBuilding": "Según la ubicación de la foto, está a unos {meters} metros de {building}. Diríjase en esa dirección.",
+  "@photoHeadTowardBuilding": {
+    "placeholders": {
+      "meters": { "type": "int" },
+      "building": { "type": "String" }
+    }
+  },
+  "photoNoLocationData": "No pude encontrar datos de ubicación en esa foto. Intente tomar una foto con su cámara — incluirá coordenadas GPS que me ayudarán a encontrar dónde está.",
+  "photoLocationTrouble": "Tengo problemas para determinar su ubicación a partir de esa foto.",
+  "a11yMicStart": "Iniciar entrada de voz",
+  "a11yMicStop": "Detener entrada de voz",
+  "a11yMicLoading": "Cargando, por favor espere",
+  "a11ySendQuery": "Enviar",
+  "a11yChangeFacility": "Cambiar de centro"
+}

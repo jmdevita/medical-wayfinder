@@ -1,0 +1,115 @@
+{
+  "clean_resolution_en": {
+    "batches": 40,
+    "phrase_buckets": ["asking_directions", "giving_directions", "landmarks"],
+    "instructions": "Patient clearly states what they need in English. Assistant resolves to the correct department and gives step-by-step directions that read like a person on the street giving directions, NOT a generic template. Each step must include a concrete visual landmark or signage cue the patient can confirm with their eyes — building name, distinctive feature ('the tall office tower set back from the sidewalk', 'the glass doors with the awning', 'the covered walkway between Buildings 2 and 3'), street name, the lobby directory, the elevator bank, the floor sign, the reception desk. Avoid template phrases like 'Exit parking toward campus', 'Building X is ahead', 'Enter through main doors' as standalone steps — they say nothing useful. Steps should describe what the patient SEES at each stage: 'Walk along Brookline Avenue toward 133 Brookline — the Atrius office tower is set back from the sidewalk with the Atrius signage above the street-level entrance.' Vary department, parking origin, and patient phrasing across examples. Use the facility data for real building names, addresses, and entrance details — never invent."
+  },
+
+  "clean_resolution_es": {
+    "batches": 30,
+    "phrase_buckets": ["asking_directions", "giving_directions", "landmarks"],
+    "instructions": "Spanish version of clean_resolution_en. Patient speaks in Spanish, assistant responds entirely in Spanish with consistent usted register and natural phrasing (not translated English). Include colloquial terms patients actually use ('el doctor de los niños' not 'el departamento de pediatría'). Each step must contain a concrete visual landmark — same standard as the English version. Avoid generic templates like 'Salga del estacionamiento hacia el campus' as standalone steps. Describe what the patient sees: 'Camine por Brookline Avenue hacia el 133 — el edificio de Atrius está retranqueado de la acera con el cartel de Atrius sobre la entrada al nivel de la calle.'"
+  },
+
+  "disambiguation": {
+    "batches": 18,
+    "phrase_buckets": ["asking_directions", "clarification", "confusion"],
+    "instructions": "Patient's query matches multiple departments (e.g., 'imaging', 'doctor'). Assistant lists the options with building/floor info and asks a clarifying question. After the patient clarifies, give full directions."
+  },
+
+  "progressive_refinement": {
+    "batches": 12,
+    "phrase_buckets": ["asking_directions", "clarification"],
+    "instructions": "Patient is vague ('my doctor told me to come here', 'I have an appointment'). Assistant asks 1-2 clarifying questions to narrow down the department. Keep it natural — don't interrogate."
+  },
+
+  "re_orientation": {
+    "batches": 16,
+    "phrase_buckets": ["confusion", "landmarks", "clarification"],
+    "instructions": "Patient is lost somewhere on campus. They describe what they see (signs, building numbers, landmarks). Assistant identifies their location and gives directions FROM where they are, not from parking."
+  },
+
+  "scope_enforcement": {
+    "batches": 6,
+    "phrase_buckets": ["asking_directions"],
+    "instructions": "Patient asks a NARROWLY medical question — symptoms ('my chest hurts'), diagnosis ('do I have the flu?'), treatment ('should I take ibuprofen?'), or what kind of care they need ('am I sick enough for the ER?'). Assistant briefly says it can't answer medical questions and immediately suggests the SPECIFIC most relevant department from the facility's actual list (Cardiology for chest pain, Urgent Care for general illness, etc.). Never lecture, never say 'I'm just an AI', never tell them to ask the front desk. Important: questions about facility logistics (hours, locations, what departments exist, where to go for a service) are NOT medical questions and belong to other categories — do not generate examples that misclassify those as medical."
+  },
+
+  "follow_up": {
+    "batches": 10,
+    "phrase_buckets": ["asking_directions", "giving_directions"],
+    "instructions": "Patient gets directions to one department, then asks about a second one (pharmacy after lab, etc.). Assistant gives new directions, accounting for where the patient will be after the first visit."
+  },
+
+  "edge_cases": {
+    "batches": 8,
+    "phrase_buckets": ["confusion", "asking_directions", "clarification"],
+    "instructions": "Unusual inputs: very short messages ('lab'), contradictory info, 'I don't know what I need', asking about departments not in the facility data. Assistant handles gracefully."
+  },
+
+  "accessibility_focused": {
+    "batches": 14,
+    "phrase_buckets": ["asking_directions", "giving_directions", "landmarks"],
+    "instructions": "Patient explicitly mentions wheelchair, mobility issues, visual impairment, or stroller. Assistant proactively adjusts directions to emphasize accessible paths, elevators, automatic doors, and ground-floor options."
+  },
+
+  "facility_accuracy": {
+    "batches": 10,
+    "phrase_buckets": ["asking_directions"],
+    "instructions": "Patient asks specific factual questions about the facility: hours of operation, which floor a department is on, parking options, which building has what, whether a service is available. Assistant answers accurately using ONLY the facility JSON data. Never guess or hallucinate details not in the data."
+  },
+
+  "step_format": {
+    "batches": 10,
+    "phrase_buckets": ["asking_directions"],
+    "instructions": "Focus on output quality: response MUST be a JSON array with correct block types (destination, steps, arrival, guide_text, disambig). Each step is one standalone action, not a run-on sentence. No filler phrases ('I'd be happy to help', 'please feel free to ask'). Under 150 words for directions. Concise and warm."
+  },
+
+  "directory_question_en": {
+    "batches": 10,
+    "phrase_buckets": ["asking_directions", "clarification"],
+    "instructions": "Patient asks what's available at the facility — 'what departments do you have?', 'what services are here?', 'what can you help with?', 'do you have a pharmacy?'. Assistant answers DIRECTLY from the Available departments list in CONTEXT with a single guide_text block listing the departments naturally (not as a bulleted dump) and ending with a clarifying offer like 'Which one are you looking for?'. This is NOT a medical question — never use the medical-question redirect template. For yes/no service questions ('do you have a pharmacy?'), confirm yes-or-no from CONTEXT and offer to direct them there if applicable."
+  },
+
+  "directory_question_es": {
+    "batches": 10,
+    "phrase_buckets": ["asking_directions", "clarification"],
+    "instructions": "Spanish version of directory_question_en. Patient asks '¿qué departamentos hay aquí?', '¿qué servicios ofrecen?', '¿tienen farmacia?'. Same response shape — list departments from CONTEXT in natural Spanish, ask which one. Use Spanish department names where the data provides them."
+  },
+
+  "service_not_offered_en": {
+    "batches": 10,
+    "phrase_buckets": ["asking_directions", "confusion"],
+    "instructions": "Patient asks for a service the facility doesn't offer — 'I need an x-ray', 'where's radiology?', 'I need an MRI', 'do you have an ER?' — at a facility whose Available departments list does not include that service. Assistant returns a single guide_text that (1) honestly says the service isn't offered at this facility, naming the facility and the service, and (2) gives a concrete next step the patient can take from where they're standing — typically 'call your provider's office for a referral to an imaging center', or for ER queries 'this is an outpatient clinic, not an ER — for emergencies call 911 or go to the nearest hospital'. Never tell the patient to 'go to the front desk', 'check with reception', or 'ask a staff member' — they're using the app because they don't know where those are. Vary phrasing across examples; don't reuse the same template."
+  },
+
+  "service_not_offered_es": {
+    "batches": 10,
+    "phrase_buckets": ["asking_directions", "confusion"],
+    "instructions": "Spanish version of service_not_offered_en. 'Necesito una radiografía', '¿dónde está radiología?', '¿tienen sala de emergencias?'. Same response shape in Spanish — name the facility, name the missing service, give an actionable next step (call provider, call 911 for emergencies, etc.). Never punt to a desk."
+  },
+
+  "facility_info_phone_redirect": {
+    "batches": 8,
+    "phrase_buckets": ["asking_directions", "clarification"],
+    "instructions": "Patient asks a logistics question CONTEXT can't fully answer — 'what other locations have x-ray?', 'are you open Saturday?' (when hours aren't in CONTEXT), 'do you validate parking?', 'how do I get a referral?'. Assistant returns a guide_text that (1) acknowledges what it doesn't have, (2) surfaces the Main phone from CONTEXT as the next step. Format: 'I don't have that information here — [Facility Name]'s main line at [phone] can answer that for you.' This is NOT a medical question and NOT a service-not-offered case. Never use either of those templates."
+  },
+
+  "correction_within_session": {
+    "batches": 14,
+    "phrase_buckets": ["asking_directions", "clarification", "confusion"],
+    "instructions": "Multi-turn conversation. The patient was previously routed to one department (visible as 'Last resolved destination' in CONTEXT) and then says something like 'actually, I meant the lab', 'no wait — I need pharmacy', 'that's not it, I'm here for cardiology', 'never mind, where's optometry?'. Assistant IGNORES the Last resolved destination and resolves the new query freshly from the Available departments list, returning a full destination + steps + arrival for the new department. Do NOT route them back to the previously resolved department. Do NOT use the medical-question redirect. Do NOT ask for confirmation if the new query maps clearly to one department."
+  },
+
+  "er_at_outpatient_facility": {
+    "batches": 6,
+    "phrase_buckets": ["asking_directions", "confusion"],
+    "instructions": "Patient asks for the ER, emergency room, or emergency care at a facility whose Available departments list does NOT include an emergency department. This is a high-stakes safety case. Assistant must (1) clearly state this facility is not an ER, (2) tell the patient: if this is an emergency, call 911 or go to the nearest hospital with an ER, (3) if Urgent Care IS in the Available list, mention that Urgent Care can handle non-emergency issues but is not an ER substitute for true emergencies. Tone: calm, urgent, clear. Do NOT silently re-route them to Urgent Care. Do NOT use the generic medical-question template."
+  },
+
+  "no_front_desk_punt": {
+    "batches": 6,
+    "phrase_buckets": ["asking_directions", "clarification", "confusion"],
+    "instructions": "Negative-example category to break the 'tell them to ask the front desk' habit. Generate scenarios where a less-careful assistant might reach for 'go to the main front desk' as a fallback — patient is unsure ('I don't know what I'm looking for'), patient asks something off-topic, patient asks about a service the facility doesn't have. The CORRECT response NEVER tells the patient to find a desk, sign, or person inside the building. Instead: ask a clarifying question with concrete options, surface the Main phone, or refer them to call their provider. Every response in this category MUST be free of the words 'front desk', 'reception', 'check with staff', 'ask someone', 'find a sign'. Generate diverse scenarios so the model learns the GENERAL principle, not a single template."
+  }
+}

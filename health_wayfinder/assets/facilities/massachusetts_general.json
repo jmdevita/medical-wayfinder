@@ -1,0 +1,431 @@
+{
+  "id": "massachusetts_general",
+  "name": "Massachusetts General Hospital",
+  "address": "55 Fruit Street, Boston, MA 02114",
+  "type": "Hospital",
+  "main_phone": "617-726-2000",
+  "campus_description": "Massachusetts General Hospital's main campus sits between Fruit Street, Cambridge Street, and the Charles River in Boston's West End. Inpatient care is centered in the historic Bulfinch, Ellison, and White buildings; outpatient services are spread across the Lunder, Yawkey, and Wang buildings; and Mass Eye & Ear is the standalone facility on Charles Street. Patient parking is in the Fruit Street, Yawkey, and Charles River Plaza garages, with Mass Eye & Ear served by the Charles Street lot.",
+  "buildings": [
+    {
+      "name": "Austen Building",
+      "lat": 42.36326,
+      "lng": -71.06986
+    },
+    {
+      "name": "Bartlett Building",
+      "lat": 42.36258,
+      "lng": -71.0673
+    },
+    {
+      "name": "Blake Building",
+      "lat": 42.36374,
+      "lng": -71.06908
+    },
+    {
+      "name": "Bulfinch Building",
+      "lat": 42.36353,
+      "lng": -71.06783
+    },
+    {
+      "name": "Cox Building",
+      "lat": 42.364,
+      "lng": -71.06935
+    },
+    {
+      "name": "Edwards Research Building",
+      "lat": 42.36349,
+      "lng": -71.06733
+    },
+    {
+      "name": "Ellison Building",
+      "lat": 42.36329,
+      "lng": -71.06945
+    },
+    {
+      "name": "Grey/Bigelow Building",
+      "lat": 42.36369,
+      "lng": -71.06855
+    },
+    {
+      "name": "Jackson Building",
+      "lat": 42.36374,
+      "lng": -71.06812
+    },
+    {
+      "name": "Lunder Building",
+      "lat": 42.36286,
+      "lng": -71.06939
+    },
+    {
+      "name": "MGH Yawkey Center",
+      "lat": 42.36191,
+      "lng": -71.06958
+    },
+    {
+      "name": "Massachusetts Eye and Ear",
+      "lat": 42.36282,
+      "lng": -71.07012
+    },
+    {
+      "name": "Massachusetts General Hospital",
+      "lat": 42.36271,
+      "lng": -71.06923
+    },
+    {
+      "name": "Russell Museum of Medical History and Innovation",
+      "lat": 42.36133,
+      "lng": -71.06902
+    },
+    {
+      "name": "Shriners Hospitals for Children - Boston",
+      "lat": 42.36305,
+      "lng": -71.06646
+    },
+    {
+      "name": "Thier Building",
+      "lat": 42.36304,
+      "lng": -71.06729
+    },
+    {
+      "name": "Wang Ambulatory Care Center",
+      "lat": 42.36263,
+      "lng": -71.06825
+    },
+    {
+      "name": "Warren Building",
+      "lat": 42.36364,
+      "lng": -71.06956
+    },
+    {
+      "name": "White Building",
+      "lat": 42.36314,
+      "lng": -71.06854
+    }
+  ],
+  "parking": [
+    {
+      "name": "Fruit Street Garage",
+      "nearest_buildings": [
+        "Massachusetts General Hospital",
+        "White Building",
+        "Bulfinch Building",
+        "Ellison Building",
+        "Lunder Building",
+        "MGH Yawkey Center",
+        "Wang Ambulatory Care Center",
+        "Blake Building"
+      ],
+      "entrance_note": "Main patient garage at 55 Fruit Street, just below the central campus. Take the elevator up to the lobby and follow signage to the building you need.",
+      "lat": 42.36202,
+      "lng": -71.06908
+    },
+    {
+      "name": "Yawkey Garage",
+      "nearest_buildings": [
+        "MGH Yawkey Center",
+        "Wang Ambulatory Care Center",
+        "Lunder Building",
+        "Massachusetts General Hospital"
+      ],
+      "entrance_note": "Underground garage directly beneath the Yawkey Center. Take the garage elevator up to the Yawkey lobby; valet parking is also available at the Yawkey entrance off Cambridge Street.",
+      "lat": 42.36161,
+      "lng": -71.06976
+    },
+    {
+      "name": "Charles River Plaza Garage",
+      "nearest_buildings": [
+        "Bartlett Building",
+        "Edwards Research Building",
+        "Thier Building"
+      ],
+      "entrance_note": "Garage entrance at 207 Cambridge Street, next to Flour Bakery — serves the 165/175/185 Cambridge Street outpatient buildings on the east side of campus.",
+      "lat": 42.36165,
+      "lng": -71.06606
+    },
+    {
+      "name": "North Grove Street Garage",
+      "nearest_buildings": [
+        "Wang Ambulatory Care Center",
+        "Bulfinch Building",
+        "White Building"
+      ],
+      "entrance_note": "On North Grove Street between Cambridge and Fruit. Walk south on North Grove to enter the main campus near the Wang/Bulfinch buildings.",
+      "lat": 42.36181,
+      "lng": -71.06823
+    },
+    {
+      "name": "Blossom Parking Garage",
+      "nearest_buildings": [
+        "Cox Building",
+        "Warren Building",
+        "Shriners Hospitals for Children - Boston"
+      ],
+      "entrance_note": "On Blossom Street at the north edge of campus — closest to the Cox, Warren, and Shriners buildings.",
+      "lat": 42.36439,
+      "lng": -71.06663
+    },
+    {
+      "name": "Charles Street Garage",
+      "nearest_buildings": [
+        "Massachusetts Eye and Ear"
+      ],
+      "entrance_note": "On Charles Street near the river — primarily serves the Massachusetts Eye and Ear building at 243 Charles Street.",
+      "lat": 42.36018,
+      "lng": -71.07102
+    }
+  ],
+  "departments": [
+    {
+      "name": "Emergency Department",
+      "building": "Massachusetts General Hospital",
+      "floor": "Ground floor",
+      "hours": "24/7",
+      "aliases": [
+        "emergency",
+        "ER",
+        "emergency room",
+        "urgencias",
+        "emergencia",
+        "urgent care",
+        "sala de emergencia",
+        "ED",
+        "accident and emergency",
+        "trauma center"
+      ],
+      "check_in": "Go directly to the emergency entrance on North Grove Street.",
+      "directions": "Enter via North Grove Street; the main entrance and emergency room are visible at the end of the street.",
+      "accessible": true
+    },
+    {
+      "name": "Computed Tomography (CT)",
+      "building": "Blake Building",
+      "floor": "Second floor",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "CT scan",
+        "computed tomography",
+        "tomografía computarizada",
+        "cat scan",
+        "ct",
+        "scanner",
+        "tomografía axial",
+        "tomo",
+        "scan ct",
+        "axial tomography"
+      ],
+      "check_in": "Check in at the Imaging reception on the second floor.",
+      "directions": "Located on the second floor of the Blake Building.",
+      "accessible": true
+    },
+    {
+      "name": "Magnetic Resonance Imaging (MRI)",
+      "building": "Wang Ambulatory Care Center",
+      "floor": "Second floor",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "MRI",
+        "magnetic resonance imaging",
+        "resonancia magnética",
+        "nuclear magnetic resonance",
+        "nmr",
+        "mri scan",
+        "resonancia",
+        "magnet",
+        "brain mri",
+        "joint mri"
+      ],
+      "check_in": "Check in at the Imaging reception on the second floor.",
+      "directions": "Located on the second floor of the Wang Ambulatory Care Center.",
+      "accessible": true
+    },
+    {
+      "name": "Mammography",
+      "building": "Wang Ambulatory Care Center",
+      "floor": "Second floor, Suite 240",
+      "hours": "Monday to Friday 7:00 am to 5:30 pm, Saturday 7:00 am to 3:30 pm",
+      "aliases": [
+        "mammogram",
+        "breast imaging",
+        "mamografía",
+        "breast x-ray",
+        "breast scan",
+        "screening mammogram",
+        "diagnostic mammogram",
+        "3d mammography",
+        "tomosynthesis",
+        "breast check"
+      ],
+      "check_in": "Check in at the reception area of the Avon Comprehensive Breast Center.",
+      "directions": "Located in Suite 240 on the second floor of the Wang Ambulatory Care Center.",
+      "accessible": true
+    },
+    {
+      "name": "Ultrasound",
+      "building": "White Building",
+      "floor": "Second floor",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "ultrasound",
+        "sonogram",
+        "ecografía",
+        "ultrasonido",
+        "echo",
+        "abdominal ultrasound",
+        "pregnancy scan",
+        "fetal ultrasound",
+        "soft tissue imaging",
+        "doppler"
+      ],
+      "check_in": "Check in at the Imaging reception on the second floor.",
+      "directions": "Located on the second floor of the White Building.",
+      "accessible": true
+    },
+    {
+      "name": "PET-CT Services",
+      "building": "Blake Building",
+      "floor": "Second floor, Suite 260",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "PET scan",
+        "positron emission tomography",
+        "tomografía por emisión de positrones",
+        "pet ct",
+        "pet/ct",
+        "whole body scan",
+        "oncology scan",
+        "metabolic imaging",
+        "cancer scan",
+        "fusion scan"
+      ],
+      "check_in": "Check in at Suite 260 on the second floor.",
+      "directions": "Located in Suite 260 on the second floor of the Blake Building.",
+      "accessible": true
+    },
+    {
+      "name": "Pediatric Imaging",
+      "building": "Ellison Building",
+      "floor": "Second floor, Suite 237",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "children's imaging",
+        "pediatric radiology",
+        "imagen pediátrica",
+        "kids x-ray",
+        "child scan",
+        "baby ultrasound",
+        "infant imaging",
+        "adolescent radiology",
+        "peds imaging",
+        "small patient care"
+      ],
+      "check_in": "Check in at the reception area of the pediatric waiting room.",
+      "directions": "Located on the second floor of the Ellison Building; check in at Suite 237.",
+      "accessible": true
+    },
+    {
+      "name": "Bone Densitometry",
+      "building": "MGH Yawkey Center",
+      "floor": "Third floor",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "bone density scan",
+        "DEXA",
+        "densitometría ósea",
+        "dxa scan",
+        "osteoporosis test",
+        "bone strength test",
+        "calcium scan",
+        "spine scan",
+        "hip scan",
+        "bone mass measurement"
+      ],
+      "check_in": "Check in at the Bone Density Center.",
+      "directions": "Located on the third floor of the MGH Yawkey Center.",
+      "accessible": true
+    },
+    {
+      "name": "X-Ray Services",
+      "building": "Wang Ambulatory Care Center",
+      "floor": "Second floor, Suite 290",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "x-ray",
+        "radiography",
+        "rayos x",
+        "chest x-ray",
+        "broken bone scan",
+        "dental x-ray",
+        "fluoroscopy",
+        "plain film",
+        "xr",
+        "skeletal survey"
+      ],
+      "check_in": "Check in at Suite 290.",
+      "directions": "Located in Suite 290 on the second floor of the Wang Ambulatory Care Center.",
+      "accessible": true
+    },
+    {
+      "name": "Nuclear Medicine",
+      "building": "Blake Building",
+      "floor": "Second floor",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "nuclear medicine",
+        "cardiac stress test",
+        "medicina nuclear",
+        "thyroid scan",
+        "bone scan",
+        "heart scan",
+        "radioisotope imaging",
+        "gamma camera",
+        "sPECT",
+        "functional imaging"
+      ],
+      "check_in": "Check in at the Imaging reception on the second floor.",
+      "directions": "Located on the second floor of the Blake Building.",
+      "accessible": true
+    },
+    {
+      "name": "Lung Screening",
+      "building": "Blake Building",
+      "floor": "Second floor",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "lung cancer screening",
+        "low-dose CT",
+        "cribado de cáncer de pulmón",
+        "chest ct",
+        "smoker scan",
+        "pulmonary screening",
+        "lung check",
+        "thoracic imaging",
+        "early detection lung",
+        "ldct"
+      ],
+      "check_in": "Check in at the Imaging reception on the second floor.",
+      "directions": "Located on the second floor of the Blake Building.",
+      "accessible": true
+    },
+    {
+      "name": "Interventional Radiology",
+      "building": "MGH Yawkey Center",
+      "floor": "Third floor, Suite 6E",
+      "hours": "Monday to Friday, 7:30 am to 6:00 pm",
+      "aliases": [
+        "interventional radiology",
+        "IR",
+        "radiología intervencionista",
+        "minimally invasive surgery",
+        "image guided therapy",
+        "angiography",
+        "embolization",
+        "stent placement",
+        "biopsy under imaging",
+        "catheter procedures"
+      ],
+      "check_in": "Check in at Suite 6E.",
+      "directions": "Located in Suite 6E on the third floor of the MGH Yawkey Center.",
+      "accessible": true
+    }
+  ]
+}

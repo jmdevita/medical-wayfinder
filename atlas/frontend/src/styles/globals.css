@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper:    #F4EFE5;
+  --color-paper-2:  #EDE6D2;
+  --color-paper-3:  #E5DCC4;
+  --color-ink:      #1C1917;
+  --color-ink-2:    #3A352E;
+  --color-slate:    #6B6862;
+  --color-slate-2:  #928D82;
+  --color-slate-3:  #B8B2A4;
+  --color-hairline: #D9D2C2;
+  --color-saffron:  #B8530A;
+  --color-saff-2:   #D87125;
+  --color-moss:     #516B53;
+  --color-plum:     #5B3A4E;
+  --color-sky:      #1E3A5F;
+  --color-rust:     #9A3412;
+  --color-ochre:    #A98024;
+
+  --font-display: "Fraunces", ui-serif, serif;
+  --font-sans:    "Geist", system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, monospace;
+
+  --tracking-wide-2: 0.12em;
+  --tracking-wide-3: 0.18em;
+  --tracking-wide-4: 0.24em;
+}
+
+html, body, #root { height: 100%; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display utilities the mockup used */
+.ff-display { font-family: var(--font-display); font-feature-settings: "ss01"; }
+.ff-mono    { font-family: var(--font-mono); }
+.small-caps { font-variant: small-caps; letter-spacing: 0.1em; }
+.num-display {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01", "lnum";
+  font-variation-settings: "opsz" 144;
+}
+
+/* Hairline rule */
+.rule-h {
+  background: linear-gradient(to right, transparent 0, var(--color-hairline) 12%, var(--color-hairline) 88%, transparent 100%);
+  height: 1px;
+}
+
+/* Cards: crisp paper border + lift on hover */
+.crisp-shadow         { box-shadow: 0 1px 0 rgba(28,25,23,0.04), 0 0 0 1px var(--color-paper-3); }
+.crisp-shadow-strong  { box-shadow: 0 1px 0 rgba(28,25,23,0.08), 0 0 0 1px var(--color-hairline); }
+.lift                 { transition: box-shadow 180ms ease, transform 180ms ease; }
+.lift:hover           { box-shadow: 0 6px 18px -8px rgba(28,25,23,0.18), 0 0 0 1px var(--color-saffron); transform: translateY(-1px); }
+
+/* Faint dotted plate for empty surfaces */
+.plate-dots {
+  background-image: radial-gradient(var(--color-hairline) 0.8px, transparent 0.8px);
+  background-size: 14px 14px;
+  background-position: 0 0;
+}
+
+/* Grain overlay */
+.grain { position: relative; }
+.grain::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3CfeColorMatrix values='0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0.045 0' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Animations */
+@keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.9); } }
+.pulse-dot { animation: pulseDot 2.6s ease-in-out infinite; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.rise { animation: rise 480ms cubic-bezier(.2,.7,.1,1) both; }
+
+/* Scrollbars */
+::-webkit-scrollbar       { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--color-hairline); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-slate-3); }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Focus */
+*:focus { outline: none; }
+*:focus-visible {
+  outline: 1.5px solid var(--color-saffron);
+  outline-offset: 2px;
+}
+
+/* Leaflet overrides — match the atlas palette */
+.leaflet-container {
+  background: var(--color-paper-2) !important;
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+.leaflet-control-zoom a {
+  background: var(--color-paper) !important;
+  color: var(--color-ink) !important;
+  border: 1px solid var(--color-hairline) !important;
+  font-weight: 400 !important;
+}
+.leaflet-control-attribution {
+  background: rgba(244,239,229,0.85) !important;
+  color: var(--color-slate) !important;
+  font-size: 9px !important;
+  letter-spacing: 0.05em;
+}
+.leaflet-tooltip.atlas-tt {
+  background: rgba(244,239,229,0.95);
+  border: 1px solid var(--color-hairline);
+  color: var(--color-ink);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  box-shadow: none;
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
+.leaflet-tooltip.atlas-tt::before { display: none; }
+
+/* Editor tool cursor — avoids Tailwind arbitrary variants that conflicted
+   with Leaflet's own styles when toggled. */
+[data-tool="addNode"] .leaflet-container,
+[data-tool="addEdge"] .leaflet-container {
+  cursor: crosshair !important;
+}
+
+/* Phone preview screen */
+.phone-screen {
+  background: #FAF7F0;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(184, 83, 10, 0.04), transparent 40%),
+    radial-gradient(circle at 80% 100%, rgba(81, 107, 83, 0.05), transparent 50%);
+}
+
+/* Command palette (cmdk) — global classes the CommandPalette component sets
+   on its primitives. Tailwind utilities don't reach inside cmdk's render,
+   so we style by class here. */
+.atlas-cmdk-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+}
+.atlas-cmdk-content {
+  position: fixed;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, 92vw);
+  background: var(--color-paper);
+  border: 1px solid var(--color-hairline);
+  border-radius: 6px;
+  box-shadow: 0 20px 50px -12px rgba(28, 25, 23, 0.35), 0 0 0 1px var(--color-hairline);
+  z-index: 1001;
+  overflow: hidden;
+}
+.atlas-cmdk-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-hairline);
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-ink);
+}
+.atlas-cmdk-input::placeholder { color: var(--color-slate-2); }
+.atlas-cmdk-list {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 6px 6px 0;
+}
+.atlas-cmdk-empty {
+  padding: 28px 16px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-slate-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.atlas-cmdk-group [cmdk-group-heading] {
+  padding: 10px 10px 4px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-slate-2);
+}
+.atlas-cmdk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: var(--color-ink-2);
+  cursor: pointer;
+  user-select: none;
+}
+.atlas-cmdk-item[data-selected="true"] {
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+}
+.atlas-cmdk-item[data-disabled="true"] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.atlas-cmdk-foot {
+  display: flex;
+  gap: 14px;
+  padding: 8px 14px;
+  border-top: 1px solid var(--color-hairline);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-slate-2);
+  background: var(--color-paper-2);
+}
+.atlas-cmdk-foot kbd {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 1px 5px;
+  border: 1px solid var(--color-hairline);
+  border-radius: 3px;
+  background: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--color-ink-2);
+}

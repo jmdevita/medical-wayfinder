@@ -1,0 +1,555 @@
+{
+  "version": "2026-05-16-manual-from-tufts-pdfs",
+  "facility_id": "tufts_medical_center",
+  "nodes": [
+    {
+      "id": "transit_orange_line",
+      "type": "transit",
+      "label": "Tufts Medical Center MBTA station (Orange Line)",
+      "description": "MBTA Orange Line headhouse on the west side of Washington Street, directly across from the hospital main entrance at 800 Washington Street. Fully elevator-accessible. The station serves Downtown Crossing, Back Bay, Forest Hills, and Oak Grove.",
+      "keywords": [
+        "orange line",
+        "T",
+        "subway",
+        "MBTA",
+        "tufts medical center station",
+        "tumnl",
+        "metro",
+        "tren",
+        "estación",
+        "地鐵",
+        "地铁"
+      ],
+      "lat": 42.34952,
+      "lng": -71.06366
+    },
+    {
+      "id": "transit_silver_line",
+      "type": "transit",
+      "label": "Silver Line — Washington St @ Tufts Med Ctr",
+      "description": "MBTA Silver Line SL4 and SL5 stop on Washington Street directly in front of the hospital. SL4 runs to South Station via Essex Street; SL5 runs to Downtown Crossing.",
+      "keywords": [
+        "silver line",
+        "SL4",
+        "SL5",
+        "bus stop",
+        "washington street stop",
+        "autobús",
+        "parada",
+        "巴士站"
+      ],
+      "lat": 42.34948,
+      "lng": -71.06302
+    },
+    {
+      "id": "parking_tremont_garage",
+      "type": "parking",
+      "label": "Tremont Street Garage",
+      "description": "Primary patient garage at 274 Tremont Street, next to the Wang Theatre. 24/7 access with discounted patient/visitor rates when validated inside the hospital. Garage stairs exit at the 3rd floor corridor. Garage elevators reach the Ground level, which connects via corridor to the Floating Building Plaza level for an accessible route.",
+      "keywords": [
+        "tremont garage",
+        "tremont street garage",
+        "parking",
+        "garage",
+        "274 tremont",
+        "estacionamiento",
+        "停車場",
+        "停车场"
+      ],
+      "lat": 42.35070,
+      "lng": -71.06480
+    },
+    {
+      "id": "parking_valet",
+      "type": "parking",
+      "label": "Patient Valet — Washington Street",
+      "description": "Patient valet curb on Washington Street between the North and South buildings, weekdays 5:45 am–6:00 pm. Phone 617-636-8970. After 6 pm valeted cars are relocated to the Tremont Street Garage.",
+      "keywords": [
+        "valet",
+        "valet parking",
+        "drop off",
+        "drop-off",
+        "patient drop off",
+        "estacionamiento con valet",
+        "代客泊車"
+      ],
+      "lat": 42.34920,
+      "lng": -71.06280
+    },
+    {
+      "id": "entrance_main_800_washington",
+      "type": "entrance",
+      "label": "Main Entrance — 800 Washington St (Atrium)",
+      "description": "Main patient entrance at 800 Washington Street. Opens directly onto a public sidewalk across from the MBTA Orange Line headhouse, recognizable by the large cream concrete overhang with X-braced ceiling pattern. Glass doors lead into the Atrium 1st floor, with Au Bon Pain on the left and the Information Ambassador desk straight ahead. Accessible automatic doors.",
+      "keywords": [
+        "main entrance",
+        "800 washington",
+        "atrium",
+        "atrium entrance",
+        "front door",
+        "lobby",
+        "entrada principal",
+        "正門",
+        "主樓入口"
+      ],
+      "lat": 42.34952,
+      "lng": -71.06330
+    },
+    {
+      "id": "entrance_emergency_830_washington",
+      "type": "entrance",
+      "label": "Emergency Department Entrance — 830 Washington St (North Building)",
+      "description": "Emergency Department entrance at 830 Washington Street on the North Building's 1st floor, between the main entrance and the South Building. Marked with red ED signage on the Washington Street facade. Ambulance bay is on the same frontage. 24/7.",
+      "keywords": [
+        "emergency entrance",
+        "ER entrance",
+        "830 washington",
+        "ED entrance",
+        "trauma entrance",
+        "entrada de emergencia",
+        "ambulance",
+        "急診入口"
+      ],
+      "lat": 42.34900,
+      "lng": -71.06315
+    },
+    {
+      "id": "entrance_south_860_washington",
+      "type": "entrance",
+      "label": "South Building Entrance — 860 Washington St",
+      "description": "South Building's own street entrance at 860 Washington Street. Use this for a more direct route to the South Building when not routing through the Atrium.",
+      "keywords": [
+        "south building entrance",
+        "860 washington",
+        "south entrance",
+        "南樓入口"
+      ],
+      "lat": 42.34800,
+      "lng": -71.06280
+    },
+    {
+      "id": "entrance_south_ash_street",
+      "type": "entrance",
+      "label": "South Building Entrance — Ash Street",
+      "description": "South Building's alternate entrance on Ash Street, opposite the 860 Washington Street side. Just down from Patient Valet Parking. Useful when arriving from the east side of campus or being dropped off by valet.",
+      "keywords": [
+        "ash street",
+        "ash street entrance",
+        "south ash",
+        "south building ash"
+      ],
+      "lat": 42.34800,
+      "lng": -71.06200
+    },
+    {
+      "id": "entrance_biewend_260_tremont",
+      "type": "entrance",
+      "label": "Biewend Building Entrance — 260 Tremont St",
+      "description": "Biewend Building outpatient entrance at 260 Tremont Street, on the Tremont Street side of campus. Two blocks from the main hospital. Houses Primary Care, Radiology, Rehab Medicine, Neurology, Orthopedics, Dermatology, Endocrinology, GI, Infectious Disease, and Ophthalmology. Connected to the rest of the hospital via the 3rd floor corridor.",
+      "keywords": [
+        "biewend",
+        "biewend entrance",
+        "260 tremont",
+        "outpatient entrance",
+        "拜雲樓"
+      ],
+      "lat": 42.35030,
+      "lng": -71.06500
+    },
+    {
+      "id": "entrance_rehab_185_harrison",
+      "type": "entrance",
+      "label": "Rehabilitation Building Entrance — 185 Harrison Ave",
+      "description": "Standalone Rehabilitation Building entrance at 185 Harrison Avenue. Street-level Physical Therapy.",
+      "keywords": [
+        "rehabilitation",
+        "rehab entrance",
+        "185 harrison",
+        "physical therapy entrance",
+        "復健大樓"
+      ],
+      "lat": 42.34870,
+      "lng": -71.06100
+    },
+    {
+      "id": "atrium_1f",
+      "type": "internal",
+      "label": "Atrium 1st floor",
+      "description": "The Atrium 1st floor is the central hub immediately inside the 800 Washington Street main entrance. Au Bon Pain is on the left; the Information Ambassador desk is straight ahead. Three vertical paths leave this floor: (1) the Atrium elevators (used to reach North/South building floors); (2) the double staircase on the left up to Proger 1 (or the accessible elevator between Au Bon Pain and the staircase); (3) the route to the 3rd floor corridor for cross-campus travel.",
+      "keywords": [
+        "atrium",
+        "atrium 1",
+        "atrium first floor",
+        "au bon pain",
+        "information desk",
+        "info desk",
+        "lobby"
+      ],
+      "lat": 42.34955,
+      "lng": -71.06290
+    },
+    {
+      "id": "atrium_elevators",
+      "type": "internal",
+      "label": "Atrium elevators",
+      "description": "Atrium elevators, accessed from Atrium 1st floor by walking past Au Bon Pain and taking a right in front of the Information desk. These elevators serve every floor of the North and South buildings.",
+      "keywords": [
+        "atrium elevators",
+        "atrium lift",
+        "main elevators",
+        "elevadores del atrio"
+      ],
+      "lat": 42.34950,
+      "lng": -71.06288
+    },
+    {
+      "id": "proger_1f",
+      "type": "internal",
+      "label": "Proger 1st floor (top of Atrium staircase)",
+      "description": "Proger 1st floor, reached from Atrium 1F by climbing the double staircase on the left, or by taking the accessible elevator between Au Bon Pain and the staircase. The yellow Proger elevators are on this floor and serve every Proger floor. Dunkin' Donuts is on Proger 1.",
+      "keywords": [
+        "proger 1",
+        "proger first floor",
+        "proger lobby",
+        "yellow elevators landing",
+        "dunkin donuts",
+        "double staircase"
+      ],
+      "lat": 42.34978,
+      "lng": -71.06310
+    },
+    {
+      "id": "proger_yellow_elevators",
+      "type": "internal",
+      "label": "Proger yellow elevators",
+      "description": "The yellow elevators on Proger 1st floor. These are the canonical elevators for reaching Proger floors 2 through 7. Tufts staff routes patients here by color.",
+      "keywords": [
+        "yellow elevators",
+        "proger elevators",
+        "yellow lift",
+        "elevadores amarillos"
+      ],
+      "lat": 42.34980,
+      "lng": -71.06310
+    },
+    {
+      "id": "third_floor_corridor",
+      "type": "internal",
+      "label": "3rd floor corridor",
+      "description": "The 3rd floor corridor is the campus spine. Every patient building — Atrium, Proger, Pratt/Farnsworth/Ziskind, Floating, North, South, Biewend — connects through it at the 3rd-floor level. Routes from one building to another almost always pass through here.",
+      "keywords": [
+        "third floor corridor",
+        "3rd floor corridor",
+        "skybridge",
+        "third floor",
+        "campus spine",
+        "corredor del tercer piso"
+      ],
+      "lat": 42.34960,
+      "lng": -71.06300
+    },
+    {
+      "id": "floating_plaza",
+      "type": "internal",
+      "label": "Floating Building Plaza level",
+      "description": "Plaza level of the Floating Building at 755 Washington Street. Reached from the Tremont Street Garage by taking the garage elevator to the Ground level and following the corridor left. The Floating elevators are on this level — go up two floors to reach the 3rd floor corridor for the rest of the campus. This is the canonical wheelchair-accessible route from parking.",
+      "keywords": [
+        "floating plaza",
+        "plaza level",
+        "floating building plaza",
+        "accessible plaza",
+        "wheelchair route",
+        "ruta accesible"
+      ],
+      "lat": 42.34965,
+      "lng": -71.06340
+    },
+    {
+      "id": "floating_elevators",
+      "type": "internal",
+      "label": "Floating Building elevators",
+      "description": "Elevators inside the Floating Building serving every floor. Go up two floors from Plaza level to reach the 3rd floor corridor.",
+      "keywords": [
+        "floating elevators",
+        "floating lift",
+        "elevadores del floating"
+      ],
+      "lat": 42.34966,
+      "lng": -71.06342
+    },
+    {
+      "id": "landmark_fao_bear",
+      "type": "landmark",
+      "label": "FAO Schwarz Bronze Teddy Bear",
+      "description": "A 12-foot bronze teddy bear sculpture on the Washington Street sidewalk in front of the Floating Building (755 Washington St), right beside the American flag pole. The Floating Building's curved glass entrance is immediately behind the bear. Sculpted by Robert Shure in 1991, the bear sits with one paw raised in a wave and clutches alphabet blocks spelling FAO. It is the single most recognizable outdoor landmark on the campus — patients commonly orient by it ('I'm at the bear', 'meet me by the big bear').",
+      "keywords": [
+        "bear",
+        "big bear",
+        "teddy bear",
+        "fao bear",
+        "fao schwarz bear",
+        "bronze bear",
+        "oso",
+        "oso grande",
+        "大熊",
+        "大熊雕像"
+      ],
+      "lat": 42.34980,
+      "lng": -71.06322
+    },
+    {
+      "id": "landmark_wang_theatre",
+      "type": "landmark",
+      "label": "Wang Theatre",
+      "description": "The Boch Center Wang Theatre at 270 Tremont Street, on the east side of Tremont. A 14-story Renaissance Revival facade with fluted Ionic columns and Corinthian pilasters — the obvious 'you're at the right spot' anchor for anyone heading to Biewend, which sits directly across Tremont Street from the theatre.",
+      "keywords": [
+        "wang theatre",
+        "wang theater",
+        "boch center",
+        "citi performing arts center",
+        "theatre district"
+      ],
+      "lat": 42.35025,
+      "lng": -71.06535
+    },
+    {
+      "id": "landmark_chinatown_gate",
+      "type": "landmark",
+      "label": "Chinatown Gate (China Trade Gate)",
+      "description": "The Chinatown paifang at Beach Street and the Rose Kennedy Greenway, two blocks northeast of the hospital. Jade-green tiled roof, white frame, two stone foo dogs. The defining neighborhood landmark; patients arriving from Chinatown often pass it on the way to the main entrance.",
+      "keywords": [
+        "chinatown gate",
+        "china trade gate",
+        "paifang",
+        "chinatown",
+        "唐人街",
+        "牌坊"
+      ],
+      "lat": 42.35130,
+      "lng": -71.06070
+    },
+    {
+      "id": "pratt_elevators",
+      "type": "internal",
+      "label": "Pratt Building elevators",
+      "description": "Elevator bank in the middle of the Pratt Building hallway, reached from the 3rd floor corridor. NOTE: floor numbers in Pratt-Ziskind-Farnsworth shift up by one compared to Proger — Pratt 4 is at the same height as Proger 3.",
+      "keywords": [
+        "pratt elevators",
+        "pratt lift",
+        "pratt elevator bank"
+      ],
+      "lat": 42.34935,
+      "lng": -71.06200
+    }
+  ],
+  "edges": [
+    {
+      "from": "transit_orange_line",
+      "to": "entrance_main_800_washington",
+      "distance_meters": 30,
+      "walk_minutes": 1.0,
+      "instruction": "Exit the Orange Line headhouse and cross Washington Street at the crosswalk — the hospital main entrance is directly across from the station.",
+      "blocked": false
+    },
+    {
+      "from": "transit_silver_line",
+      "to": "entrance_main_800_washington",
+      "distance_meters": 15,
+      "walk_minutes": 0.5,
+      "instruction": "Step off the Silver Line at the Washington Street stop — the main entrance is on the same side of the street, a few yards along the sidewalk.",
+      "blocked": false
+    },
+    {
+      "from": "parking_tremont_garage",
+      "to": "third_floor_corridor",
+      "distance_meters": 80,
+      "walk_minutes": 2.0,
+      "instruction": "From the Tremont Street Garage, take the stairs and exit at the 3rd floor. Take a right toward the Atrium — you are now on the 3rd floor corridor.",
+      "blocked": false
+    },
+    {
+      "from": "parking_tremont_garage",
+      "to": "floating_plaza",
+      "distance_meters": 90,
+      "walk_minutes": 2.0,
+      "instruction": "For an accessible route from the Tremont Street Garage, take the garage elevator to the Ground level. Enter the building and follow the corridor left to the Floating Building elevators — you are now on the Plaza level of the Floating Building.",
+      "blocked": false
+    },
+    {
+      "from": "floating_plaza",
+      "to": "floating_elevators",
+      "distance_meters": 10,
+      "walk_minutes": 0.2,
+      "instruction": "From the Plaza level corridor, walk to the Floating Building elevator bank.",
+      "blocked": false
+    },
+    {
+      "from": "floating_elevators",
+      "to": "third_floor_corridor",
+      "distance_meters": 10,
+      "walk_minutes": 0.5,
+      "instruction": "Take the Floating Building elevators up two floors to the 3rd floor, exit the elevator bank, and go left toward the Atrium — you are now on the 3rd floor corridor.",
+      "blocked": false
+    },
+    {
+      "from": "parking_valet",
+      "to": "entrance_main_800_washington",
+      "distance_meters": 40,
+      "walk_minutes": 1.0,
+      "instruction": "From Patient Valet on Washington Street, walk north along the curb to the 800 Washington Street main entrance.",
+      "blocked": false
+    },
+    {
+      "from": "parking_valet",
+      "to": "entrance_south_ash_street",
+      "distance_meters": 50,
+      "walk_minutes": 1.0,
+      "instruction": "From Patient Valet on Washington Street, walk around the corner onto Ash Street — the South Building Ash Street entrance is just down from valet.",
+      "blocked": false
+    },
+    {
+      "from": "entrance_main_800_washington",
+      "to": "atrium_1f",
+      "distance_meters": 5,
+      "walk_minutes": 0.2,
+      "instruction": "Step through the automatic doors into the Atrium's 1st floor — Au Bon Pain is on your left and the Information desk is straight ahead.",
+      "blocked": false
+    },
+    {
+      "from": "atrium_1f",
+      "to": "atrium_elevators",
+      "distance_meters": 15,
+      "walk_minutes": 0.3,
+      "instruction": "Walk past Au Bon Pain on your left and take a right in front of the Information desk to the Atrium elevators.",
+      "blocked": false
+    },
+    {
+      "from": "atrium_elevators",
+      "to": "entrance_south_860_washington",
+      "distance_meters": 60,
+      "walk_minutes": 1.0,
+      "instruction": "Take the Atrium elevators to your floor and turn right into the North or South Building.",
+      "blocked": false
+    },
+    {
+      "from": "atrium_1f",
+      "to": "proger_1f",
+      "distance_meters": 10,
+      "walk_minutes": 0.5,
+      "instruction": "From Atrium 1, walk straight past Au Bon Pain. On the left you'll see a double staircase — take it up one floor to Proger 1.",
+      "blocked": false
+    },
+    {
+      "from": "atrium_1f",
+      "to": "proger_1f",
+      "distance_meters": 12,
+      "walk_minutes": 0.5,
+      "instruction": "For an accessible route to Proger 1, take the accessible elevator between Au Bon Pain and the double staircase up to Proger 1.",
+      "blocked": false
+    },
+    {
+      "from": "proger_1f",
+      "to": "proger_yellow_elevators",
+      "distance_meters": 5,
+      "walk_minutes": 0.2,
+      "instruction": "On Proger 1, walk to the yellow Proger elevators just past Dunkin' Donuts.",
+      "blocked": false
+    },
+    {
+      "from": "atrium_1f",
+      "to": "third_floor_corridor",
+      "distance_meters": 20,
+      "walk_minutes": 0.5,
+      "instruction": "From Atrium 1, take the Atrium elevators up to the 3rd floor and step onto the 3rd floor corridor.",
+      "blocked": false
+    },
+    {
+      "from": "third_floor_corridor",
+      "to": "pratt_elevators",
+      "distance_meters": 60,
+      "walk_minutes": 1.5,
+      "instruction": "Follow the 3rd floor corridor toward the Atrium. As you approach the Atrium, stay left to Proger. Your first right will take you to the Pratt Building. Note: in Pratt-Ziskind-Farnsworth, floor numbers shift up one (Proger 3 = Pratt 4).",
+      "blocked": false
+    },
+    {
+      "from": "third_floor_corridor",
+      "to": "entrance_biewend_260_tremont",
+      "distance_meters": 120,
+      "walk_minutes": 3.0,
+      "instruction": "Follow the 3rd floor corridor west toward Tremont Street — it connects to the Biewend Building at 260 Tremont. Take any Biewend elevator to the floor you need.",
+      "blocked": false
+    },
+    {
+      "from": "third_floor_corridor",
+      "to": "floating_elevators",
+      "distance_meters": 40,
+      "walk_minutes": 1.0,
+      "instruction": "From the 3rd floor corridor, follow signs to the Floating Building elevators.",
+      "blocked": false
+    },
+    {
+      "from": "landmark_fao_bear",
+      "to": "entrance_main_800_washington",
+      "distance_meters": 40,
+      "walk_minutes": 1.0,
+      "instruction": "From the big bronze bear on Washington Street, walk south along the sidewalk — the main entrance at 800 Washington Street is the next set of glass doors.",
+      "blocked": false
+    },
+    {
+      "from": "landmark_fao_bear",
+      "to": "floating_plaza",
+      "distance_meters": 15,
+      "walk_minutes": 0.3,
+      "instruction": "The big bronze bear is right outside the Floating Building entrance — step through the doors and you're on the Plaza level.",
+      "blocked": false
+    },
+    {
+      "from": "transit_orange_line",
+      "to": "landmark_fao_bear",
+      "distance_meters": 50,
+      "walk_minutes": 1.0,
+      "instruction": "Exit the Orange Line headhouse, cross Washington Street, and walk a short distance north along the hospital-side sidewalk — the big bronze teddy bear is beside the American flag pole, in front of the Floating Building.",
+      "blocked": false
+    },
+    {
+      "from": "landmark_wang_theatre",
+      "to": "entrance_biewend_260_tremont",
+      "distance_meters": 20,
+      "walk_minutes": 0.5,
+      "instruction": "The Biewend Building is directly across Tremont Street from the Wang Theatre — cross at the corner and look for the 260 Tremont Street entrance.",
+      "blocked": false
+    },
+    {
+      "from": "landmark_chinatown_gate",
+      "to": "entrance_main_800_washington",
+      "distance_meters": 240,
+      "walk_minutes": 4.0,
+      "instruction": "From the Chinatown Gate at Beach Street, walk south along Washington Street for about two blocks — the hospital main entrance is on your left.",
+      "blocked": false
+    },
+    {
+      "from": "transit_orange_line",
+      "to": "entrance_emergency_830_washington",
+      "distance_meters": 90,
+      "walk_minutes": 2.0,
+      "instruction": "Exit the Orange Line headhouse, cross Washington Street, and walk south along the curb — the Emergency Department entrance is at 830 Washington Street, marked with red signage.",
+      "blocked": false
+    },
+    {
+      "from": "entrance_south_860_washington",
+      "to": "atrium_elevators",
+      "distance_meters": 30,
+      "walk_minutes": 1.0,
+      "instruction": "From the 860 Washington Street entrance to the South Building, follow signs inside to the South elevators (which connect to the Atrium elevator bank on shared floors).",
+      "blocked": false
+    },
+    {
+      "from": "entrance_main_800_washington",
+      "to": "entrance_emergency_830_washington",
+      "distance_meters": 60,
+      "walk_minutes": 1.5,
+      "instruction": "If you came in the main entrance by mistake but need the Emergency Department, exit and walk south along Washington Street — the ED entrance is on the same block at 830 Washington Street.",
+      "blocked": false
+    }
+  ]
+}

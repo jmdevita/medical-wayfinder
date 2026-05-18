@@ -1,0 +1,234 @@
+{
+  "id": "atrius_boston_kenmore",
+  "name": "Atrius Health",
+  "address": "133 Brookline Avenue, Boston, MA 02215",
+  "type": "Hospital",
+  "main_phone": "617-421-1000",
+  "campus_description": "Atrius Health Boston Kenmore is a single multi-story office building at 133 Brookline Avenue, in the Audubon Circle / Fenway area near Kenmore Square and Fenway Park. Patient parking is in the building's own garage (validated $10) with kiosks on floors 2 and 3; on-street and Kenmore Square garages are also nearby.",
+  "buildings": [
+    {
+      "name": "Atrius Health",
+      "lat": 42.3456,
+      "lng": -71.10135
+    }
+  ],
+  "parking": [
+    {
+      "name": "Kenmore Lot",
+      "nearest_buildings": ["Atrius Health"],
+      "entrance_note": "Closest parking to the Atrius Health entrance — about a 2-minute walk south along Brookline Avenue.",
+      "lat": 42.34698,
+      "lng": -71.10035
+    },
+    {
+      "name": "VIP Parking",
+      "nearest_buildings": ["Atrius Health"],
+      "entrance_note": "Small lot just south of the Atrius Health entrance — about a 1-2 minute walk north back to 133 Brookline Avenue.",
+      "lat": 42.34545,
+      "lng": -71.09932
+    }
+  ],
+  "departments": [
+    {
+      "name": "Urgent Care",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Weekdays, weekends, and most holidays",
+      "aliases": [
+        "urgent care",
+        "walk-in clinic",
+        "urgencias",
+        "urgent clinic",
+        "immediate care",
+        "walk in",
+        "emergencia menor",
+        "clínica de urgencias",
+        "quick care"
+      ],
+      "check_in": "Check in at the Urgent Care reception on arrival.",
+      "directions": "Walk along Brookline Avenue and look for the Atrius Health office tower at 133 Brookline — it's set back from the sidewalk with the Atrius signage above the street-level entrance. Go in through the glass main doors into the lobby and check the directory by the elevator bank for the Urgent Care floor. Take the elevator up and follow the signs to Urgent Care reception.",
+      "accessible": true
+    },
+    {
+      "name": "Primary Care",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "primary care",
+        "family medicine",
+        "internal medicine",
+        "pediatrics",
+        "medicina familiar",
+        "general practice",
+        "family doctor",
+        "doctor",
+        "medicina general",
+        "pediatría"
+      ],
+      "check_in": "Check in at the Primary Care reception on arrival.",
+      "directions": "Walk along Brookline Avenue toward 133 Brookline — the Atrius Health tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors and check the lobby directory for your Primary Care provider's floor. Take the elevator up, then follow the floor signs to your provider's suite reception.",
+      "accessible": true
+    },
+    {
+      "name": "Physical Therapy",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "physical therapy",
+        "PT",
+        "fisioterapia",
+        "rehabilitation",
+        "rehab",
+        "physiotherapy",
+        "rehab center",
+        "terapia física",
+        "rehabilitación"
+      ],
+      "check_in": "Check in at the Physical Therapy reception desk.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health building is the tall office tower set back from the sidewalk. Go in through the glass main entrance and check the lobby directory for the Physical Therapy floor. Take the elevator up, then follow the signs to the PT reception desk.",
+      "accessible": true
+    },
+    {
+      "name": "Pharmacy",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "pharmacy",
+        "farmacia",
+        "drug store",
+        "meds",
+        "prescriptions",
+        "fill prescriptions",
+        "medicamentos",
+        "recetas",
+        "dispensary"
+      ],
+      "check_in": "Drop off prescriptions at the pharmacy counter.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health office tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors into the lobby. The pharmacy is on the ground floor — the counter is to your right, just past the lobby.",
+      "accessible": true
+    },
+    {
+      "name": "Cardiology",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "cardiology",
+        "heart care",
+        "cardiologia",
+        "heart doctor",
+        "heart clinic",
+        "cardiac care",
+        "corazón",
+        "cardiología",
+        "heart specialist"
+      ],
+      "check_in": "Check in at the Cardiology reception on arrival.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors and check the lobby directory for the Cardiology floor. Take the elevator up, then follow the signs to the Cardiology reception desk.",
+      "accessible": true
+    },
+    {
+      "name": "Ear, Nose & Throat",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "ENT",
+        "ear nose and throat",
+        "otorrinolaringologia",
+        "ear doctor",
+        "nose doctor",
+        "throat specialist",
+        "sinus care",
+        "otorrino",
+        "ear nose throat"
+      ],
+      "check_in": "Check in at the ENT reception on arrival.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors and check the lobby directory for the Ear, Nose & Throat floor. Take the elevator up, then follow the signs to the ENT reception desk.",
+      "accessible": true
+    },
+    {
+      "name": "Fertility and Reproductive Health",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "fertility",
+        "reproductive health",
+        "salud reproductiva",
+        "ivf",
+        "pregnancy planning",
+        "baby making",
+        "infertility",
+        "fertilidad",
+        "reproductive clinic"
+      ],
+      "check_in": "Check in at the Fertility & Reproductive Health reception.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors and check the lobby directory for the Fertility & Reproductive Health floor. Take the elevator up, then follow the signs to the Fertility reception desk.",
+      "accessible": true
+    },
+    {
+      "name": "Laboratory",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "laboratory",
+        "lab",
+        "laboratorio",
+        "blood draw",
+        "blood test",
+        "labs",
+        "phlebotomy",
+        "pruebas de sangre",
+        "draw blood"
+      ],
+      "check_in": "Present your lab order at the phlebotomy window.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health office tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors into the lobby. The lab and phlebotomy are on the ground floor — follow the signs from the lobby and check in at the phlebotomy window.",
+      "accessible": true
+    },
+    {
+      "name": "Optometry",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "optometry",
+        "eye care",
+        "optometria",
+        "eye doctor",
+        "vision test",
+        "glasses",
+        "contact lenses",
+        "vista",
+        "exámenes de la vista"
+      ],
+      "check_in": "Check in at the Optometry reception on arrival.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors and check the lobby directory for the Optometry floor. Take the elevator up, then follow the signs to the Optometry reception desk.",
+      "accessible": true
+    },
+    {
+      "name": "Midwifery",
+      "building": "Atrius Health",
+      "floor": "",
+      "hours": "Standard business hours",
+      "aliases": [
+        "midwifery",
+        "obstetrics",
+        "matrona",
+        "birth center",
+        "labor and delivery",
+        "pregnancy care",
+        "delivery",
+        "parto",
+        "prenatal care"
+      ],
+      "check_in": "Check in at the Midwifery / Obstetrics reception.",
+      "directions": "Walk along Brookline Avenue to 133 Brookline — the Atrius Health tower is set back from the sidewalk with signage above the street-level entrance. Go in through the glass main doors and check the lobby directory for the Midwifery / Obstetrics floor. Take the elevator up, then follow the signs to the Midwifery reception desk.",
+      "accessible": true
+    }
+  ]
+}
